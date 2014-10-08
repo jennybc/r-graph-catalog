@@ -1,3 +1,5 @@
+Go to the [r-graph-catalog](https://github.com/jennybc/r-graph-catalog) GitHub repository.
+
 The initial work on this project was facilitated by an [NSERC Undergraduate Student Research Award](http://www.nserc-crsng.gc.ca/students-etudiants/ug-pc/usra-brpc_eng.asp).
 
 #### Inspiration
