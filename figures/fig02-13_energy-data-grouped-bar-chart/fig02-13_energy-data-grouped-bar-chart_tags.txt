@@ -1,0 +1,1 @@
+bar chart,ch02_limitations,naomi,legend,not recommended

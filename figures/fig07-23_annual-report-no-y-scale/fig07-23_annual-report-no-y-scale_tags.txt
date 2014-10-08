@@ -1,0 +1,1 @@
+line graph,timeseries,not recommended,ch07_scales,naomi,multiple plots,data labels

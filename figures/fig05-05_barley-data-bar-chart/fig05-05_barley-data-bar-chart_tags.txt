@@ -1,0 +1,1 @@
+bar chart,trellis display,good,ch05_morethan2var,naomi

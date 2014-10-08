@@ -1,0 +1,37 @@
+#mytable .shadow:hover {
+  -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+#mytable table.data {
+  width: 100%;
+}
+
+#mytable table.data td {
+  text-align: center;
+  vertical-align: middle;
+  width: 33.33%;
+  height: 250px
+}
+
+#mytable td img {
+  max-height: 250px;
+  width: auto;
+}
+
+#sidepanel {
+  height: 750px;
+  overflow: auto;
+}
+
+#mytable {
+  height: 750px;
+  overflow: auto;
+}
+
+#popup {
+  position: relative;
+  left: -11px;
+}
+

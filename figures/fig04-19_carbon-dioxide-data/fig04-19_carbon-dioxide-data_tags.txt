@@ -1,0 +1,1 @@
+timeseries,good,ch04_1or2dim,naomi,loess smoothing

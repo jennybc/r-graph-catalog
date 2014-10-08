@@ -1,0 +1,1 @@
+parallel coordinates plot,good,ch05_morethan2var,naomi

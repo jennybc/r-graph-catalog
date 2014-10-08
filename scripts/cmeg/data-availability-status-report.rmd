@@ -1,0 +1,133 @@
+# **Data availability status report**
+## `r as.character(format(Sys.Date(), format="%B %d, %Y"))`
+========================================================
+
+```{r, include=FALSE}
+library(knitr)
+app <- read.delim(file.path("../..", "inputs", "appendix-b.tsv"), 
+									colClasses = "character")
+
+app <- 
+  subset(app, select = c("Figure.Number", "Title", "Page", "Data.Availability"))
+
+# set up data frames for found and not found data
+app_found <- 
+  subset(app, grepl("Read off|Online|R data set|Splus", app$Data.Availability))
+
+app_notfound <- 
+  subset(app, grepl("Estimate|Not found|Random", app$Data.Availability))
+    
+read <- sum(grepl("Read off", app$Data.Availability))
+dataset <- sum(grepl("data set", app$Data.Availability))
+online <- sum(grepl("Online", app$Data.Availability))
+est <- sum(grepl("Estimate", app$Data.Availability))
+nfound <- sum(grepl("Not found", app$Data.Availability))
+rand_no <- sum(grepl("Random", app$Data.Availability))
+tot <- sum(dataset + est + nfound + online + rand_no + read)
+
+```
+
+### There are a total of `r nrow(app)` figures.  
+
+#### _Data found_ for `r  sum(read + dataset + online)` figures
+
+```{r found_data_table, echo=FALSE, results="asis"}
+
+df_found <- data.frame(
+  grp = c("Read off figure or figure description", "Online source", 
+          "R or S-Plus data set", "Total"),
+  count = c(read, online, dataset, sum(read, dataset, online))
+  )
+
+names(df_found) <- c("Data Found", "Number of Figures")
+
+kable(df_found)
+
+```
+
+#### _Data not found_ for `r  sum(est + nfound + rand_no)` figures
+
+```{r not found data table, echo=FALSE, results="asis"}
+
+df_notfound <- data.frame(
+  grp = c("Not found", "Estimate from figure", "Random numbers", "Total"),
+  count = c(nfound, est, rand_no, sum(nfound, est, rand_no))
+  )
+
+names(df_notfound) <- c("Data not Found", "Number of Figures")
+
+kable(df_notfound)
+
+```
+
+The following consists of the breakdown of each group of figures with no data found.
+
+#### Data sets that couldn't be found and are difficult to estimate are as follows:
+
+```{r no_data_table, echo=FALSE, results="asis"}
+
+library(plyr) #ddply() , join_all() , count()
+
+# get all not found datasets
+t <- subset(app_notfound, grepl("Not found", Data.Availability),
+						select = -Title)
+
+df1 <- count(t, "Data.Availability")
+
+df2 <- ddply(t, .(Data.Availability), summarise, 
+             paste(Figure.Number, collapse = ", "))
+
+df3 <- ddply(t, .(Data.Availability), summarise, paste(Page, collapse = ", "))
+
+df4 <- join_all(list(df1, df2, df3) , "Data.Availability")
+
+
+# clean up df: shorten names, order by frequency, rename columns
+df4$Data.Availability <- gsub("Not found ; | data", "", df4$Data.Availability)
+df4 <- data.frame(df4[order(-df4$freq), ], row.names = NULL)
+
+# append "total"" row
+df4 <- rbind(df4, c("Total", sum(df1$freq), "", ""))
+
+names(df4) <- c("Data set" , "Number of Figures", "Figure Number(s)", "Page(s)")
+
+kable(df4)
+
+```
+
+#### The data used for the following figures could be estimated from the figure itself.
+
+```{r estimate_table, echo=FALSE, results="asis"}
+
+# get all estimable data sets
+df_est <- subset(app_notfound, grepl("Estimate", Data.Availability), 
+								 select = -Data.Availability)
+
+# reorder and rename columns
+df_est <- data.frame(df_est[, c("Figure.Number", "Title", "Page")], 
+										 row.names = NULL)
+
+# append 'total' row
+df_est <- rbind(df_est, c("Total", nrow(df_est), "", ""))
+
+names(df_est) <- c("Figure Number", "Name", "Page")
+
+kable(df_est)
+```
+
+#### The following figures use data sets generated from random numbers:
+
+```{r random_number_table, echo=FALSE, results="asis"}
+df_rand_no <- 
+  data.frame(subset(app_notfound, select = c("Figure.Number", "Title", "Page"), 
+                    Data.Availability == "Random numbers"), row.names = NULL)
+
+# append 'total' row
+df_rand_no <- data.frame(rbind(df_rand_no, c("Total", nrow(df_rand_no), "")))
+
+names(df_rand_no) <- c("Figure Number", "Name", "Page")
+
+kable(df_rand_no)
+```
+
+
