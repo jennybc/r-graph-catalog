@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
-<meta name="author" content="jenny" />
+<meta name="author" content="jzhao" />
 
 
 <title>04_copy-files-into-r-graph-catalog.R</title>
@@ -53,8 +53,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="header">
 <h1 class="title">04_copy-files-into-r-graph-catalog.R</h1>
-<h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Wed Oct 8 14:19:15 2014</em></h4>
+<h4 class="author"><em>jzhao</em></h4>
+<h4 class="date"><em>Wed Oct 8 16:25:34 2014</em></h4>
 </div>
 
 
@@ -63,6 +63,20 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 ## get top-level directory for this project
 proj_dir &lt;-
   normalizePath(if(basename(getwd()) == &quot;scripts&quot;) &quot;..&quot; else getwd())
+
+
+# create thumbnails directory if does not exist
+out_thumb_dir &lt;- file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;thumbnails&quot;)
+if(!file.exists(out_thumb_dir)) {
+  dir.create(out_thumb_dir)
+}
+
+# create figures directory if does not exist
+out_fig_dir &lt;- file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;figures&quot;)
+if(!file.exists(out_fig_dir)) {
+  dir.create(out_fig_dir)
+}
+
 
 # get R files
 r_files &lt;-
@@ -95,8 +109,7 @@ if(all(r_files_copied)) {
 }</code></pre>
 <pre><code>## 123 *.R files successfully copied into r-graph-catalog/data</code></pre>
 <pre class="r"><code>thumbs_copied &lt;-
-  file.copy(file.path(proj_dir, &quot;figures&quot;, thumbs),
-            file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;thumbnails&quot;),
+  file.copy(file.path(proj_dir, &quot;figures&quot;, thumbs), out_thumb_dir, 
             overwrite = TRUE)
 
 if(all(thumbs_copied)) {
@@ -108,8 +121,7 @@ if(all(thumbs_copied)) {
 }</code></pre>
 <pre><code>## 123 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails</code></pre>
 <pre class="r"><code>figs_copied &lt;-
-  file.copy(file.path(proj_dir, &quot;figures&quot;, figures),
-            file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;figures&quot;),
+  file.copy(file.path(proj_dir, &quot;figures&quot;, figures), out_fig_dir,
             overwrite = TRUE)
 
 if(all(figs_copied)) {

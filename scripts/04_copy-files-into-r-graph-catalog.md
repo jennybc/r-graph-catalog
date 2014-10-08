@@ -7,6 +7,20 @@
 proj_dir <-
   normalizePath(if(basename(getwd()) == "scripts") ".." else getwd())
 
+
+# create thumbnails directory if does not exist
+out_thumb_dir <- file.path(proj_dir, "r-graph-catalog", "www", "thumbnails")
+if(!file.exists(out_thumb_dir)) {
+  dir.create(out_thumb_dir)
+}
+
+# create figures directory if does not exist
+out_fig_dir <- file.path(proj_dir, "r-graph-catalog", "www", "figures")
+if(!file.exists(out_fig_dir)) {
+  dir.create(out_fig_dir)
+}
+
+
 # get R files
 r_files <-
   list.files(file.path(proj_dir, "figures"), pattern = ".R", recursive = TRUE)
@@ -44,8 +58,7 @@ if(all(r_files_copied)) {
 
 ```r
 thumbs_copied <-
-  file.copy(file.path(proj_dir, "figures", thumbs),
-            file.path(proj_dir, "r-graph-catalog", "www", "thumbnails"),
+  file.copy(file.path(proj_dir, "figures", thumbs), out_thumb_dir, 
             overwrite = TRUE)
 
 if(all(thumbs_copied)) {
@@ -63,8 +76,7 @@ if(all(thumbs_copied)) {
 
 ```r
 figs_copied <-
-  file.copy(file.path(proj_dir, "figures", figures),
-            file.path(proj_dir, "r-graph-catalog", "www", "figures"),
+  file.copy(file.path(proj_dir, "figures", figures), out_fig_dir,
             overwrite = TRUE)
 
 if(all(figs_copied)) {
@@ -83,6 +95,6 @@ if(all(figs_copied)) {
 
 ---
 title: "04_copy-files-into-r-graph-catalog.R"
-author: "jenny"
-date: "Wed Oct  8 14:19:15 2014"
+author: "jzhao"
+date: "Wed Oct  8 16:25:34 2014"
 ---

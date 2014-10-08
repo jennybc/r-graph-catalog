@@ -134,6 +134,11 @@ head(fig_tags)
 ```
 
 ```r
+out_dir <- file.path(proj_dir, "r-graph-catalog", "data")
+if(!file.exists(out_dir)) {
+	dir.create(out_dir)
+}
+
 ## Save to file
 
 write.table(tags_only,
@@ -141,13 +146,13 @@ write.table(tags_only,
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 write.table(fig_tags,
-            file.path(proj_dir, "r-graph-catalog", "data", "figure-list.tsv"),
+            file.path(out_dir, "figure-list.tsv"),
             sep = '\t', row.names = FALSE, quote = FALSE)
 ```
 
 
 ---
 title: "03_create-tags-list-and-figure-list.R"
-author: "jenny"
-date: "Wed Oct  8 14:19:14 2014"
+author: "jzhao"
+date: "Wed Oct  8 16:25:33 2014"
 ---

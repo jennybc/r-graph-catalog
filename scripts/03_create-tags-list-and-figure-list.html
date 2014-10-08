@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
-<meta name="author" content="jenny" />
+<meta name="author" content="jzhao" />
 
 
 <title>03_create-tags-list-and-figure-list.R</title>
@@ -53,8 +53,8 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 
 <div id="header">
 <h1 class="title">03_create-tags-list-and-figure-list.R</h1>
-<h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Wed Oct 8 14:19:14 2014</em></h4>
+<h4 class="author"><em>jzhao</em></h4>
+<h4 class="date"><em>Wed Oct 8 16:25:33 2014</em></h4>
 </div>
 
 
@@ -179,14 +179,19 @@ tags_only</code></pre>
 ## 4 pie chart,ch02_limitations,naomi,not recommended
 ## 5             dot plot,good,ch02_limitations,naomi
 ## 7            bar chart,good,ch02_limitations,naomi</code></pre>
-<pre class="r"><code>## Save to file
+<pre class="r"><code>out_dir &lt;- file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;data&quot;)
+if(!file.exists(out_dir)) {
+    dir.create(out_dir)
+}
+
+## Save to file
 
 write.table(tags_only,
             file.path(proj_dir, &quot;outputs&quot;, &quot;available-tags.tsv&quot;),
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 write.table(fig_tags,
-            file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;data&quot;, &quot;figure-list.tsv&quot;),
+            file.path(out_dir, &quot;figure-list.tsv&quot;),
             sep = '\t', row.names = FALSE, quote = FALSE)</code></pre>
 
 

@@ -1,0 +1,43 @@
+===GRAPH TYPE===
+not recommended
+good
+===GRAPH TAGS===
+pie chart
+dot plot
+table
+bar chart
+line graph
+bubble chart
+scatterplot
+stripplot
+histogram
+boxplot
+timeseries
+month plot
+trellis display
+spline graph
+mosaic plot
+parallel coordinates plot
+rose plot
+area plot
+waffle chart
+===GRAPH ELEMENTS===
+legend
+annotation
+multiple plots
+jitter
+loess smoothing
+data labels
+subscript
+footnote
+===CHAPTER===
+ch01_intro
+ch02_limitations
+ch03_perception
+ch04_1or2dim
+ch05_morethan2var
+ch06_general
+ch07_scales
+ch08_beforeafter
+ch09_software
+ch10_qanda
