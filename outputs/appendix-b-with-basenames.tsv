@@ -1,0 +1,163 @@
+Figure.Number	Title	Page	Data.Availability	Source.of.Data	Software.Used.Source.of.Figure	basename
+1.1	Similar Pie Wedges	2	Read off figure 1.3		S-Plus: inspired by Cleveland (1985)	fig01-01_similar-pie-wedges
+1.2	Similar Pie Wedges: Dot Plot	4	Read off figure 1.3		S-Plus: inspired by Cleveland (1985)	fig01-02_similar-pie-wedges-dot-plot
+1.3	Similar Pie Wedges: Table	8	Read off figure 1.3		Word	fig01-03_similar-pie-wedges-table
+2.1	Structured Data Set	12	Read off figure 2.2 description		S-Plus: inspired by Cleveland (1994)	fig02-01_structured-data-set
+2.2	Structured Data Set: Dot Plot	14	Read off figure 2.2 description		S-Plus: inspired by Cleveland (1994)	fig02-02_structured-data-set-dot-plot
+2.3	Three-Dimensional Pie Data	18	Read off figure 2.4		Excel	fig02-03_three-dimensional-pie-data
+2.4	Three-Dimensional Pie Data: Two-Dimensional Bar Chart	20	Read off figure 2.4		Excel	fig02-04_three-dimensional-pie-data-two-dimensional-bar-chart
+2.5	Three-Dimensional Pie Data: Two-Dimensional Pie Chart	22	Read off figure 2.4		Excel	fig02-05_three-dimensional-pie-data-two-dimensional-pie-chart
+2.6	Three-Dimensional Bar Data	22	Read off figure 2.7		Excel	fig02-06_three-dimensional-bar-data
+2.7	Three-Dimensional Bar Data: Two-Dimensional Bar Chart	24	Read off figure 2.7		Excel	fig02-07_three-dimensional-bar-data-two-dimensional-bar-chart
+2.8	Three-Dimensional Bar Data: Excel	24	Read off figure 2.7		Excel	fig02-08_three-dimensional-bar-data-excel
+2.9	Three-Dimensional Bar Data: PowerPoint	26	Read off figure 2.7		Powerpoint	fig02-09_three-dimensional-bar-data-powerpoint
+2.10	Three-Dimensional Bar Data: Presentations and Charts	26	Read off figure 2.7		Presentations & Charts	fig02-10_three-dimensional-bar-data-presentations-and-charts
+2.11	Energy Data	28	Estimate from figure 2.13	U.S. Dept. Energy (1986)	S-Plus	fig02-11_energy-data
+2.12	Energy Data: All Other OECD	30	Estimate from figure 2.12	U.S. Dept. Energy (1986)	Excel	fig02-12_energy-data-all-other-oecd
+2.13	Energy Data: Grouped Bar Chart	32	Estimate from figure 2.13	U.S. Dept. Energy (1986)	Excel	fig02-13_energy-data-grouped-bar-chart
+2.14	Playfair's Balance-of-Trade Data	34	Online source ; http://web.mit.edu/ikari/Desktop/ikari/MacData/afs.ikari/MacData/afs/athena/astaff/project/Sdev/OldFiles/src/data/EXAMPLES	S-Plus 6 for Windows Users Guide. Copyright 2003 Insightful Corporation, Seattle, WA.	S-Plus from Cleveland (1994)	fig02-14_playfair-s-balance-of-trade-data
+2.15	Playfair's Balance-of-Trade Data: Imports Minus Export	36	Online source ; http://web.mit.edu/ikari/Desktop/ikari/MacData/afs.ikari/MacData/afs/athena/astaff/project/Sdev/OldFiles/src/data/EXAMPLES	S-Plus Data Set	S-Plus; from Cleveland (1994)	fig02-15_playfair-s-balance-of-trade-data-imports-minus-export
+2.16	Difference between Curves	38	Estimate from figure 2.16		S-Plus	fig02-16_difference-between-curves
+2.17	Ownership of Government Securities	40	Not found ; Government Securities data	Board of Governors of the Federal Reserve System (U.S.) (1989): Historical Chart Book, Washington, DC.		fig02-17_ownership-of-government-securities
+2.18	Playfair's Population of Cities	42	Online source ; http://pi-sigma.info/Downloads.htm (EDA Toolbox)	S-Plus Data Set	S-Plus: from Cleveland (1993)	fig02-18_playfair-s-population-of-cities
+2.19	Population of Cities: Dot Plot	44	Online source ; http://pi-sigma.info/Downloads.htm (EDA Toolbox)	S-Plus Data Set	S-Plus: from Cleveland (1993)	fig02-19_population-of-cities-dot-plot
+3.1	Angle Judgments	48	Estimate from figure 3.1		S-Plus	fig03-01_angle-judgments
+3.2	Area and Volume Judgments	50	Estimate from figure 3.2		S-Plus	fig03-02_area-and-volume-judgments
+3.3	Color Hue, Saturation, and Density	52	Random numbers	Random numbers	S-Plus	fig03-03_color-hue-saturation-and-density
+3.4	Length Judgments	54	Read off figure 3.4 description		S-Plus	fig03-04_length-judgments
+3.5	Position along a Common Scale	56	Read off figure 1.3		S-Plus	fig03-05_position-along-a-common-scale
+3.6	Position along Identical, Nonaligned Scales	58	Estimate from figure 3.5		S-Plus	fig03-06_position-along-identical-nonaligned-scales
+3.7	Slope Judgments	60	Estimate from figure 3.7		S-Plus	fig03-07_slope-judgments
+3.8	Detection	62	Random numbers	Random numbers	S-Plus	fig03-08_detection
+4.1	State Areas: Strip Plot	66	R data set ; state.name, state.area	S-Plus Data Set	Linda Clark using S-Plus	fig04-01_state-areas-strip-plot
+4.2	State Areas: Dot Plot	68	R data set ; state.name, state.area	S-Plus Data Set	S-Plus	fig04-02_state-areas-dot-plot
+4.3	State Areas: Ordered by Size	70	R data set ; state.name, state.area	S-Plus Data Set	S-Plus	fig04-03_state-areas-ordered-by-size
+4.4	State Areas Logarithm with Base 2	72	R data set ; state.name, state.area	S-Plus Data Set	S-Plus	fig04-04_state-areas-logarithm-with-base-2
+4.5	State Areas: Top Axis Labeled with Original Scale	74	R data set ; state.name, state.area	S-Plus Data Set	S-Plus	fig04-05_state-areas-top-axis-labeled-with-original-scale
+4.6	Families Exhibition: Histogram	76	Read off figure 4.6	Beverly Serrell	S-Plus	fig04-06_families-exhibition-histogram
+4.7	Avoid Misleading Histograms	78	Read off figure 4.7		S-Plus	fig04-07_avoid-misleading-histograms
+4.8	Judith Leyster Exhibition: Strip Plot	80	Read off figure 4.8 description	Beverly Serrell	S-Plus	fig04-08_judith-leyster-exhibition-strip-plot
+4.9	Judith Leyster: Jittered Strip Plot	82	Read off figure 4.8 description	Beverly Serrell	S-Plus	fig04-09_judith-leyster-jittered-strip-plot
+4.10	Museum Exhibitions: Jittering	84	Not found ; Museum Exhibitions data	Beverly Serrell	S-Plus	fig04-10_museum-exhibitions-jittering
+4.11	Museum Exhibitions: Box Plot	88	Not found ; Museum Exhibitions data	Beverly Serrell	S-Plus	fig04-11_museum-exhibitions-box-plot
+4.12	Description of Box Plot	90	Estimate from figure 4.12	Cleveland (1993)	S-Plus; from Cleveland (1993)	fig04-12_description-of-box-plot
+4.13	Museum Exhibitions: Styles of Box Plots	92	Not found ; Museum Exhibitions data	Beverly Serrell	S-Plus	fig04-13_museum-exhibitions-styles-of-box-plots
+4.14	Paying Attention Data: Scatterplot	94	Not found ; Paying Attention data	Beverly Serrell	S-Plus	fig04-14_paying-attention-data-scatterplot
+4.15	Paying Attention Data: Regression Line	96	Not found ; Paying Attention data	Serrell (1998)	S-Plus	fig04-15_paying-attention-data-regression-line
+4.16	Paying Attention Data: Loess Fit	98	Not found ; Paying Attention data	Serrell (1998)	S-Plus	fig04-16_paying-attention-data-loess-fit
+4.17	Visitors at St. Louis Science Center	100	Estimate from figure 4.17	St. Louis Science Center	S-Plus	fig04-17_visitors-at-st-louis-science-center
+4.18	SLSC Visitors: Month Plot	102	Not found ; SLSC Visitors data	St. Louis Science Center	R	fig04-18_slsc-visitors-month-plot
+4.19	Carbon Dioxide Data	104	R data set ; co2	S-Plus Data Set	S-Plus; from Cleveland (1994)	fig04-19_carbon-dioxide-data
+4.20	Carbon Dioxide Data: Month Plot	106	R data set ; co2	S-Plus Data Set	S-Plus	fig04-20_carbon-dioxide-data-month-plot
+4.21	Used Car Price: Line Graph	108	Estimate from figure 4.21	http://www.kbb.com/	Excel	fig04-21_used-car-price-line-graph
+4.22	Mountain Height Data: Line Graph	108	Online source ; wikipedia	Sutcliffe (1996)	Excel	fig04-22_mountain-height-data-line-graph
+4.23	Mountain Height Data by Mountain	110	Online source ; wikipedia	Sutcliffe (1996)	Excel	fig04-23_mountain-height-data-by-mountain
+4.24	Mountain Height Data by Continent	110	Online source ; wikipedia	Sutcliffe (1996)	Excel	fig04-24_mountain-height-data-by-continent
+5.1	Energy Data: Stacked Bar Chart	114	Estimate from figure 2.13	U.S. Dept. Energy (1986)	S-Plus	fig05-01_energy-data-stacked-bar-chart
+5.2	Energy Data: Labeled Scatterplot	116	Estimate from figure 2.13	U.S. Dept. Energy (1986)	S-Plus	fig05-02_energy-data-labeled-scatterplot
+5.3	Energy Data: Trellis Display	118	Estimate from figure 2.13	U.S. Dept. Energy (1986)	 S-Plus	fig05-03_energy-data-trellis-display
+5.4	Barley Data	120	Splus data set ; barley	S-Plus Data Set	S-Plus; from Cleveland (1994)	fig05-04_barley-data
+5.5	Barley Data: Bar Chart	124	Splus data set ; barley	S-Plus Data Set	S-Plus	fig05-05_barley-data-bar-chart
+5.6	Energy Data: Scatterplot Matrix	126	Estimate from figure 2.13	U.S. Dept. Energy (1986)	R	fig05-06_energy-data-scatterplot-matrix
+5.7	Reading a Scatterplot	128	Estimate from figure 2.13	U.S. Dept. Matrix Energy (1986)	R	fig05-07_reading-a-scatterplot
+5.8	Monterey Bay Aquarium Data: Mosaic Plot Preliminaries	130	Estimate from figure 5.8	Monterey Bay Aquarium	S-Plus with http://www.statyale.edut-jay/JCGS/mosaic.code	fig05-08_monterey-bay-aquarium-data-mosaic-plot-preliminaries
+5.9	MBA Data: Another Variable Added	132	Not found ; Monterey Bay Aquarium data	Monterey Bay Aquarium	S-Plus with http://www.stat.yale.edu/~jay/JCGS/mosaic.code	fig05-09_mba-data-another-variable-added
+5.10	MBA Data: Mosaic Plot	134	Not found ; Monterey Bay Aquarium data	Monterey Bay Aquarium	S-Plus with http://www.stat.yale.edu/~jay/JCGS/mosaic.code	fig05-10_mba-data-mosaic-plot
+5.11	Soybean Data: Linked Micromaps	136	Online source ; http://www.agcensus.usda.gov/Publications/1997/Rankings_of_State_and_Counties/tbl61.pdf	http://www.nass.usda.gov/research/gmsoyyap.htm		fig05-11_soybean-data-linked-micromaps
+5.12	Iris Data: Parallel Coordinate Plots	140	R data set ; iris	S-Plus Data Set	S-Plus	fig05-12_iris-data-parallel-coordinate-plots
+5.13	Reading a Parallel Coordinates Plot	142	Read off figure 5.13 decription		S-Plus	fig05-13_reading-a-parallel-coordinates-plot
+5.14	Nightingale Data	144	Online source ; http://understandinguncertainty.org/node/214	http://www.uh.edu/engines/epi1712.htm		fig05-14_nightingale-data
+5.15	Nightingale Data: Trellis Plot	148	Online source ; http://understandinguncertainty.org/node/214	Provided by Hugh Small	S-Plus	fig05-15_nightingale-data-trellis-plot
+5.16	DJIA: High-Low - Open - Close Plots	150	Online source ; https://finance.yahoo.com	Dow Jones Industrial Average	S-Plus	fig05-16_djia-high-low-open-close-plots
+6.1	Terminology	156	Not found ; SLSC Visitors data	St. Louis Science Center	S-Plus	fig06-01_terminology
+6.2	Association of Research Libraries Data	158	Read off figure 6.2	ARL Notebook 2002 LibQUAL (tm) Results (Washington, DC: Association of Research Libraries, 2002). 4.1.2: Respondents by Discipline for 4-Year Institution—All User Groups (Includes Library Staff)[table], p. 26. Retrieved January 20, 2003 from <http.//www.libqual.org/documents/admin/ARLNotebook111.pdf> For more information on the ARL Statistics and Measurement Program, see <http://www.artorg/stats/>		fig06-02_association-of-research-libraries-data
+6.3	ARL Data: Data Stand Out Better	160	Read off figure 6.2	Association of Research Libraries (2002)	S-Plus	fig06-03_arl-data-data-stand-out-better
+6.4	Data That Are Difficult to See	162	Random numbers		S-Plus	fig06-04_data-that-are-difficult-to-see
+6.5	Museum Exhibitions: Overlapping Data	164	Not found ; Museum Exhibitions data	Beverly Serrell	S-Plus	fig06-05_museum-exhibitions-overlapping-data
+6.6	Superposed Data Sets	166	Random numbers		S-Plus	fig06-06_superposed-data-sets
+6.7	Superposed Data Sets 2	168	Random numbers		S-Plus	fig06-07_superposed-data-sets-2
+6.8	Avoiding Superposed Data	170	Random numbers		S-Plus	fig06-08_avoiding-superposed-data
+6.9	Stock Market Data	172	Online source ; https://finance.yahoo.com	http://chart.yahoo.com/d	Excel	fig06-09_stock-market-data
+6.10	Stock Market Data: Clarified	172	Online source ; https://finance.yahoo.com	http://chart.yahoo.com/d	S-Plus	fig06-10_stock-market-data-clarified
+6.11	Marketing Data	174	Not found ; Marketing data		S-Plus	fig06-11_marketing-data
+6.12	Marketing Data: Less Cluttered Version	176	Not found ; Marketing data		S-Plus	fig06-12_marketing-data-less-cluttered-version
+6.13	Inflation Data	178	Online source ; http://minneapolisfed.org/research/data/us/calc/hist1913.cfm	http://minneapolisfed.org/research/data/us/calc/hist1913.cfm	Excel; inspired by graphs in software and publications	fig06-13_inflation-data
+6.14	Data That Hide Labels	180	Read off figure 6.14		Excel; inspired by graphs on the web	fig06-14_data-that-hide-labels
+6.15	Tick Marks and Tick Mark Labels	182	Read off figure 6.15	Designing & Delivering: Scientific, Technical, and Managerial Presentations by Peter Hager and Howard Scheiber. Copyright 1997 John Wiley & Sons, Inc. This figure is used by permission of John Wiley & Sons, Inc.		fig06-15_tick-marks-and-tick-mark-labels
+6.16	Exhibit Label Data	184	Estimate from figure 6.16	Used with permission from an anonymous source.		fig06-16_exhibit-label-data
+6.17	Stock Market Data: Visual Reference Grids	186	Online source ; https://finance.yahoo.com	http://chartyahoo.com/d	S-Plus	fig06-17_stock-market-data-visual-reference-grids
+6.18	Zoo Exhibit Data	188	Estimate from figure 6.18	Rosenfeld, Sherman. 1982. A Naturalistic Study of Visitors at an Interactive Mini-zoo. Curator 25: 200. Copyright 1982 Rowman and Littlefield Publishing Group. Used with their permission.		fig06-18_zoo-exhibit-data
+6.19	Barley Data	190	Splus data set ; barley	Written by Naomi B. Robbins and reprinted with permission from the Society for Technical Communication, Arlington, VA.		fig06-19_barley-data
+6.20	World Population Data	194	Read off figure 6.20	Wurman (1999)		fig06-20_world-population-data
+6.21	Internet Users Data	196	Read off figure 6.21	Wurman (1999)	Top: Wurman (1999); bottom: Excel	fig06-21_internet-users-data
+6.22	Police Officer Data	198	Read off figure 6.22	State of New Jersey, Division of State Police, Uniform Crime Reporting Unit (1997)		fig06-22_police-officer-data
+6.23	Police Officer Data to Scale	200	Read off figure 6.22	State of New Jersey, Division of State Police, Uniform Crime Reporting Unit (1997)	Excel	fig06-23_police-officer-data-to-scale
+6.24	Earnings per Share Data	202	Read off figure 6.24		Top: Linda Clark using S-Plus, inspired by graphs in annual reports; bottom: Excel	fig06-24_earnings-per-share-data
+6.25	America Online Market Value	204	Read off figure 6.25	Wurman (1999)	Top: Wurman (1999); bottom: Becker Chart	fig06-25_america-online-market-value
+6.26	Annual Report Data	206	Read off figure 6.26		Linda Clark using S-Plus; inspired by graphs in annual reports	fig06-26_annual-report-data
+6.27	Immigration Data	208	Read off figure 6.27	Wurman (1999)		fig06-27_immigration-data
+6.28	Immigration Data with Horizontal Baseline	210	Read off figure 6.28	Wurman (1999)	Drawn by Marc Tracey using Illustrator. Used with his permission.	fig06-28_immigration-data-with-horizontal-baseline
+6.29	Survey Results Data	212	Not found ; Survey Results data		Excel; inspired by graphs in newsletters	fig06-29_survey-results-data
+6.30	Health Insurance Data	214	Read off figure 6.30	Wurman (1999)	Top: Wurman (1999); bottom: Excel	fig06-30_health-insurance-data
+6.31	Source of Funding Data	218	Read off figure 6.31		Top: Linda Clark using S-Plus; inspired by graphs in newsletters; bottom: Excel	fig06-31_source-of-funding-data
+6.32	Population of Cities	220	Online source ; http://www.census.gov/population/www/documentation/twps0027/tab22.txt ; http://www.census.gov/statab/ccdb/cit1020r.txt	U.S. Census	S-Plus	fig06-32_population-of-cities
+6.33	Population of Cities: Conflicting Principles	222	Online source ; http://www.census.gov/population/www/documentation/twps0027/tab22.txt ; http://www.census.gov/statab/ccdb/cit1020r.txt	U.S. Census	S-Plus	fig06-33_population-of-cities-conflicting-principles
+7.1	Sunspot Data: Aspect Ratio 1	228	R data set ; sunspots	S-Plus Data Set	S-Plus; from Cleveland (1994)	fig07-01_sunspot-data-aspect-ratio-1
+7.2	Annual Report: Aspect Ratio 2	230	Read off figure 7.2		S-Plus; top inspired by graphs in annual reports	fig07-02_annual-report-aspect-ratio-2
+7.3	Carbon Dioxide data	234	R data set ; co2	S-Plus Data Set	S-Plus; from Cleveland (1994)	fig07-03_carbon-dioxide-data
+7.4	Carbon Dioxide: Aspect Ratio Changed	236	R data set ; co2	S-Plus Data Set	S-Plus	fig07-04_carbon-dioxide-aspect-ratio-changed
+7.5	Annual Report Bar Chart: No Zero	238	Read off figure 7.5		Excel; top inspired by graphs in annual reports	fig07-05_annual-report-bar-chart-no-zero
+7.6	Logarithmic Scales for Percent Change	242	Read off figure 7.6 description		S-Plus	fig07-06_logarithmic-scales-for-percent-change
+7.7	Sales Data	244	Not found ; Sales data	Private client	S-Plus	fig07-07_sales-data
+7.8	Sales Data: Logarithmic Scale	246	Not found ; Sales data	Private client	S-Plus	fig07-08_sales-data-logarithmic-scale
+7.9	Sales Data: Ordered. Data with Logarithmic Scale	248	Not found ; Sales data	Private client	S-Plus	fig07-09_sales-data-ordered-data-with-logarithmic-scale
+7.10	Police Data: Logarithmic Scale with Bars	250	Read off figure 7.10	State of New jersey, Division of State Police, Uniform Crime Reporting Unit (1997)		fig07-10_police-data-logarithmic-scale-with-bars
+7.11	Police Data: Scale Break	252	Read off figure 7.11	State of New jersey, Division of State Police, Uniform Crime Reporting Unit (1994)		fig07-11_police-data-scale-break
+7.12	Police Data.: Simple View	254	Read off figure 7.12	State of New jersey, Division of State Police, Uniform Crime Reporting Unit (1997)	Excel	fig07-12_police-data-simple-view
+7.13	Sales Data: Full Scale Break	256	Not found ; Sales data	Private client	S-Plus	fig07-13_sales-data-full-scale-break
+7.14	Sales Data: Avoiding a Scale Break	258	Not found ; Sales data	Private client	S-Plus	fig07-14_sales-data-avoiding-a-scale-break
+7.15	Connecting Sides Of a Scale Break	260	Not found ; Revenue of Divisions data		Linda Clark using S-Plus; inspired by graphs in annual reports	fig07-15_connecting-sides-of-a-scale-break
+7.16	Temperature Data: Two Scales	262	Estimate from figure 7.16	Sutcliffe (1996)	S-Plus	fig07-16_temperature-data-two-scales
+7.17	Income Data: Gender Gap at All Ages	264	Estimate from figure 7.17 or http://www.bls.gov/cps/cpswom2001.pdf (table 1)	U.S. Bureau of Labor Statistics	S-Plus	fig07-17_income-data-gender-gap-at-all-ages
+7.18	Income Data: Gender Gap Depends on Age	266	Estimate from figure 7.17 or http://www.bls.gov/cps/cpswom2001.pdf (table 1)	U.S. Bureau of Labor Statistics	S-Plus	fig07-18_income-data-gender-gap-depends-on-age
+7.19	Blood-Level Data	268	Not found ; Blood Level data	Private Communication	Linda Clark using S-Plus	fig07-19_blood-level-data
+7.20	Blood-Level Data: Variation in Ratio	270	Estimate from figure 7.20	Private communication	Linda Clark using S-Plus	fig07-20_blood-level-data-variation-in-ratio
+7.21	Blood-Level Data: Multipanel Plot	272	Not found ; Blood Level data	Private communication	Linda Clark using S-Plus	fig07-21_blood-level-data-multipanel-plot
+7.22	Blood-Level Data: Scatterplot Matrix	274	Not found ; Blood Level data	Private communication	R	fig07-22_blood-level-data-scatterplot-matrix
+7.23	Annual Report: No Y Scale	276	Read off figure 7.23		S-Plus; top inspired by graphs in annual reports	fig07-23_annual-report-no-y-scale
+7.24	Prime Lending Rate Data: No X Scale	278	Online source ; http://interestonlyloans.com/prime_rate_history.html	Copyright 2003-2004 Spydercube, Inc. Used with their permission.		fig07-24_prime-lending-rate-data-no-x-scale
+7.25	Annual Report Data: Tick Marks at Hard-to-judge Values	280	Estimate from figure 7.25		Excel; inspired by graphs in annual reports	fig07-25_annual-report-data-tick-marks-at-hard-to-judge-values
+7.26	IRS Data: Departing from Convention	282	Estimate from figure 7.26	http://www.gao.gov		fig07-26_irs-data-departing-from-convention
+7.27	Invoice Data: Filling the Scale-Line Rectangle	284	Estimate from figure 7.27	Texas State Auditors Office (1995)		fig07-27_invoice-data-filling-the-scale-line-rectangle
+7.28	Body Mass Data: Unequal Intervals	286	Not found ; Body Mass data	Calle et al. (1999). Copyright 1999 Massachusetts Medical Society. All rights reserved.		fig07-28_body-mass-data-unequal-intervals
+7.29	Body Mass Data: Comparing Panels	288	Not found ; Body Mass data	Calle et al. (1999). Copyright 1999 Massachusetts Medical Society. All rights reserved.		fig07-29_body-mass-data-comparing-panels
+7.30	Body Mass Data: Corrected	290	Not found ; Body Mass data	Copyright 1999 Edith Flaster. Used with her permission.		fig07-30_body-mass-data-corrected
+8.1	Gold Price Data	294	Online source ; http://www.nma.org/pdf/gold/his_gold_prices.pdf ; estimate highs/lows from figure 8.1	http://www.gold-eagle.com/analysis/london_gold.html	Excel; inspired by graphs on Web	fig08-01_gold-price-data
+8.2	Gold Price Data: High - Low Chart	296	Online source ; http://www.nma.org/pdf/gold/his_gold_prices.pdf ; estimate highs/lows from figure 8.1	http://www.gold-eagle.com/analysis/london_gold.html	S-Plus	fig08-02_gold-price-data-high-low-chart
+8.3	Task Data	298	Read off figure 8.3	Dynamics in Document Design: Creating Texts for Readers by Karen A. Schriver. Copyright 1997 by John Wiley & Sons, Inc. All rights reserved. Reproduced here by permission of the publisher.		fig08-03_task-data
+8.4	Task Data Unified	300	Read off figure 8.3	Schriver (1997)	S-Plus	fig08-04_task-data-unified
+8.5	Task Data: Improvement	302	Read off figure 8.3	Schriver (1997)	S-Plus	fig08-05_task-data-improvement
+8.6	Task Data: Percent Improvement	304	Read off figure 8.3	Schriver (1997)	S-Plus	fig08-06_task-data-percent-improvement
+8.7	Task Data: Bar Chart	306	Read off figure 8.3	Schriver (1997)	Excel	fig08-07_task-data-bar-chart
+8.8	ARL Library Survey: Radar Chart	310	Online source ; http://www.libqualorg/documents/admin/ARLNotebook111.pdf	ARL Notebook 2002 LibQUAL + (tm) Results (Washington, DC: Association of Research Libraries, 2002). 4.5.1: Item Summary for 4-Year Institution—Faculty [radar graph], p. 46. Retrieved January 20, 2003 from <http://www.libqualorg/documents/admin/ARLNotebook111.pdf>		fig08-08_arl-library-survey-radar-chart
+8.9	ARL Library Survey: Variation of a Trellis Plot	312	Online source ; http://www.libqual.org/documents/admin/ARLNotebook111.pdf	ARL (2002)	R	fig08-09_arl-library-survey-variation-of-a-trellis-plot
+8.10	ARL Library Survey: Comparison of User Groups	314	Online source ; http://www.libqual.org/documents/admin/ARLNotebook111.pdf	ARL (2002)	S-Plus	fig08-10_arl-library-survey-comparison-of-user-groups
+8.11	Car Production: Multiple Pie Charts	316	Read off figure 8.11	Visualization: Using Computer Graphics to Explore Data and Present Information by Judith R. Brown, Rae Earnshaw, Mikel Jern and John Vince. Copyright 1995 by John Wiley & Sons, Inc. All rights reserved, Reproduced here by permission of the publisher.		fig08-11_car-production-multiple-pie-charts
+8.12	Car Production: Stacked Bar Chart	318	Read off figure 8.11	Brown et al. (1995)	Excel; inspired by Spielman	fig08-12_car-production-stacked-bar-chart
+8.13	Car Production: Trellis Panels	320	Read off figure 8.11	Brown et al. (1995)	S-Plus	fig08-13_car-production-trellis-panels
+8.14	Population Data by Race	324	Read off table pages 322-323	U.S. Census	S-Plus	fig08-14_population-data-by-race
+8.15	Population Data by County	326	Read off table pages 322-323	U.S. Census	S-Plus	fig08-15_population-data-by-county
+9.1	Moving an Axis in Excel	332	Estimate from figure 9.1		Excel	fig09-01_moving-an-axis-in-excel
+9.2	Scale Tip for Excel Users	334	Estimate from figure 9.2	Anonymous	Excel	fig09-02_scale-tip-for-excel-users
+9.3	State Areas: Dot Chart from Excel	336	R data set ; state.name, state.area	S-Plus Data	Excel	fig09-03_state-areas-dot-chart-from-excel
+9.4	Marketing Data: Data Labels with Excel	338	Not found ; Marketing data	Random	Excel	fig09-04_marketing-data-data-labels-with-excel
+10.1	BLS Unemployment Data: Table	346	Read off figure 10.1	http://data.bls.gov/cgi-bin/surveymost		fig10-01_bls-unemployment-data-table
+10.2	BLS Unemployment Data: Graph	347	Online source ; http://data.bls.gov/cgi-bin/surveymost?bls	U.S. Bureau of Labor Statistics	S-Plus	fig10-02_bls-unemployment-data-graph
+10.3	Presidential Approval Data: Waffle Chart	352	Read off figure 10.3	New York Times, June 21, 2002	Word	fig10-03_presidential-approval-data-waffle-chart
+10.4	Presidential Approval Data: Which do you prefer?	354-355	Read off figure 10.4	New York Times, June 21, 2002	Left: Excel; middle: Word	fig10-04_presidential-approval-data-which-do-you-prefer
+10.5	Total Sales: Three-Dimensional Bar Chart	356	Estimate from figure 10.5		Paint; inspired by ads in junk mail	fig10-05_total-sales-three-dimensional-bar-chart
+10.6	Data Labels on Three-Dimensional Bars	358	Read off figure 10.6		Excel; inspired by presentations	fig10-06_data-labels-on-three-dimensional-bars
+10.7	Computer Sales: Framing the Graph	362	Estimate from figure 10.7	Written by Charles Kostelnick and reprinted with permission from the Society for Technical Communication, Arlington, VA.		fig10-07_computer-sales-framing-the-graph
+10.8	Kostelnicks Informal Tone	364	Estimate from figure 10.8	Written by Charles Kostelnick and reprinted with permission from the Society for Technical Communication, Arlington, VA.		fig10-08_kostelnicks-informal-tone
+10.9	Informal Tone without Graph Clutter	366	Estimate from figure 10.9	Kostelnick (1998)	S-Plus with PowerPoint background	fig10-09_informal-tone-without-graph-clutter
+10.10	Adding Glitz with Labels	368	Read off figure 1.3		S-Plus with clip art	fig10-10_adding-glitz-with-labels

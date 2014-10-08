@@ -63,6 +63,12 @@ tags_only
 
 head(fig_tags)
 
+# ---- create outputs directory if does not exist
+out_dir <- file.path(proj_dir, "r-graph-catalog", "data")
+if(!file.exists(out_dir)) {
+	dir.create(out_dir)
+}
+
 ## Save to file
 
 write.table(tags_only,
@@ -70,5 +76,5 @@ write.table(tags_only,
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 write.table(fig_tags,
-            file.path(proj_dir, "r-graph-catalog", "data", "figure-list.tsv"),
+            file.path(out_dir, "figure-list.tsv"),
             sep = '\t', row.names = FALSE, quote = FALSE)

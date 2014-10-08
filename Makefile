@@ -38,7 +38,7 @@ $(basename $(script02)).md: $(script02) appendix-b-with-basenames.tsv
 	$(tidy-spin)
 
 # The default target of this Makefile
-all: basenames pngs readmes thumbs lists copy-files
+all: basenames pngs readmes thumbs lists copy-files sync
 
 # all figure directories
 fig_dirs = $(wildcard figures/*)
@@ -123,6 +123,9 @@ script10 = 13_manage-figure-directories.R
 
 check-directories: $(script10)
 	$(tidy-spin)
+
+sync:
+	rsync -a r-graph-catalog/ joanna.zhao@shinyapps.stat.ubc.ca:/nfs/zfs-shiny-server/joanna.zhao-apps/r-graph-catalog
 
 ## Clean targets for different levels of cleaning
 
