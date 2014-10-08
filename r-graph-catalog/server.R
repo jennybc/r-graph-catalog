@@ -191,9 +191,9 @@ shinyServer(function(input, output, session){
   output$link <- renderText({
 
     if(length(values$code > 0)) {
-      repo <- paste0("https://github.com/jennybc/hadley-et-naomi/tree/master/figures/",
+      repo <- paste0("https://github.com/jennybc/r-graph-catalog/tree/master/figures/",
                      values$code)
-
+      
       target <- paste('target="_blank"')
 
       link <- paste(a("Go to GitHub to download figure and code",
