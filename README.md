@@ -2,8 +2,7 @@ R Graph Catalog
 ===============
 
 
-Link to
-[R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/) app
+Link to [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/) app
 
 ## Contributing
 
