@@ -38,7 +38,7 @@ $(basename $(script02)).md: $(script02) appendix-b-with-basenames.tsv
 	$(tidy-spin)
 
 # The default target of this Makefile
-all: basenames pngs readmes thumbs lists copy-files sync
+all: basenames pngs readmes thumbs lists copy-files
 
 # all figure directories
 fig_dirs = $(wildcard figures/*)
@@ -97,8 +97,6 @@ other-readmes: $(addsuffix /README.md , $(other_fig_dirs))
 script06 = 03_create-tags-list-and-figure-list.R
 
 lists: figure-list.tsv available-tags.tsv
-
-
 
 # create available-tags.tsv and figure-list.tsv
 figure-list.tsv available-tags.tsv: $(script06) figures/*/*_tags.txt $(PNGS)
