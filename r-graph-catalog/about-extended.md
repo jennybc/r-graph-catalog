@@ -1,10 +1,10 @@
-This project was funded under [NSERC](http://www.nserc-crsng.gc.ca/index_eng.asp).
+The initial work on this project was facilitated by an [NSERC Undergraduate Student Research Award](http://www.nserc-crsng.gc.ca/students-etudiants/ug-pc/usra-brpc_eng.asp).
 
 #### Inspiration
 
-The graph gallery was inspired by [rgraphicsgallery](http://rgraphgallery.blogspot.ca) and [rChartsGallery](http://rcharts.io/gallery/). The goal is to create a simple and organized visual index of ggplot2 graphs.
+We are inspired by the [R graph gallery](http://rgraphgallery.blogspot.ca) and [rCharts Gallery](http://rcharts.io/gallery/). Our goal is to create a simple and organized visual index of diverse ggplot2 graphs. Naomi Robbins' book provided a great set of figures to start with.
 
-We are very interested in extending this current work in hopes of  reviving the dormant R Graph Gallery.
+We are very interested in extending this catalog, possibly helping to revive to the dormant [R graph gallery](http://rgraphgallery.blogspot.ca).
 
 #### Useful Resources
 
@@ -12,7 +12,7 @@ We are very interested in extending this current work in hopes of  reviving the 
 
 [`ggplot2`](http://ggplot2.org) written by [Hadley Wickham](http://hadley.github.io)
 
-["R Graphics Cookbook"](http://www.cookbook-r.com/) by [Winston Chang](https://github.com/wch)
+[Winston Chang's](https://github.com/wch) book ["R Graphics Cookbook"](http://shop.oreilly.com/product/0636920023135.do) and the [Graphs section](http://www.cookbook-r.com/Graphs/) of his [Cookbook for R website](http://www.cookbook-r.com/)
 
 [ggplot2 Version of Figures in "Lattice: Multivariate Data Visualization with R"](http://learnr.wordpress.com/2009/08/26/ggplot2-version-of-figures-in-lattice-multivariate-data-visualization-with-r-final-part/)
 
