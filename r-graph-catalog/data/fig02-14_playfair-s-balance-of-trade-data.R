@@ -7,20 +7,17 @@ this_base <- "fig02-14_playfair-s-balance-of-trade-data"
 my_data_wide <- read.delim(paste0(this_base, ".tsv"))
 
 # convert my_data into long format
-my_data_long <- melt(my_data_wide, id.vars = c("year"), 
-                  measure.vars = c("exports", "imports"), 
-                  variable.name = "type", value.name = "pounds")
+my_data_long <- melt(my_data_wide, id.vars = "year", 
+                     measure.vars = c("exports", "imports"), 
+                     variable.name = "type", value.name = "pounds")
 
-p <- ggplot(my_data_long, aes(x = year, y = pounds, colour = type)) + 
+p <- ggplot(my_data_long, aes(x = year, y = pounds, group = type)) + 
   geom_line() +
-  scale_colour_manual(values = c("black", "black")) +
-  scale_y_continuous(breaks = c(-0.5, 0, 0.5, 1, 1.5), 
-                     limits = c(0, 1.6)) +
+  scale_y_continuous(breaks = c(0, 0.5, 1, 1.5), limits = c(0, 1.6)) +
   labs(x = "Year", y = "Millions of Pounds") +
   ggtitle("Fig 2.14 Playfair's Balance-of-Trade Data") +
   theme_bw() +
-  theme(legend.position = "none",
-        panel.grid.major = element_blank(),
+  theme(panel.grid.major = element_blank(),
         plot.title = element_text(size = rel(1.2), face = "bold", vjust = 1.5),
         axis.title = element_text(face = "bold", size = 10))
 

@@ -95,6 +95,6 @@ if(all(figs_copied)) {
 
 ---
 title: "04_copy-files-into-r-graph-catalog.R"
-author: "jzhao"
-date: "Wed Oct  8 16:25:34 2014"
+author: "jenny"
+date: "Wed Oct  8 23:44:03 2014"
 ---

@@ -7,9 +7,8 @@ set.seed(100)
 
 my_data <- data.frame(x = rnorm(100, mean = 20, sd = 10),
                       y = c(rnorm(50, mean = 20, sd = 10), 
-                            rnorm(50, mean = 25, sd = 10)))
-
-my_data$country <- c(rep("England", 33), rep("France", 33), rep("Italy", 34))
+                            rnorm(50, mean = 25, sd = 10)),
+                      country = rep(c("England", "France", "Italy"), c(33, 33, 34)))
 
 p1 <- ggplot(my_data, aes(x = x, y = y, group = country)) +
   geom_point(aes(shape = country), show_guide = FALSE) +

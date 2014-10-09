@@ -153,6 +153,6 @@ write.table(fig_tags,
 
 ---
 title: "03_create-tags-list-and-figure-list.R"
-author: "jzhao"
-date: "Wed Oct  8 16:25:33 2014"
+author: "jenny"
+date: "Wed Oct  8 23:44:02 2014"
 ---

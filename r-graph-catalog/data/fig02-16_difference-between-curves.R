@@ -4,8 +4,8 @@ library(reshape2)
 this_base <- "fig02-16_difference-between-curves"
 
 my_data <- data.frame(
-  curve1 = curve(1/x^2, from = 0.5, to = 3, ylim = c(0, 5)),
-  curve2 = curve(1/x^2 + 0.6, from = 0.5, to = 3.0 , ylim = c(0, 5))$y)
+  curve1 = curve(1/x^2, from = 0.5, to = 3, ylim = c(0, 5), add = FALSE),
+  curve2 = curve(1/x^2 + 0.6, from = 0.5, to = 3, ylim = c(0, 5), add = FALSE)$y)
 
 names(my_data) <- c("x", "curve1", "curve2")
 

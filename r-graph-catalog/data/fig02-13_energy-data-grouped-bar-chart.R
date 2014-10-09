@@ -5,14 +5,14 @@ library(grid) # unit()
 this_base <- "fig02-13_energy-data-grouped-bar-chart"
 
 my_data <- data.frame(
-  year = factor(c(77, 78, 79, 80, 81, 82, 83, 84, 85, 86)),
+  year = factor(77:86),
   us = c(1320, 1280, 1350, 1400, 1470, 1420, 1440, 1580, 1520, 1610),
   japan = c(405, 405, 480, 500, 490, 495, 480, 480, 500, 530),
   germany = c(220, 225, 290, 320, 300, 280, 260, 240, 220, 225),
   other = c(1280, 1195, 1310, 1390, 1270, 1200, 1100, 1100, 1040, 1080))
 
 # reshape my_data into long form
-my_data_long <- melt(my_data, id.vars = c("year"))
+my_data_long <- melt(my_data, id.vars = "year")
 
 p <- ggplot(my_data_long, aes(x = year, y = value, fill = variable)) +
   # to hide legend slashes, first graph bars with no outline and add legend

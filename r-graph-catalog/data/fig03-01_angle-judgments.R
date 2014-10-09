@@ -6,14 +6,12 @@ my_data <- data.frame(
   variable = c("A", "B","C","D","E"), 
   value = c(25, 55, 55, 90, 135) / 360)
 
-p <- ggplot(my_data, aes(x = factor(1), fill = variable, weight = value)) +
-  geom_bar(width = 1, show_guide = FALSE, colour = 'black') + 
+p <- ggplot(my_data, aes(x = factor(1), y = value)) +
+  geom_bar(width = 1, colour = "black", fill = "white", stat = "identity") + 
   coord_polar(theta = "y", start = (1/2)*pi) +
-  scale_fill_manual("variable" ,values = c(rep('white', 5))) + 
   ggtitle("Fig 3.1 Angle Judgments") +
   theme_bw() + 
   theme(panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank(),
         plot.title = element_text(size = rel(1.5), face = "bold"),
         panel.border = element_blank(),
         axis.title = element_blank(), 

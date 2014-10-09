@@ -9,13 +9,12 @@ my_data_wide <- read.delim(paste0(this_base, ".tsv"))
 
 # convert my_data into long format
 my_data_long <- melt(my_data_wide,
-                  id.vars = c("year"), measure.vars = c("exports", "imports"), 
-                  variable.name = "type", value.name = "pounds")
+                     id.vars = "year", measure.vars = c("exports", "imports"), 
+                     variable.name = "type", value.name = "pounds")
 
-p1 <- ggplot(my_data_long, aes(x = year, y = pounds, colour = type)) + 
+p1 <- ggplot(my_data_long, aes(x = year, y = pounds, group = type)) + 
   geom_line() +
-  scale_colour_manual(values = c("black", "black")) +
-  scale_y_continuous(breaks = c(-0.5, 0, 0.5, 1, 1.5), limits = c(0, 1.6)) +
+  scale_y_continuous(breaks = c(0, 0.5, 1, 1.5), limits = c(0, 1.6)) +
   labs(x = "Imports and Exports", y = "Millions of Pounds") +
   theme_bw() +
   theme(legend.position = "none",
@@ -33,7 +32,6 @@ p1 <- p1 + annotate("text", x = 1720, y = 1.1, size = 4,
 
 p2 <- ggplot(my_data_wide, aes(x = year, y = difference)) + 
   geom_line() +
-  scale_colour_manual(values = c("black", "black")) +
   scale_y_continuous(breaks = seq(0, 1, by = 0.2), limits = c(0, 1)) +
   labs(x = "Imports Minus Exports", y = "Millions of Pounds") +
   theme_bw() +

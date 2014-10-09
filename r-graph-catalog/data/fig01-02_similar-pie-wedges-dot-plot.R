@@ -6,7 +6,7 @@ my_data <- data.frame(
   variable = c("A", "B", "C", "D", "E"),
   value = c(23, 22, 19.5, 18.5, 17))
 
-p <- ggplot(my_data, aes(x = value, y = reorder(variable, value))) + 
+p <- ggplot(my_data, aes(x = value, y = reorder(variable, value))) +  
   geom_point() +
   scale_x_continuous(limits = c(0, 25)) +
   ggtitle("Fig 1.2 Similar Pie Wedges: Dot Plot") + 
