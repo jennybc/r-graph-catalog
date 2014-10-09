@@ -4,8 +4,8 @@ library(reshape2)
 this_base <- "fig05-13_reading-a-parallel-coordinates-plot"
 
 my_data <- data.frame(x = c(2, 3, 1, 4), 
-                   y = c(4, 1, 3, 3),
-                   z = c(3, 4, 3.5, 2))
+                      y = c(4, 1, 3, 3),
+                      z = c(3, 4, 3.5, 2))
 
 my_data$row <- rownames(my_data)
 

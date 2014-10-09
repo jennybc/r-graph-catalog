@@ -2,21 +2,23 @@ library(ggplot2)
 library(gridExtra)
 library(scales)
 library(reshape2)
+library(plyr) #rename()
 
 this_base <- "fig05-15_nightingale-data-trellis-plot"
 
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
-my_data$Date <- 
-  as.Date(paste("01",my_data$Month ,my_data$Year, sep = "-"), format = "%d-%b-%Y")
+my_data$Date <- as.Date(paste("01",my_data$Month ,my_data$Year, sep = "-"),
+                        format = "%d-%b-%Y")
 
-my_data <- subset(my_data, 
-               select = c(Date, Zymotic.Diseases.Rate : All.Other.Causes.Rate))
-
-names(my_data) <- c("Date", "disease", "wounds", "other")
+my_data <-
+  subset(my_data, select = c(Date, Zymotic.Diseases.Rate,
+                             Wounds.and.Injuries.Rate, All.Other.Causes.Rate))
+my_data <- rename(my_data, c("Zymotic.Diseases.Rate" = "disease",
+                             "Wounds.and.Injuries.Rate" = "wounds",
+                             "All.Other.Causes.Rate" = "other"))
 
 my_data_long <- melt(my_data, id.vars = "Date")
-
 my_data_long$variable <- 
   factor(my_data_long$variable, c("other", "wounds", "disease"))
 
@@ -34,6 +36,12 @@ p <- ggplot(my_data_long, aes(x = Date, y = value)) +
         panel.grid.minor = element_blank(),
         panel.margin = unit(0, "lines"),
         plot.title = element_text(size = rel(1.1), face = "bold", vjust = 1)) 
+
+p
+
+## note: everything below here only necessary to get the years 1854, 1855, 1856
+## in the figure margin; a natural ggplot2 solution would simply accomplish this
+## some other way!
 
 yr1 <- "1854"
 yr2 <- "1855"

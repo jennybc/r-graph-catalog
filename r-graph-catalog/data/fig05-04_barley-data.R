@@ -6,15 +6,15 @@ this_base <- "fig05-04_barley-data"
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
 my_data$variety <- factor(my_data$variety,
-                       levels = c("Svansota", "No. 462", "Manchuria", 
-                                  "No. 475", "Velvet", "Peatland",
-                                  "Glabron", "No. 457", 
-                                  "Wisconsin No. 38", "Trebi"))
+                          levels = c("Svansota", "No. 462", "Manchuria", 
+                                     "No. 475", "Velvet", "Peatland",
+                                     "Glabron", "No. 457", 
+                                     "Wisconsin No. 38", "Trebi"))
 my_data$site <- factor(my_data$site,
-                    levels = c("Waseca", "Crookston", "Morris",
-                               "University Farm", "Duluth", "Grand Rapids"))
+                       levels = c("Waseca", "Crookston", "Morris",
+                                  "University Farm", "Duluth", "Grand Rapids"))
 
-my_data$year <- factor(my_data$year, levels = c(1931, 1932))
+my_data$year <- factor(my_data$year)
 
 p <- ggplot(my_data, aes(x = yield, y = variety, group = year)) +
   geom_point(aes(shape = year), size = 1.5) +

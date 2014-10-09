@@ -9,7 +9,7 @@ my_data$row <- rownames(my_data) # group lines by row
 my_data_long <- 
   melt(my_data, c("row", "Species"), 
        c("Sepal.Length", "Sepal.Width", "Petal.Length", "Petal.Width"),
-       variable.name = "part",)
+       variable.name = "part")
 
 my_data_long$part <- 
   factor(my_data_long$part, 

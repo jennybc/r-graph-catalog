@@ -1,22 +1,24 @@
 library(ggplot2)
 library(reshape2)
+library(plyr)
 
 this_base <- "fig05-14_nightingale-data"
 
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
-my_data$Date <- 
-  as.Date(paste("01",my_data$Month ,my_data$Year, sep = "-"), format = "%d-%b-%Y")
-
-# keep rate my_data 
+my_data$Date <- as.Date(paste("01", my_data$Month , my_data$Year, sep = "-"),
+                        format = "%d-%b-%Y")
 my_data <- subset(my_data, Date < as.Date("1855-04-01"), 
-               c(Date, Zymotic.Diseases.Rate : All.Other.Causes.Rate))
+                  c(Date, Zymotic.Diseases.Rate,
+                    Wounds.and.Injuries.Rate, All.Other.Causes.Rate))
+my_data <- rename(my_data, c("Zymotic.Diseases.Rate" = "disease",
+                             "Wounds.and.Injuries.Rate" = "wounds",
+                             "All.Other.Causes.Rate" = "other"))
 
-names(my_data) <- c("Date", "disease", "wounds", "other")
-
-my_data_long <- melt(my_data, "Date")
-names(my_data_long) <- c("Date", "Cause", "Deaths")
-my_data_long$Cause <- factor(my_data_long$Cause, c("wounds", "disease", "other"))
+my_data_long <-
+  melt(my_data, id = "Date", variable.name = "Cause", value.name = "Deaths")
+my_data_long$Cause <-
+  factor(my_data_long$Cause, c("wounds", "disease", "other"))
 
 # labels for wedges
 date_labels <- format(my_data_long$Date, format = "%B")
