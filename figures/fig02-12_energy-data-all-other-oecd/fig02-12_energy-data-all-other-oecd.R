@@ -3,7 +3,7 @@ library(ggplot2)
 this_base <- "fig02-12_energy-data-all-other-oecd"
 
 my_data <- data.frame(
-  year = factor(c(77:86)),
+  year = factor(77:86),
   us = c(1320, 1280, 1350, 1400, 1470, 1420, 1440, 1580, 1520, 1610),
   japan = c(405, 405, 480, 500, 490, 495, 480, 480, 500, 530),
   germany = c(220, 225, 290, 320, 300, 280, 260, 240, 220, 225),

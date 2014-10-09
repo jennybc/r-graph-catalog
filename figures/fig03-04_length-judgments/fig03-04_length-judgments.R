@@ -3,11 +3,10 @@ library(ggplot2)
 this_base <- "fig03-04_length-judgments" 
 
 my_data <- data.frame(ylow = c(4.2, 1.5, 2.5, 5, 3), 
-                  yhigh = c(6.3, 3.7, 4.8, 7.4, 5.5))
+                      yhigh = c(6.3, 3.7, 4.8, 7.4, 5.5))
 
-p <- ggplot() + 
-  geom_segment(data = my_data, aes(x = 1:5, y = ylow, 
-                                      xend = 1:5, yend = yhigh)) +
+p <- ggplot(my_data, aes(x = c(0, 6), y = range(c(ylow, yhigh)))) + 
+  geom_segment(aes(x = 1:5, y = ylow, xend = 1:5, yend = yhigh)) +
   scale_x_continuous(breaks = seq(0, 6, 1), limit = c(0, 6)) +
   scale_y_continuous(limit = c(0,8)) +
   ggtitle("Fig 3.4 Length Judgments") +

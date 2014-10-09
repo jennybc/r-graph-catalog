@@ -11,9 +11,9 @@ my_data <- data.frame(
   Third = c(2.5, 3, 5.5, 8, 11, 17, 20))
 
 my_data_long <- melt(my_data,
-                  id.vars = c("variable"),
-                  measure.vars = c("First", "Second", "Third"),
-                  variable.name = "group")
+                     id.vars = "variable",
+                     measure.vars = c("First", "Second", "Third"),
+                     variable.name = "group")
 
 p <- ggplot(my_data_long, aes(x = value, y = variable)) + 
   geom_point() +

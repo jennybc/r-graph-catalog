@@ -14,7 +14,7 @@ my_data <- data.frame(
 
 # include helper variables
 my_data$row <- c(rep("row1", 11), rep("row2", 11)) # to organize into 2 rows 
-my_data$pos <- c(rep(11:1, 2))  # specify x coord
+my_data$pos <- rep(11:1, 2) # specify x coord
 
 p <- ggplot(my_data, aes(x = pos, y = row, size = population)) +
   geom_point(aes(size = population), shape = 21, fill = "white", 
