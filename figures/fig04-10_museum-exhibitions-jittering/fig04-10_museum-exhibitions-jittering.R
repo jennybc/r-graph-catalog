@@ -6,12 +6,16 @@ this_base <- "fig04-10_museum-exhibitions-jittering"
 # code to simulate data
 # library(plyr)
 # upper <- list("Dia de los Muertos" = 60, "From Bustles to Bikinis" = 38,
-#               "Next Stop Westchester" = 35, "Families" = 47,
-#               "Customers & Communities" = 40, "What is An Animal" = 25, 
-#               "Silent Witness" = 21, "Kopje" = 23, "Darkened Waters" = 36, 
-#               "Darkened Waters 2" = 24, "The Universe in Your Hands" = 22)
+#               "Next Stop Westchester" = 78, "Families" = 82,
+#               "Customers & Communities" = 40, "What is An Animal" = 40, 
+#               "Silent Witness" = 21, "Kopje" = 23, "Darkened Waters" = 65, 
+#               "Darkened Waters 2" = 39, "The Universe in Your Hands" = 42)
 # set.seed(0)
-# my_data <- llply(upper, function(x) {sample(0:x, 49, replace = TRUE)})
+# my_data <- llply(upper, function(x) {
+#   y <- rlnorm(n = 41, sdlog = 0.5)
+#   y <- y / max(y)
+#   y <- c(y, runif(8))
+#   y * x})
 # my_data <- # not sure what's so special about Judith? whatever ...
 #   c(list("Judith Leyster" = c(4, 7, 7, 9, 10, 10, 11, 11, 13, 14, 15, 15, 20,
 #                               21, 22, 22, 23, 27, 27, 28, 28, 29, 31, 32, 33,
@@ -23,7 +27,8 @@ this_base <- "fig04-10_museum-exhibitions-jittering"
 
 my_data <- read.delim(paste0(this_base, ".tsv"))
 my_data_long <-
-  melt(my_data, variable.name = "exhibition", value.name = "visit_length")
+  melt(my_data, id = NULL,
+       variable.name = "exhibition", value.name = "visit_length")
 levels(my_data_long$exhibition) <-
   gsub("\\.\\.\\.", ".&.", levels(my_data_long$exhibition))
 levels(my_data_long$exhibition) <-
