@@ -12,15 +12,11 @@ my_data <- data.frame(
                49, 49, 55, 58, 66, 72, 73)
 )
 
-df <- with(my_data, {
-  mu <- mean(minutes)
-  med <- median(minutes)
-  q1 <- quantile(minutes, probs = 0.25, names = FALSE)
-  q2 <- quantile(minutes, probs = 0.75, names = FALSE)
-  df <- data.frame(stat = c("Mean", "Median", "Quartiles", "Quartiles"),
-                   val = c(mu, med, q1, q2))
-  df
-})
+summ_stats <-
+  with(my_data,
+       data.frame(stat = c("Mean", "Median", "Quartile", "Quartile"),
+                  val = c(mean(minutes), median(minutes),
+                          quantile(minutes, probs = c(0.25, 0.75)))))
 
 # to reproduce jittering
 set.seed(0)
@@ -40,7 +36,7 @@ p <- ggplot(my_data, aes(x = minutes, y = factor(1))) +
         legend.position = "top",
         legend.title = element_blank())
 
-p <- p + geom_vline(data = df, aes(xintercept = val, linetype = stat), 
+p <- p + geom_vline(data = summ_stats, aes(xintercept = val, linetype = stat), 
                     show_guide = TRUE)
 
 p
