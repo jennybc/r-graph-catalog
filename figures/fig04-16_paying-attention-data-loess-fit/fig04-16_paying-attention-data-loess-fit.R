@@ -11,7 +11,7 @@ my_data <- subset(my_data, y > 0 )
 
 p <- ggplot(my_data, aes(x = x, y = y)) +
   geom_point(shape = 1) +
-  geom_smooth(method = "loess", formula = y~x, se = FALSE, colour = "black") +
+  geom_smooth(method = "loess", formula = y ~ x, se = FALSE, colour = "black") +
   scale_x_continuous(breaks = seq(0, 100, 20), limits = c(0, 120)) +
   scale_y_continuous(breaks = seq(0, 40, 10)) +
   labs(x = "Number of Elements", y = "Average Time (minutes)") + 

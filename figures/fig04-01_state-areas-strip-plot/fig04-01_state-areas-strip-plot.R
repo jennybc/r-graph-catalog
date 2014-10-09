@@ -24,7 +24,7 @@ p2 <- p1 +
   geom_vline(data = summ_stats,
              aes(xintercept = val, linetype = stat), show_guide = TRUE) +
   theme(legend.position = "top",
-        legend.justification = c(1, 0)
+        legend.justification = c(1, 0),
         legend.title = element_blank()) 
 
 p3 <- arrangeGrob(p1, p2, nrow = 2, heights = c(0.45, 0.55), 

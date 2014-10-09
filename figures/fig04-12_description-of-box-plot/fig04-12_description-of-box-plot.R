@@ -7,13 +7,12 @@ set.seed(0)
 my_data <- data.frame(value = c(rnorm(10, 4, 1), 8, 9, 1))
 
 label_data <- data.frame(
-  label = c("outside values", "upper adjacent value", "upper quartile", 
-            "median", "lower quartile", "lower adjacent value", 
-            "outside value"),
-  # from fivenum(my_data$value)
-  yinter = rev(c(1, 2.5 , 3.673767, 4.414641, 5.329799, 6.5 , 9)))
+  label = c("outside value", "lower quartile", "median",
+            "upper quartile", "outside value",
+            "lower adjacent value", "upper adjacent value"),
+  yinter = c(fivenum(my_data$value), 2.5, 6.5))
 
-p <- ggplot(my_data, aes(x = factor(1, levels = c(1, 2)), y = value)) +
+p <- ggplot(my_data, aes(x = factor(1, levels = 1:2), y = value)) +
   geom_boxplot(outlier.shape = 1) +
   annotate("text", x = 2, y = label_data$yinter, label = label_data$label) +
   annotate("segment", x = 1.6, xend = 1.5, 

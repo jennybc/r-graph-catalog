@@ -21,7 +21,7 @@ data_long <- melt(data, c("month", "time", "year"))
 p <- ggplot(data_long, aes(x = time, y = value)) +
   geom_point(aes(group = year)) +
   geom_line() +
-  stat_smooth(method = "lm", formula = y~1, se = F, colour = "black") +
+  stat_smooth(method = "lm", formula = y ~ 1, se = FALSE, colour = "black") +
   facet_wrap(~ month, nrow = 1) +
   labs(x = NULL, y = "Number of Visitors") +
   ggtitle("Fig 4.18 SLSC Visitors: Month Plot") +

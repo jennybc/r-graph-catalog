@@ -1,28 +1,29 @@
 library(ggplot2)
 library(reshape2)
+library(plyr)
 
 this_base <- "fig04-13_museum-exhibitions-styles-of-box-plots"
 
 my_data <- read.delim(paste0(this_base, ".tsv"), sep = "\t")
+my_data_long <-
+  melt(my_data, id = NULL,
+       variable.name = "exhibition", value.name = "visit_length")
+my_data_long <-
+  subset(my_data_long, !(exhibition %in% c("The.Universe.in.Your.Hands",
+                                           "Dia.de.los.Muertos")))
+my_data_long$exhibition <-
+  revalue(my_data_long$exhibition,
+          c("Judith.Leyster" = "Leyst", "From.Bustles.to.Bikinis" = "Bikini",
+            "Next.Stop.Westchester" = "Next", "Customers...Communities" = "C&C",
+            "What.is.An.Animal" = "WIAA", "Silent.Witness" = "SW",
+            "Kopje" = "Kopj", "Darkened.Waters" = "DW",
+            "Darkened.Waters.2" = "DW2"))
 
-my_data_long <- melt(my_data, id = NULL)
-
-my_data_long$variable <- factor(my_data_long$variable, 
-                  levels = c("Silent.Witness", "Kopje", "Darkened.Waters", 
-                             "What.is.An.Animal", "Darkened.Waters.2",
-                             "Customers...Communities", "From.Bustles.to.Bikinis", 
-                             "Families", "Next.Stop.Westchester",
-                             "Dia.de.los.Muertos", "Judith.Leyster", 
-                             "The.Universe.in.Your.Hands"))
-
-my_data_long <- subset(my_data_long, variable != "The.Universe.in.Your.Hands")
-
-p <- ggplot(my_data_long, aes(x = variable, y = value)) +
+p <- ggplot(my_data_long, aes(x = reorder(exhibition, visit_length),
+                              y = visit_length)) +
   geom_boxplot(fill = "grey80") +
   stat_summary(fun.y = median, geom = "point", 
                shape = 18, size = 3, show_guide = FALSE) +
-  scale_x_discrete(label = c("SW", "Kopj", "DW", "WIAA", "DW2", "C&C", "Bikini",
-                             "Families", "Next", "DOD2", "Leyst")) +
   labs(x = NULL, y = "Time (minutes)") +
   ggtitle("Fig 4.13 Museum Exhibitions:\nStyles of Box Plots") +
   theme_bw() +
@@ -34,5 +35,4 @@ p
 
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 6)
 
-
-## note: data was simulated and outliers were inspired by the original
+## note: data was simulated so even the order of the boxes differes from orig
