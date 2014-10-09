@@ -1,6 +1,5 @@
 library(ggplot2)
 library(gridExtra)
-library(dplyr)
 
 this_base <- "fig04-01_state-areas-strip-plot"
 
