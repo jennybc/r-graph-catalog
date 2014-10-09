@@ -10,7 +10,7 @@ my_data <- data.frame(
 p <- ggplot(my_data, aes(x = log2(state_area_scaled), 
                       y = reorder(state_name, state_area_scaled))) +
   geom_point() + 
-  scale_x_continuous(breaks = seq(0,8,2), limits = c(0, 9.25)) +
+  scale_x_continuous(breaks = seq(0, 8, 2), limits = c(0, 9.25)) +
   labs(x = "Log (base = 2) of State Area (thousand square miles)", y = NULL) +
   ggtitle("Fig. 4.4 State Areas: Logarithm with Base 2") +
   theme_bw() + 

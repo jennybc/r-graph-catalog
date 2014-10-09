@@ -1,10 +1,16 @@
 library(ggplot2)
 library(gridExtra)
+library(dplyr)
 
 this_base <- "fig04-01_state-areas-strip-plot"
 
-my_data <- data.frame(state.area / 1000)
-names(my_data) <- "state.area.scaled"
+my_data <- data.frame(state.area.scaled = state.area / 1000)
+
+summ_stats <-
+  with(my_data,
+       data.frame(stat = c("Mean", "Median", "Quartile", "Quartile"),
+                  val = c(mean(state.area.scaled), median(state.area.scaled),
+                          quantile(state.area.scaled, probs = c(0.25, 0.75)))))
 
 p1 <- ggplot(my_data, aes(x = state.area.scaled, y = factor(1))) + 
   geom_point(shape = 1) + 
@@ -12,34 +18,15 @@ p1 <- ggplot(my_data, aes(x = state.area.scaled, y = factor(1))) +
   labs(x = "Area (thousand square miles)", y = NULL) +
   theme_bw() + 
   theme(panel.grid.major = element_blank(),
-        axis.title.y = element_blank(),
+        panel.grid.minor = element_blank(),
         axis.ticks.y = element_blank())
 
-df <- with(my_data, {
-  mu <- mean(state.area.scaled)
-  med <- median(state.area.scaled)
-  q1 <- quantile(state.area.scaled, probs = 0.25, names = FALSE)
-  q2 <- quantile(state.area.scaled, probs = 0.75, names = FALSE)
-  df <- data.frame(stat = c("Mean", "Median", "Quartile", "Quartile"), 
-                   val = c(mu, med, q1, q2))
-  df
-})
-
-p2 <- ggplot(my_data, aes(x = state.area.scaled, y = factor(1)), linetype = "line") + 
-  geom_point(shape = 1) + 
-  scale_x_continuous(breaks = seq(0,500, 100), limits = c(0, 600)) +
-  labs(x = "Area (thousand square miles)") +
-  theme_bw() + 
-  theme(panel.grid.major = element_blank(),
-        axis.title.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        legend.position = "top",
+p2 <- p1 +
+  geom_vline(data = summ_stats,
+             aes(xintercept = val, linetype = stat), show_guide = TRUE) +
+  theme(legend.position = "top",
+        legend.justification = c(1, 0)
         legend.title = element_blank()) 
-
-p2 <- p2 + geom_vline(data = df, aes(xintercept = val, linetype = stat), 
-                      show_guide = TRUE)
-
 
 p3 <- arrangeGrob(p1, p2, nrow = 2, heights = c(0.45, 0.55), 
                   main = textGrob("Fig 4.1 State Areas: Strip Plot", 

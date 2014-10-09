@@ -1,4 +1,5 @@
 library(ggplot2)
+library(scales) # log2_trans(), trans_breaks()
 
 this_base <- "fig04-05_state-areas-top-axis-labeled-with-original-scale"
 
@@ -7,12 +8,13 @@ my_data <- data.frame(
   state_area = state.area,
   state_area_scaled = state.area / 1000)
 
-p <- ggplot(my_data, aes(x = log2(state_area_scaled),
+p <- ggplot(my_data, aes(x = state_area_scaled,
                       y = reorder(state_name, state_area_scaled))) +
   geom_point() + 
-  scale_x_continuous(breaks = seq(0,8,2), limits = c(0, 9.25)) +
-  labs(x = "Log Area (base = 2)", y = NULL) +
-  ggtitle("Fig. 4.5 State Areas: Top Axis Labeled \nwith Original Scale") +
+  scale_x_continuous(trans = log2_trans(),
+                     breaks = trans_breaks("log2", function(x) 2^x)) +
+  labs(x = "Area (thousand square miles)", y = NULL) +
+  ggtitle("Fig. 4.5 State Areas: BOTTOM Axis Labeled \nwith Original Scale") +
   theme_bw() + 
   theme(panel.grid.major.x = element_blank(),
         panel.grid.major.y = element_line(colour = "grey70"),
@@ -25,6 +27,6 @@ p
 ggsave(paste0(this_base, ".png"), 
        p, width = 6, height = 6)
 
-## TODO: missing original scale axis at top of plot
+## pedantic: move original scale to top, include log scale on bottom
 
 
