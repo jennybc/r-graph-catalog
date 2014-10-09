@@ -3,16 +3,7 @@ library(gridExtra) #arrangeGrob()
 
 this_base <- "fig04-07_avoid-misleading-histograms"
 
-my_data <- data.frame(
-  value = c(1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 
-            2, 2, 2, 2, 2, 3, 3, 3, 3, 3,
-            3, 3, 3, 3, 3, 3, 3, 3, 3, 3,
-            4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-            4, 4, 4, 4, 4, 4, 4, 4, 4, 4,
-            5, 5, 5, 5, 5, 5, 5, 5, 5, 5,
-            5, 5, 5, 5, 5, 6, 6, 6, 6, 6,
-            6, 6, 6, 6, 6, 7, 7, 7, 7, 7)
-)
+my_data <- data.frame(value = rep(1:7, c(1:4, 3:1) * 5))
 
 p1 <- ggplot(my_data, aes(x = value)) + 
   geom_histogram(binwidth = 1, fill = 'white', colour = 'black', origin = 0.5) +
