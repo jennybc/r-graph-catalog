@@ -6,22 +6,18 @@ library(plyr)
 this_base <- "fig05-03_energy-data-trellis-display"
 
 my_data <- data.frame(
-  year = c(1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986),
+  year = 1977:1986,
   us = c(1320, 1280, 1350, 1400, 1470, 1420, 1440, 1580, 1520, 1605),
   japan = c(405, 405, 480, 500, 490, 495, 480, 480, 500, 530),
   germany = c(220, 225, 290, 320, 300, 280, 260, 240, 220, 225),
   other = c(1280, 1195, 1310, 1390, 1270, 1200, 1100, 1100, 1040, 1080))
 
-my_data_long <- melt(my_data, id.vars = c("year"),
-                  measure.vars = c("us", "japan", "germany", "other"), 
-                  variable.name = "country")
+my_data_long <- melt(my_data, id.vars = "year",
+                     measure.vars = c("us", "japan", "germany", "other"), 
+                     variable.name = "country")
 
 my_data_long$country <- factor(my_data_long$country, 
-                            levels = c("other", "us", "germany", "japan"))
-
-my_data_long$year <- as.numeric(as.character(my_data_long$year))
-
-# rename variables in my_data frame 
+                               levels = c("other", "us", "germany", "japan"))
 my_data_long$country <- 
   revalue(my_data_long$country, 
           c("other" = "Country: All Other OECD", "us" = "Country: US",

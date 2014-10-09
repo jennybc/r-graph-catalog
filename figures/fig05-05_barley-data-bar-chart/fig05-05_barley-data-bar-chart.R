@@ -6,13 +6,13 @@ this_base <- "fig05-05_barley-data-bar-chart"
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
 my_data$variety <- factor(my_data$variety,
-                       levels = c("Svansota", "No. 462", "Manchuria", 
-                                  "No. 475", "Velvet", "Peatland",
-                                  "Glabron", "No. 457", 
-                                  "Wisconsin No. 38", "Trebi"))
+                          levels = c("Svansota", "No. 462", "Manchuria", 
+                                     "No. 475", "Velvet", "Peatland",
+                                     "Glabron", "No. 457", 
+                                     "Wisconsin No. 38", "Trebi"))
 my_data$site <- factor(my_data$site,
-                    levels = c("Waseca", "Crookston", "Morris",
-                               "University Farm", "Duluth", "Grand Rapids"))
+                       levels = c("Waseca", "Crookston", "Morris",
+                                  "University Farm", "Duluth", "Grand Rapids"))
 
 p <- ggplot(my_data, aes(x = variety, y = yield, group = year, width = 0.5)) +
   geom_bar(stat = "identity", fill = 'grey80', colour = 'black') +
