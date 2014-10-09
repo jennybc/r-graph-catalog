@@ -5,7 +5,7 @@ this_base <- "fig04-19_carbon-dioxide-data"
 
 my_data <- data.frame(
   co2 = as.numeric(co2),
-  date = seq(as.Date("1959-01-01"),  by = "month", length.out = 12*39))
+  date = seq(as.Date("1959-01-01"), by = "month", length.out = 12 * 39))
 
 my_data <- subset(my_data, date < as.Date("1991-01-01"))
 

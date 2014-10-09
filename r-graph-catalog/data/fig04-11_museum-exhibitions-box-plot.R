@@ -3,27 +3,18 @@ library(reshape2)
 
 this_base <- "fig04-11_museum-exhibitions-box-plot"
 
-my_data <- read.delim(paste0(this_base, ".tsv"), sep = "\t")
+my_data <- read.delim(paste0(this_base, ".tsv"))
+my_data_long <-
+  melt(my_data, id = NULL,
+       variable.name = "exhibition", value.name = "visit_length")
+levels(my_data_long$exhibition) <-
+  gsub("\\.\\.\\.", ".&.", levels(my_data_long$exhibition))
+levels(my_data_long$exhibition) <-
+  gsub("\\.", " ", levels(my_data_long$exhibition))
 
-names(my_data) <- c("Judith Leyster", "Dia de los Muertos", 
-                    "From Bustles to Bikinis", "Next Stop Westchester", 
-                    "Families", "Customers & Communities", "What is An Animal", 
-                    "Silent Witness", "Kopje", "Darkened Waters", 
-                    "Darkened Waters 2", "The Universe in Your Hands")
-
-my_data_long <- melt(my_data, id = NULL)
-
-my_data_long$variable <- 
-  factor(my_data_long$variable, 
-         levels = 
-           rev(c("Judith Leyster", "Dia de los Muertos", 
-                 "From Bustles to Bikinis", "Next Stop Westchester", 
-                 "Families", "Customers & Communities", "What is An Animal", 
-                 "Silent Witness", "Kopje", "Darkened Waters", 
-                 "Darkened Waters 2", "The Universe in Your Hands")))
-
-p <- ggplot(my_data_long, aes(x = variable, y = value)) +
+p <- ggplot(my_data_long, aes(x = exhibition, y = visit_length)) +
   geom_boxplot(outlier.shape = 1) + 
+  scale_x_discrete(limits = rev(levels(my_data_long$exhibition))) +
   scale_y_continuous(breaks = seq(0, 80, 20), limits = c(0, 90)) +
   labs(x = NULL, y = "Time (minutes)") + 
   coord_flip() +
@@ -39,5 +30,7 @@ p
 
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 5)
 
-## note: data was simulated and outliers were inspired by the original
+## note: data was simulated, inspired by the original
+
+## TO DO: boxplot decorations don't match original exactly
 

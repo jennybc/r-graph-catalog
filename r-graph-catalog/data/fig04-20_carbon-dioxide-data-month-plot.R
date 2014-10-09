@@ -4,7 +4,7 @@ library(grid) # unit()
 
 this_base <- "fig04-20_carbon-dioxide-data-month-plot"
 
-co2_trim <- window(co2, c(1959,1), c(1990,12))
+co2_trim <- window(co2, c(1959, 1), c(1990, 12))
 fit <- stl(co2_trim, s.window = 20, t.window = 20)
 
 my_data <- data.frame(
@@ -15,7 +15,7 @@ my_data <- data.frame(
 p <- ggplot(my_data, aes(x = x, y = seasonal)) +
   geom_line() +
   facet_wrap(~ month, nrow = 1) +
-  stat_smooth(method = "lm", formula = y~1, se = F, colour = "black") +
+  stat_smooth(method = "lm", formula = y ~ 1, se = FALSE, colour = "black") +
   scale_x_continuous(labels = c("", "", "", 30)) +
   scale_y_continuous(breaks = seq(-2, 2, 2), limits = c(-3.5, 3.5), 
                      expand = c(0, 0)) +

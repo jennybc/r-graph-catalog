@@ -65,10 +65,10 @@ p4 <- ggplot(my_data, aes(x = year, y = visitors)) +
 p4
 
 # arrange plots together 
-p5 <- arrangeGrob( p1, p2, p3, p4, nrow = 2, 
-                   main = textGrob(
-                     "Fig 4.17 Visitors at St. Louis Science Center",
-                     just = "top", vjust = 0.75, gp = gpar(fontface = "bold")))
+p5 <- arrangeGrob(p1, p2, p3, p4, nrow = 2, 
+                  main = textGrob(
+                    "Fig 4.17 Visitors at St. Louis Science Center",
+                    just = "top", vjust = 0.75, gp = gpar(fontface = "bold")))
 
 p5
 

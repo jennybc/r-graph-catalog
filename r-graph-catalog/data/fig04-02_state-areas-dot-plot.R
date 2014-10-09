@@ -9,7 +9,7 @@ my_data <- data.frame(
 
 p <- ggplot(my_data, aes(x = state_area_scaled, y = state_name)) +
   geom_point() +
-  scale_x_continuous(breaks=seq(0,500,100), limits = c(0,590)) +
+  scale_x_continuous(breaks=seq(0, 500, 100), limits = c(0, 590)) +
   # reverse order of y axis
   scale_y_discrete(limits = rev(levels(my_data$state_name))) +
   labs(x = "Area (thousand square miles)", y = NULL) +
