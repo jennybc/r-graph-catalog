@@ -12,12 +12,10 @@ my_data$labels <- with(my_data, paste0(Abbreviation, "(", Number, ")"))
 my_data <- transform(my_data, RGap = Desired - Perceived)
 names(my_data)[names(my_data) == "Gap"] <- "LGap"
 
-
 my_data_long <- 
   melt(my_data, id.vars = c("Number", "Question", "Abbreviation", "Group", 
                             "LGap", "RGap", "labels"), 
        variable.name = "Type", value.name = "Score")
-
 
 my_data_long[which(my_data_long$Type %in% c("Minimum", "Desired")), 
              c("RGap", "LGap")] <- 0

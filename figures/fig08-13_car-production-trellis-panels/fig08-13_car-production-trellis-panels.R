@@ -12,21 +12,17 @@ my_data <- data.frame(
   Other = c(28.3, 28.0, 28.1, 29.5))
 
 my_data_long <- melt(my_data, id.vars = "year",
-                  measure.vars = c("Japan", "USA", "West.Germany",
-                                   "France", "Other"),
-                  variable.name = "country", value.name = "production")
+                     measure.vars = c("Japan", "USA", "West.Germany",
+                                      "France", "Other"),
+                     variable.name = "country", value.name = "production")
 
-my_data_long$country <-
-  factor(my_data_long$country,
-         c("France", "West.Germany",  "Japan", "Other", "USA"))
+my_data_long$country <- with(my_data_long, reorder(country, production, max))
 
 p <- ggplot(my_data_long, aes(x = year, y = production)) +
   geom_line() +
-  geom_point(show_guide = FALSE) +
+  geom_point() +
   facet_grid(~ country) +
   scale_x_continuous(labels = c(1977, "", 1979, "")) +
-  scale_fill_manual(values = c("grey70", "white", "grey30", 
-                               "grey50", "black")) +
   labs(x = "Year", y = "Percent") +
   ggtitle("Fig 8.13 Car Production: Trellis Panels") +
   theme_bw() +
@@ -36,9 +32,7 @@ p <- ggplot(my_data_long, aes(x = year, y = production)) +
 
 p
 
-
-
 ggsave(paste0(this_base, ".png"), p, width = 6, height = 6)
 
-# note: my_data doesnt quite match with fig 8.11
+# note: my_data doesnt quite match with fig 8.13
 
