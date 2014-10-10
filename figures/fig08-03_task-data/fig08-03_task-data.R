@@ -4,30 +4,23 @@ library(gridExtra)
 
 this_base <- "fig08-03_task-data"
 
+task <- c("Connect a Stereo", "Set the Clock",
+          "Program Radio Stations", "Listen to the Radio", 
+          "Listen to a Tape","Record on One Side of a Tape", 
+          "Listen to a Song on a CD", "Program the CD Player", 
+          "Create a Mixed Tape", "Set the Timer to Record")
+
 my_data <- data.frame(
-  task = c("Connect a Stereo", "Create a Mixed Tape", "Program Radio Stations", 
-           "Record on One Side of a Tape", "Program the CD Player", 
-           "Set the Clock", "Set the Timer to Record", 
-           "Listen to a Song on a CD", "Listen to a Tape", 
-           "Listen to the Radio"),
-  Revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
-  Original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
+  task = factor(task, task),
+  Original = c(18.6, 4.0, 11.3, 0.9, 2.6, 9.7, 3.8, 6.4, 15.9, 3.7),
+  Revised = c(8.8, 2.3, 7.7, 1.0, 2.2, 5.8, 2.1, 2.6, 9.6, 2.2))
 
 my_data_long <- melt(my_data, id.vars = "task", 
-                  measure.vars = c("Original", "Revised"),
-                  variable.name = "type", value.name = "time")
-
-my_data_long$task <- 
-  factor(my_data_long$task, c("Connect a Stereo", "Set the Clock",
-                           "Program Radio Stations", "Listen to the Radio", 
-                           "Listen to a Tape","Record on One Side of a Tape", 
-                           "Listen to a Song on a CD", "Program the CD Player", 
-                           "Create a Mixed Tape", "Set the Timer to Record"))
+                     measure.vars = c("Original", "Revised"),
+                     variable.name = "type", value.name = "time")
 
 txt <- sprintf("%.1f", 
-               round(c(18.6, 8.8, 4.0, 2.3, 11.3, 7.7, 0.9, 1.0, 
-                       2.6, 2.2, 9.7, 5.8, 3.8, 2.1, 6.4, 2.6, 
-                       15.9, 9.6, 3.7, 2.2), 2))
+               round(as.vector(t(my_data[c("Original", "Revised")])), 2))
 
 p1 <- ggplot(my_data_long, aes(x = type, y = time)) +
   geom_bar(stat = "identity", fill = "black") +
@@ -45,6 +38,7 @@ p1 <- ggplot(my_data_long, aes(x = type, y = time)) +
         strip.background = element_blank(),
         strip.text = element_text(face = "bold"),
         axis.ticks.x = element_blank())
+p1
 
 footnote <- 
   paste("Note. Values represent participants' mean time per task.\n",

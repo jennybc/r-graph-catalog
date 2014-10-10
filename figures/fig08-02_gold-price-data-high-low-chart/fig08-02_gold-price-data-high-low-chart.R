@@ -3,8 +3,7 @@ library(ggplot2)
 this_base <- "fig08-02_gold-price-data-high-low-chart"
 
 my_data <- data.frame( 
-  Year = c(1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 
-           1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996),
+  Year = 1979:1996,
   Average = c(306, 615, 460, 376, 424, 361, 317, 368, 447, 437, 381, 
               383.51, 362.11, 343.82, 359.77, 384, 383.79, 387.81),
   High = c(510, 850, 599, 475, 505, 402, 340, 440, 500, 480,
@@ -14,8 +13,8 @@ my_data <- data.frame(
 
 p <- ggplot(my_data, aes(x = Year, y = Average)) +
   geom_point(shape = 95, size = 4) + 
-  geom_segment(aes(x = c(1979:1996) - 0.15, xend = c(1979:1996) - 0.15,
-                   y = Low, yend = High), my_data = my_data, hjust = 4) +
+  geom_segment(aes(x = Year - 0.15, xend = Year - 0.15,
+                   y = Low, yend = High), hjust = 4) +
   scale_x_continuous(breaks = seq(1975, 1995, 5), limits = c(1975, 1997),
                      expand = c(0, 0)) +
   scale_y_continuous(breaks = seq(100, 900, 100), limits = c(100, 950),
