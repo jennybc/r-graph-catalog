@@ -25,5 +25,5 @@ p
 
 ggsave(paste0(this_base, ".png"), p, width = 6, height = 5)
 
-## pedantic: missing celcius scale 
+## TO DO: add the Celsius scale? 
 ## note: my_data is estimated

@@ -5,10 +5,10 @@ library(reshape2)
 this_base <- "fig07-19_blood-level-data"
 
 my_data <- 
-  data.frame(time = c("1990-11-01", "1991-06-01", "1991-12-01",
-                      "1992-05-01", "1993-06-01", "1994-07-01",
-                      "1995-06-01", "1996-07-01", "1997-01-01", 
-                      "1997-07-01", "1997-08-01", "1998-05-01"),
+  data.frame(time = as.Date(c("1990-11-01", "1991-06-01", "1991-12-01",
+                              "1992-05-01", "1993-06-01", "1994-07-01",
+                              "1995-06-01", "1996-07-01", "1997-01-01", 
+                              "1997-07-01", "1997-08-01", "1998-05-01")),
              C = c(195, 198, 198, 205, 207, 190, 212, 230, 227, 222, 220, 231),
              T = c(120, 111, 150, 104, 125, 160, 85, 100, 103, 188, 120, 170),
              L = c(118, 140, 125, 135, 132, 123, 146, 150, 135, 130, 145, 138),
@@ -17,14 +17,17 @@ my_data <-
              R = c(4.1, 4.6, 4.38, 3.84, 3.88, 4.5, 
                    4.65, 4.7, 4.4, 5.27, 4.65, 4.0))
 
-my_data$time <- as.Date(my_data$time)
+lipid_letters <- names(my_data)[-1]
+levels_at_last_time <- unlist(my_data[nrow(my_data), lipid_letters])
+names(levels_at_last_time) <- lipid_letters
 
-my_data_long <- melt(my_data, "time")
+my_data_long <- melt(my_data, id = "time",
+                     variable.name = "lipid", value.name = "level")
 
-p <- ggplot(my_data_long, aes(x = time, y = value)) +
-  geom_line(aes(linetype = variable), show_guide = FALSE) +
-  annotate("text", x = as.Date("1998-08-01"), y = c(231, 170, 138, 57.8, 4), 
-           label = c("C", "T", "L", "H", "R")) + 
+p <- ggplot(my_data_long, aes(x = time, y = level)) +
+  geom_line(aes(linetype = lipid), show_guide = FALSE) +
+  annotate("text", x = as.Date("1998-08-01"), y = levels_at_last_time, 
+           label = names(levels_at_last_time)) +
   scale_x_date(breaks = seq(as.Date("1990-07-01"), as.Date("1998-07-01"), 
                             "year"), labels = date_format("%b %y")) +
   ggtitle("Fig 7.19 Blood-Level Data") + 

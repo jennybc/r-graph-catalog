@@ -47,3 +47,8 @@ ggsave(paste0(this_base, ".png"), p3, width = 5, height = 4)
 
 ## pedantic: position of y axis label
 ## note: my_data is simulated
+
+## TO DO: can the fake data be made more similar to that in the book?
+
+## TO DO: create a base plot p, w/ everything in common btwn p1 and p2 and base
+## them off of that; see examples elsewhere

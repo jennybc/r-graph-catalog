@@ -5,6 +5,7 @@ this_base <- "fig07-03_carbon-dioxide-data"
 
 my_data <- data.frame(
   co2 = as.numeric(co2),
+  #time = time(co2),
   date = seq(as.Date("1959-01-01"),  by = "month", length.out = 12*39))
 
 my_data <- subset(my_data, date < as.Date("1991-01-01"))
@@ -15,9 +16,10 @@ p1 <- ggplot(my_data, aes(x = date, y = co2)) +
   theme_bw() +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
-
+p1
 
 p2 <- p1 + scale_y_continuous(breaks = seq(0, 300, 100), limits = c(0, 400))
+p2
 
 p3 <- p3 <- arrangeGrob(p1, p2, nrow = 2,
                         main = textGrob("Fig 7.3 Carbon Dioxide Data", 

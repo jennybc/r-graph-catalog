@@ -3,8 +3,8 @@ library(gridExtra)
 
 this_base <- "fig07-25_annual-report-data-tick-marks-at-hard-to-judge-values"
 
-my_data <- data.frame(year = c(1998, 1999, 2000, 2001, 2002),
-                   value = c(74, 111, 195, 350, 390))
+my_data <- data.frame(year = 1998:2002,
+                      value = c(74, 111, 195, 350, 390))
 
 p <- ggplot(my_data, aes(x = year, y = value)) +
   geom_bar(stat = "identity", colour = "black", fill = "grey60") +

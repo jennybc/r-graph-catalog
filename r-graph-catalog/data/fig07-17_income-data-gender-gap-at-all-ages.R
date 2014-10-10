@@ -7,7 +7,7 @@ my_data <- data.frame(age = c(19, 24, 30, 40, 50, 60, 70),
                       men = c(16, 20.2, 32, 38, 41, 37, 28.5),
                       women = c(14, 19.5, 26, 26.5, 28, 27, 20.5))
 
-my_data_long <- melt(my_data, "age")
+my_data_long <- melt(my_data, id = "age")
 
 p <- ggplot(my_data_long, aes(x = age, y = value)) +
   geom_line(aes(linetype = variable), show_guide = FALSE) +
