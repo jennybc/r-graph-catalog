@@ -5,7 +5,8 @@ this_base <- "fig07-24_prime-lending-rate-data-no-x-scale"
 
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
-my_data$date_axis <- seq(as.Date("1993-01-01"), as.Date("2003-12-01"), by="month")
+my_data$date_axis <-
+  seq(as.Date("1993-01-01"), as.Date("2003-12-01"), by="month")
 
 p <- ggplot(my_data, aes(x = date_axis, y = Rate)) +
   geom_area(position = "stack", fill = "grey60") +

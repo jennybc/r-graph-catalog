@@ -4,7 +4,7 @@ library(gridExtra) #arrangeGrob()
 this_base <- "fig07-05_annual-report-bar-chart-no-zero"
 
 my_data <- data.frame(
-  year = c(95, 96, 97, 98, 99),
+  year = 95:99,
   revenue = c(15048, 16451, 17699, 19613, 22982))
 
 p1 <- ggplot(my_data, aes(x = year, y = revenue)) +
@@ -20,6 +20,7 @@ p1 <- ggplot(my_data, aes(x = year, y = revenue)) +
         axis.text.y = element_text(colour="white"),
         axis.ticks.y = element_blank(),
         axis.title.x = element_text(face = "bold"))
+p1
 
 p2 <- ggplot(my_data, aes(x = year, y = revenue)) +
   geom_bar(stat = "identity", fill = "grey50", colour = "black", width = 0.4) +
@@ -33,6 +34,7 @@ p2 <- ggplot(my_data, aes(x = year, y = revenue)) +
         panel.grid.minor = element_blank(),
         axis.title.y = element_blank(),
         axis.title.x = element_text(face = "bold"))
+p2
 
 # arrange plots together 
 p3 <- arrangeGrob(

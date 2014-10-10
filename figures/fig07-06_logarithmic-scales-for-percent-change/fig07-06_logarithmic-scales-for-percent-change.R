@@ -4,8 +4,8 @@ library(gridExtra)
 this_base <- "fig07-06_logarithmic-scales-for-percent-change"
 
 my_data <- data.frame(
-  day = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
-  dollars = c(1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024))
+  day = 1:11,
+  dollars = 2^(0:10))
 
 p1 <- ggplot(my_data, aes(x = day, y = dollars)) +
   geom_point(shape = 21, fill = "white") +
@@ -15,7 +15,6 @@ p1 <- ggplot(my_data, aes(x = day, y = dollars)) +
   theme_bw() +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
-
 p1
 
 p2 <- ggplot(my_data, aes(x = day, y = log10(dollars))) +
@@ -26,7 +25,6 @@ p2 <- ggplot(my_data, aes(x = day, y = log10(dollars))) +
   theme_bw() +
   theme(panel.grid.major = element_blank(),
         panel.grid.minor = element_blank())
-
 p2
 
 # arrange plots together 

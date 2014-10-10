@@ -14,7 +14,7 @@ my_data <- subset(my_data, date < as.Date("1991-01-01"))
 datebreaks <- seq(as.Date("1960-01-01"),
 									as.Date("1990-12-01"), by = "5 year")
 
-p1 <- ggplot(my_data, aes(x = date, y = co2)) +
+p <- ggplot(my_data, aes(x = date, y = co2)) +
 	stat_smooth(method = "loess", se = FALSE, colour = "black") +
 	theme_bw() +
 	theme(panel.grid.major = element_blank(),
@@ -22,16 +22,18 @@ p1 <- ggplot(my_data, aes(x = date, y = co2)) +
 				axis.title.y = element_text(size = 8)) +
 	labs(x = NULL,
 			 y = "Carbon Dioxide (ppm)")
+p
 
+p1 <- p +
+  coord_fixed(ratio = 40)
 p1
 
-p2 <- p1 + scale_y_continuous(breaks = seq(320, 350, 10), 
+p2 <- p + scale_y_continuous(breaks = seq(320, 350, 10), 
 															limits = c(310, 360)) +
 	scale_x_date(breaks = datebreaks, labels = c(1960, "", 1970, "", 1980, "", 1990),
 							 limits = c(as.Date("1960-01-01"),
-							 					 as.Date("1990-12-01")))  +
-	theme(plot.margin=unit(c(0, 7, 0, 7), "lines"))
-
+							 					 as.Date("1990-12-01"))) +
+  coord_fixed(ratio = 500)
 p2
 
 p3 <- p3 <- arrangeGrob(p1, p2, nrow = 2, heights = c(0.2, 0.8),

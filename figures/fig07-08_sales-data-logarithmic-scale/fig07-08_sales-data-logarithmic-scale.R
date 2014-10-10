@@ -22,5 +22,7 @@ p
 
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 5)
 
-## note: my_data is simulated 
+## note: my_data is simulated
+
+## TO DO: log the y axis properly, i.e. not just logging the data
 

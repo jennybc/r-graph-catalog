@@ -2,15 +2,15 @@ library(ggplot2)
 
 this_base <- "fig07-12_police-data-simple-view"
 
+assaults <- c(3320, 567, 39, 52)
+category <- c("Physical Force", "Other weapons", "Knife", "Firearms")
+
 my_data <- data.frame(
-	assaults = c(3320, 567, 39, 52),
-	percent = c(3320, 567, 39, 52) / 3978 * 100, 
-	variable = c("Physical Force", "Other weapons", "Knife", "Firearms")
-)
+	assaults = assaults,
+	percent = assaults / sum(assaults) * 100, 
+	category = factor(category, category))
 
-my_data$variable <- factor(my_data$variable, c("Physical Force", "Other weapons", "Knife", "Firearms"))
-
-p <- ggplot(my_data, aes(x = variable, y = percent)) +
+p <- ggplot(my_data, aes(x = category, y = percent)) +
 	geom_bar(stat = "identity", fill = "grey60", colour = "black") + 
 	geom_text(y = c(9, 9, 5, 5), label = paste0("(", my_data$assaults, ")")) +
 	theme_bw() +

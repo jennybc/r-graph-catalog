@@ -7,16 +7,16 @@ my_data <-
   data.frame(
     bmi = c(16, 19, 21.5, 22.5, 24, 25, 27.5, 28.5, 31, 34, 36.5, 45),
     Men = c(1.3, 1.2, 1.1, 1.0, 1.0, 1.0, 1.1, 1.3, 1.25, 1.7, 2.1, 2.7), 
-    Women = c(1.4, 1.1, 1.0, 1.0, 1.0, 1.0, 1.1, 1.15, 1.25, 1.4, 1.65, 1.7)
-  )
+    Women = c(1.4, 1.1, 1.0, 1.0, 1.0, 1.0, 1.1, 1.15, 1.25, 1.4, 1.65, 1.7))
 
-my_data_long <- melt(my_data, "bmi")
+my_data_long <- melt(my_data, id = "bmi",
+                     variable.name = "gender", value.name = "rrod")
 
-p <- ggplot(my_data_long, aes(x = bmi, y = value)) +
-  geom_line(aes(linetype = variable)) +
-  geom_point(aes(shape = variable)) +
-  scale_linetype_manual(values=c("solid", "longdash")) +
-  scale_shape_manual(values = c(16, 15)) + 
+p <- ggplot(my_data_long, aes(x = bmi, y = rrod)) +
+  geom_line(aes(linetype = gender)) +
+  geom_point(aes(shape = gender)) +
+  scale_linetype_manual(values=c("Men" = "solid", "Women" = "longdash")) +
+  scale_shape_manual(values = c("Men" = 16, "Women" = 15)) + 
   scale_x_continuous(breaks = seq(15, 50, 5), limits = c(15, 50), 
                      expand = c(0, 0)) + 
   scale_y_continuous(breaks = seq(0.6, 3.2, 0.2), limits = c(0.6, 3.2), 
