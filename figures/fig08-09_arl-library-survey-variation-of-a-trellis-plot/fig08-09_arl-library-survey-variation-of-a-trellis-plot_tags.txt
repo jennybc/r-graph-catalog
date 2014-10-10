@@ -1,1 +1,1 @@
-trellis display,dot plot,good,ch08_beforeafter,naomi,not doing
+trellis display,dot plot,good,ch08_beforeafter,naomi
