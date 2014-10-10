@@ -19,20 +19,17 @@ my_data <- data.frame(
   Hudson = c(215000, 242000, 73000, 57000, 22000),
   Passiac = c(252000, 147000, 60000, 18000, 12000))
 
-my_data_long <- melt(my_data, id.variables = Race,
-                  measure.variables = c("Bronx", "Kings", "New.York", 
-                                        "Queens", "Richmond", "Nassau", 
-                                        "Suffolk", "Westchester", "Rockland",
-                                        "Bergen", "Hudson", "Passiac"),
-                  variable.name = "county", value.name = "population")
+my_data_long <- melt(my_data, id = "Race",
+                     variable.name = "county", value.name = "population")
 
-my_data_long$county <-factor(
+my_data_long$county <- factor(
   my_data_long$county, rev(c("Kings", "Queens", "New.York", "Suffolk", 
                           "Nassau", "Bronx", "Westchester", "Bergen", 
                           "Hudson", "Passiac", "Richmond", "Rockland")))
 
-my_data_long$Race <-factor(
-  my_data_long$Race, c("White", "Latino", "Black", "Asian American", "All Others"))
+my_data_long$Race <-
+  factor(my_data_long$Race, c("White", "Latino", "Black",
+                              "Asian American", "All Others"))
 
 p <- ggplot(my_data_long, aes(x = population / 1000, y = county)) +
   geom_point() +

@@ -111,6 +111,7 @@ fig08-04_task-data-unified	dot plot,good,ch08_beforeafter,naomi
 fig08-05_task-data-improvement	dot plot,good,ch08_beforeafter,naomi
 fig08-06_task-data-percent-improvement	dot plot,good,ch08_beforeafter,naomi
 fig08-07_task-data-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend
+fig08-09_arl-library-survey-variation-of-a-trellis-plot	trellis display,dot plot,good,ch08_beforeafter,naomi
 fig08-10_arl-library-survey-comparison-of-user-groups	trellis display,dot plot,good,ch08_beforeafter,naomi
 fig08-12_car-production-stacked-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend
 fig08-13_car-production-trellis-panels	trellis display,timeseries,good,ch08_beforeafter,naomi

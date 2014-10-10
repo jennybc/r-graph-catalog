@@ -8,18 +8,18 @@ my_data <- data.frame(
            "Set the clock", "Set the timer to record", 
            "Listen to a song on a CD", "Listen to a tape", 
            "Listen to the radio"),
-  revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
-  original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
+  Revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
+  Original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
 
-my_data$improve = transform(my_data, improve = original - revised)$improve
+my_data$improvement <- with(my_data, Original - Revised)
+my_data$pct_improvement <- with(my_data, 100 * improvement/Original)
 
-my_data$p_improve <- transform(my_data, p_improve = (improve / original) * 100)$p_improve	
-
-p <- ggplot(my_data, aes(x = p_improve, y = reorder(task, p_improve))) +
+p <- ggplot(my_data,
+            aes(x = pct_improvement, y = reorder(task, pct_improvement))) +
   geom_point() +
   scale_x_continuous(breaks = seq(0, 60, 20)) +
   labs(x = "Percent Improvement", y = NULL) +
-  ggtitle("Fig 8.5 Task Data: Percent Improvement") +
+  ggtitle("Fig 8.6 Task Data: Percent Improvement") +
   theme_bw() +
   theme(panel.grid.major.y = element_line(colour = "grey60"),
         panel.grid.major.x = element_blank(),

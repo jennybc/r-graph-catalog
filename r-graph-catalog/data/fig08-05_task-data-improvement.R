@@ -9,10 +9,10 @@ my_data <- data.frame(
            "Set the clock", "Set the timer to record", 
            "Listen to a song on a CD", "Listen to a tape", 
            "Listen to the radio"),
-  revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
-  original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
+  Revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
+  Original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
 
-my_data$improvement = transform(my_data, improvement = original - revised)$improvement
+my_data$improvement <- with(my_data, Original - Revised)
 
 p <- ggplot(my_data, aes(x = improvement, y = reorder(task, improvement))) +
   geom_point() +

@@ -14,8 +14,8 @@ my_data <- data.frame(
   Original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
 
 my_data_long <- melt(my_data, id.vars = "task", 
-                  measure.vars = c("Revised", "Original"),
-                  variable.name = "type", value.name = "time")
+                     measure.vars = c("Revised", "Original"),
+                     variable.name = "type", value.name = "time")
 
 p <- ggplot(my_data_long, aes(x = time, y = reorder(task, time), group = type)) +
   geom_point(aes(shape = type)) +
@@ -38,3 +38,4 @@ p
 ggsave(paste0(this_base, ".png"), 
        p, width = 6, height = 6)
 
+## pedantic: move tasks to right side

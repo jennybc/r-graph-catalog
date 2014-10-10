@@ -9,19 +9,20 @@ my_data <- data.frame(
            "Set the clock", "Set the timer to record", 
            "Listen to a song on a CD", "Listen to a tape", 
            "Listen to the radio"),
-  revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
-  original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
+  Revised = c(8.8, 9.6, 7.7, 5.8, 2.6, 2.3, 2.2, 2.1, 2.2, 1.0),
+  Original = c(18.6, 15.9, 11.3, 9.7, 6.4, 4.0, 3.7, 3.8, 2.6, 0.9))
 
 my_data_long <- melt(my_data, id.vars = "task", 
-                  measure.vars = c("revised", "original"),
-                  variable.name = "type", value.name = "time")
+                     measure.vars = c("Revised", "Original"),
+                     variable.name = "type", value.name = "time")
 
 p <- ggplot(my_data_long, aes(x = reorder(task, time), y = time, 
-                           fill = type, width = 0.6)) +
+                              fill = type, width = 0.6)) +
+  ## geom_bar() twice is a hack to omit slash from legend
   geom_bar(stat = "identity", position = "dodge") +
   geom_bar(stat = "identity", position = "dodge", 
            colour = "black", show_guide = FALSE) +
-  scale_fill_manual(values = c("grey40", "grey60")) +
+  scale_fill_manual(values = c("Revised" = "grey40", "Original" = "grey60")) +
   scale_y_continuous(breaks = seq(0, 20, 5), limits = c(0, 20), 
                      expand = c(0, 0)) +
   labs(x = NULL, y = "Time (minutes)") +
