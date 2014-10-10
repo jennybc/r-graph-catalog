@@ -1,24 +1,20 @@
 library(ggplot2)
 library(grid)
+library(plyr)
 
 this_base <- "fig06-08_avoiding-superposed-data"
 
-set.seed(100)
+biv_norm <- read.delim(paste0(this_base, ".tsv"))
+biv_norm$grp <-
+  mapvalues(biv_norm$group, from = 1:3, to = paste("Group", LETTERS[1:3]))
 
-my_data <- data.frame(x = rnorm(100, mean = 15, sd = 10), 
-                   y = c(rnorm(50, mean = 15, sd = 10), 
-                         rnorm(50, mean = 25, sd = 10)))
-
-my_data$grp <- c(rep("Group: A", 33), rep("Group: B", 33), rep("Group: C", 34))
-
-p <- ggplot(my_data, aes(x = x, y = jitter(y, 2), group = grp)) +
-  geom_point(aes(shape = grp), show_guide = FALSE) +
+## y jitter not clearly necessary, but present in the original figure
+p <- ggplot(biv_norm, aes(x = x, y = jitter(y, 2))) +
+  geom_point() +
   facet_wrap(~ grp) +
-  scale_shape_manual(values = c(65, 66, 67)) +
   scale_y_continuous(breaks = seq(0, 40, 10), limits = c(0, 45),
                      expand = c(0, 0)) + 
   scale_x_continuous(breaks = seq(0, 40, 20), minor_breaks = c(10, 30),
-                     #labels = c(0, "", 20, "", 40),
                      limits = c(0, 45), expand = c(0, 0)) +
   labs(x = "X", y = "Y") +
   ggtitle("Fig 6.8 Avoiding Superposed Data") +
@@ -31,6 +27,6 @@ p <- ggplot(my_data, aes(x = x, y = jitter(y, 2), group = grp)) +
 
 p
 
-ggsave(paste0(this_base, ".png"), p, width = 6, height = 6)
+ggsave(paste0(this_base, ".png"), p, width = 6, height = 4)
 
 ## pedantic: x axis at top for middle facet

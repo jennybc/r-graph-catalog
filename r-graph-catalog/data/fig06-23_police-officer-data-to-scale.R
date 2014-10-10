@@ -15,14 +15,6 @@ my_data <- data.frame(
              2950, 484, 1912, 154, 902, 1498, 1341, 995, 
              905, 1037, 104, 528, 175, 1420, 135))
 
-my_data$county <- 
-  factor(my_data$county, 
-         levels = c("Atlantic", "Bergen", "Burlington", "Camden", "Cape May", 
-                    "Cumberland","Essex", "Gloucester", "Hudson", "Hunterdon", 
-                    "Mercer", "Middlesex", "Monmouth", "Morris", "Ocean", 
-                    "Passiac", "Salem", "Somerset", "Sussex", "Union", 
-                    "Warren"))
-
 p1 <- ggplot(my_data, aes(x = reorder(county, number), y = number, width = 0.5)) +
   geom_bar(stat = "identity", fill = "grey70", colour = "black") + 
   scale_y_continuous(breaks = seq(0, 3500, 500), limits = c(0, 3500),

@@ -28,10 +28,11 @@ p <- ggplot(my_data, aes(x = year, y = immigrants, width = 0.7)) +
 	scale_y_continuous(breaks = seq(0, 10000, 2000),
 										 limits = c(0, 10000),
 										 expand = c(0, 0)) +
-	labs( x = NULL, 
-				y = "Number of U.S. Immigrants (thousands)")
+  labs(x = NULL, 
+       y = "Number of U.S. Immigrants (thousands)")
 
-p <- p + ggtitle("Fig 6.28 Immigration Data with \n         Horizontal Baseline") + 
+p <- p +
+  ggtitle("Fig 6.28 Immigration Data with \n         Horizontal Baseline") + 
 	theme(plot.title = element_text(size = rel(1.5), 
 																	face = "bold", 
 																	vjust = 1.5))

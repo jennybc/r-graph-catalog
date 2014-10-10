@@ -29,5 +29,6 @@ p
 ggsave(paste0(this_base, ".png"), 
        p, width = 9, height = 4)
 
-## note: my_data obtained from source doesnt not match with book
+## note: my_data obtained from source doesnt not match with book; no legend
+## included since stocks not distinguished by linetype or color
 

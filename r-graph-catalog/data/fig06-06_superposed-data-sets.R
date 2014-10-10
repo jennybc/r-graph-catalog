@@ -3,16 +3,28 @@ library(gridExtra)
 
 this_base <- "fig06-06_superposed-data-sets"
 
-set.seed(100)
+## simulate data for this series of plots
+# set.seed(100)
+# raw_norm <- data.frame(z1 = rnorm(99),
+#                        z2 = rnorm(99))
+# mu <- 23
+# sigma <- 10
+# rho <- 0.7
+# biv_norm <- with(raw_norm,
+#                  data.frame(x = mu + sigma * z1,
+#                             y = mu + sigma * (z1 * rho + z2 * sqrt(1 - rho^2))))
+# biv_norm$length <- with(biv_norm, sqrt(x^2 + y^2))
+# biv_norm$group <- 1
+# biv_norm$group[sample(99, 33, prob = biv_norm$length ^ 3)] <- 3
+# biv_norm$group[sample(which(biv_norm$group == 1), 33,
+#                       prob = biv_norm$length[biv_norm$group == 1]^3)] <- 2
+# write.table(biv_norm, paste0(this_base, ".tsv"), sep = "\t",
+#             row.names = FALSE)
 
-my_data <- data.frame(x = rnorm(100, mean = 15, sd = 10), 
-                      y = c(rnorm(50, mean = 15, sd = 10), 
-                            rnorm(50, mean = 25, sd = 10)))
+biv_norm <- read.delim(paste0(this_base, ".tsv"))
 
-my_data$country <- c(rep("England", 33), rep("France", 33), rep("Italy", 34))
-
-p1 <- ggplot(my_data, aes(x = x, y = y, group = country)) +
-  geom_point(aes(shape = country), show_guide = FALSE) +
+p1 <- ggplot(biv_norm, aes(x = x, y = y)) +
+  geom_point(aes(shape = as.factor(group)), show_guide = FALSE) +
   scale_y_continuous(breaks = seq(0, 40, 10), limits = c(0, 47)) + 
   scale_x_continuous(breaks = seq(0, 40, 10), limits = c(0, 47)) +
   theme_bw() +
@@ -21,10 +33,9 @@ p1 <- ggplot(my_data, aes(x = x, y = y, group = country)) +
 
 p1
 
-
-p2 <- ggplot(my_data, aes(x = x, y = y, group = country)) +
-  geom_point(aes(shape = country), show_guide = FALSE) +
-  scale_shape_manual(values = c(1, 19, 79)) +
+p2 <- ggplot(biv_norm, aes(x = x, y = y)) +
+  geom_point(aes(shape = as.factor(group)), show_guide = FALSE) +
+  scale_shape_manual(values = c(1, 19, 5)) +
   scale_y_continuous(breaks = seq(0, 40, 10), limits = c(0, 47)) + 
   scale_x_continuous(breaks = seq(0, 40, 10), limits = c(0, 47)) +
   theme_bw() +
@@ -44,6 +55,6 @@ p3
 
 ggsave(paste0(this_base, ".png"), p3, width = 4, height = 6)
 
-## note: my_data is simulated to resemble the original
+## note: biv_norm is simulated to resemble the original
 
 

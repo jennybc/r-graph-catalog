@@ -14,18 +14,15 @@ my_data <- data.frame(
   percent = c(4.41, 1.29, 8.52, 2.89, 7.66, 12.49, 8.49,
               11.51, 2.01, 3.50, 12.44, 12.81, 0.69, 1.54, 9.75))
 
-my_data$discipline <- factor(my_data$discipline, 
-                          levels = rev(levels(my_data$discipline)))
-
 p <- ggplot(my_data, aes(x = reorder(discipline, percent), y = percent, 
-                      group = 1, label = percent)) +
+                         group = 1, label = percent)) +
   geom_point() + 
   coord_flip() +
   scale_y_continuous(breaks = seq(2, 12, 2), limits = c(0, 14), 
                      expand = c(0, 0)) +
   labs(x = NULL, y = "Percentage of Respondents of ARL Survey") +
   ggtitle("Fig 6.3 ARL Data: Data Stand Out Better") + 
-theme_bw() + 
+  theme_bw() + 
   theme(panel.grid.major.x = element_blank(),
         panel.grid.major.y = element_line(colour = 'black'),
         panel.grid.minor = element_blank(),

@@ -3,32 +3,28 @@ library(gridExtra) #arrangeGrob
 
 this_base <- "fig06-30_health-insurance-data"
 
+who_pays <- c("Private out-of-pocket","Private health insurance and other", 
+              "Medicaid", "Medicare", "Other government insurance")
+
 my_data <- data.frame(
-  variable = c("Private out-of-pocket","Private health insurance and other", 
-               "Medicaid", "Medicare", "Other government insurance"),
-  value = c(19, 36, 22, 15, 8))
+  who_pays = factor(who_pays, who_pays),
+  percentage = c(19, 36, 22, 15, 8))
 
-my_data$variable <- 
-  factor(my_data$variable, 
-         levels = c("Private out-of-pocket",
-                    "Private health insurance and other", "Medicaid", 
-                    "Medicare", "Other government insurance"))
-
-y_breaks <- cumsum(my_data$value) - my_data$value/2
+y_breaks <- cumsum(my_data$percentage) - my_data$percentage/2
 y_labels <- c("Private out-of-\npocket", "Private\nhealth insurance\nand other",
               "Medicaid", "Medicare", "Other government\ninsurance")
 
-y_value = c(19, 36, 15, 22, 8)
+y_percentage = c(19, 36, 15, 22, 8)
 
-p1 <- ggplot(my_data, aes(x = factor(1), fill = variable, weight = value)) +
-  geom_bar(width = 1, show_guide = FALSE, colour = 'black') + 
+p1 <- ggplot(my_data, aes(x = factor(1), y = percentage, fill = who_pays)) +
+  geom_bar(width = 1, colour = "black", stat = "identity") + 
+  guides(fill = FALSE) + 
   geom_text(aes(x = 1.70, y = y_breaks,
                 label = y_labels, hjust = c(0, 0, NA, NA, 1)), size = 2.5) +
-  geom_text(aes(x = 1.2, y = y_breaks, label = paste0(y_value, "%")), 
+  geom_text(aes(x = 1.2, y = y_breaks, label = paste0(y_percentage, "%")), 
             size = 3, , colour = "white") + 
   coord_polar(theta = "y") +
-  scale_fill_manual("variable", values = c("grey60", "grey70", "grey30", 
-                                           "grey40", "grey50")) +
+  scale_fill_manual(values = c("grey60", "grey70", "grey30", "grey40", "grey50")) +
   theme_bw() + 
   theme(panel.grid.minor = element_blank(), 
         panel.grid.major = element_blank(), 
@@ -38,13 +34,14 @@ p1 <- ggplot(my_data, aes(x = factor(1), fill = variable, weight = value)) +
         axis.text = element_blank(),
         axis.ticks = element_blank())
 
-p2 <- ggplot(my_data, aes(x = factor(1), fill = variable, weight = value)) +
-  geom_bar(width = 1, show_guide = FALSE, colour = 'black') + 
+p2 <- ggplot(my_data, aes(x = factor(1), y = percentage)) +
+  geom_bar(width = 1, colour = "black", stat = "identity", fill = "white") + 
+  guides(fill = FALSE) + 
   geom_text(aes(x = 1.70, y = y_breaks,
                 label = y_labels, hjust = c(0, 0, NA, NA, 1)), size = 2.5) +
-  geom_text(aes(x = 1.2, y = y_breaks, label = paste0(value, "%")), size = 3) +
+  geom_text(aes(x = 1.2, y = y_breaks,
+                label = paste0(percentage, "%")), size = 3) +
   coord_polar(theta = "y") +
-  scale_fill_manual("variable", values = rep("white", 5)) +
   theme_bw() + 
   theme(panel.grid.minor = element_blank(), 
         panel.grid.major = element_blank(), 
