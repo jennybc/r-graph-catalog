@@ -16,5 +16,7 @@ We are very interested in extending this catalog, possibly helping to revive to 
 
 [Winston Chang's](https://github.com/wch) book ["R Graphics Cookbook"](http://shop.oreilly.com/product/0636920023135.do) and the [Graphs section](http://www.cookbook-r.com/Graphs/) of his [Cookbook for R website](http://www.cookbook-r.com/)
 
+[`ggplot2` tutorial](https://github.com/jennybc/ggplot2-tutorial) from May 2014, Vancouver R Users Group
+
 [ggplot2 Version of Figures in "Lattice: Multivariate Data Visualization with R"](http://learnr.wordpress.com/2009/08/26/ggplot2-version-of-figures-in-lattice-multivariate-data-visualization-with-r-final-part/)
 
