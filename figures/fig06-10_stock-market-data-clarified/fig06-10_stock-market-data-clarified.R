@@ -3,18 +3,14 @@ library(scales)
 
 this_base <- "fig06-10_stock-market-data-clarified"
 
-my_data <- read.delim(paste0(this_base, ".tsv"))
-
-my_data$Time <- as.Date(as.character(my_data$Time), format = "%Y-%m-%d")
-
-my_data$stock <- factor(my_data$stock, levels = c("GD", "MRK", "GE", "MSFT"))
+my_data <- read.delim(paste0(this_base, ".tsv"),
+                      colClasses = list(Time = "Date"))
+my_data$stock <- factor(my_data$stock, c("GD", "MRK", "GE", "MSFT"))
 
 p <- ggplot(my_data, aes(x = Time, y = Adj.Close)) + 
   geom_line(aes(group = stock)) +
-  facet_wrap( ~ stock, ncol = 1) +
-  scale_colour_manual(values = rep("black", 4)) +
-  scale_x_date(breaks = "year", expand = c(0, 1),
-               labels = date_format("%Y")) +
+  facet_wrap(~ stock, ncol = 1) +
+  scale_x_date(breaks = "year", expand = c(0, 1), labels = date_format("%Y")) +
   scale_y_continuous(breaks = c(30, 60), limits = c(0, 65), expand = c(0, 0)) +
   labs(x = NULL, y = "Adjusted closing price") +
   ggtitle("Fig 6.10 Stock Market Data: Clarified") + 

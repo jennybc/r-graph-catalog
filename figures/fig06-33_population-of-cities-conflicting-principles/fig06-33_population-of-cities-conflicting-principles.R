@@ -12,10 +12,12 @@ my_data <- data.frame(
   population_2000 = c(8008278, 3694820, 2896016, 1953631, 1517550, 
                       1223400, 951270,  1188580, 1321045, 1144646))
 
-my_data_long <- melt(my_data, "city", c("population_1990", "population_2000"), 
-                  "year", "population")
+my_data_long <- melt(my_data, id = "city",
+                     measure.vars = c("population_1990", "population_2000"), 
+                     variable.name = "year", value.name = "population")
 
-p <- ggplot(my_data_long, aes(x = value/1000, y = reorder(city, value))) +
+p <- ggplot(my_data_long,
+            aes(x = population/1000, y = reorder(city, population))) +
   geom_point(aes(shape = year), size = 1.5) +
   scale_shape_manual(values = c(1,3), labels = c("1990", "2000")) +
   scale_x_continuous(breaks = seq(0, 8000, 2000), limits = c(0, 9000)) +

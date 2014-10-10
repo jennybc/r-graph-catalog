@@ -6,13 +6,13 @@ this_base <- "fig06-13_inflation-data"
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
 # x axis labels
-v <- c(1914 : 2003)
+v <- 1914:2003
 v[c(seq(2, 90, 3), seq(3, 90, 3))] <- ""
 
 p1 <- ggplot(my_data, aes(x = year, y = rate)) +
   geom_line() +
   geom_hline(aes(yintercept = c(0, 3))) + 
-  geom_segment(aes(x = c(1914:2003), xend =  c(1914:2003), 
+  geom_segment(aes(x = 1914:2003, xend =  1914:2003, 
                    y = rep(-0.5, 90), yend = rep(0.5, 90))) +
   geom_text(label = v, angle = 90, y = -3, size = 3) + 
   scale_y_continuous(breaks = seq(-15, 20, 5), limits = c(-15, 20),

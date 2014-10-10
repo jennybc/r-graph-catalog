@@ -5,11 +5,11 @@ this_base <- "fig06-24_earnings-per-share-data"
 
 my_data <- data.frame(
   earnings = c(20, 21.5, 23, 24.5, 26), 
-  year = c(1999, 2000, 2001, 2002, 2003))
+  year = 1999:2003)
 
 p1 <- ggplot(my_data, aes(x = earnings, y = year)) + 
   geom_rect(aes(xmin = rep(15, 5), xmax = rev(earnings), 
-                ymin = rep(1998, 5), ymax = rev(c(1999:2003))), 
+                ymin = rep(1998, 5), ymax = rev(1999:2003)), 
             fill = c("grey80", "grey70", "grey60", "grey50", "grey40"), 
             colour = "white") +
   geom_text(x = 15.5, y = my_data$year - 0.2, label = my_data$year, size = 4) +

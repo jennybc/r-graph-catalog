@@ -4,13 +4,13 @@ library(gridExtra)
 this_base <- "fig06-16_exhibit-label-data"
 
 my_data <- data.frame(before = c(115, 20, 58, 4, 3, 1),
-                   after = c(116, 18, 36, 18, 4, 3),
-                   level = c("0", "1", "2", "3", "4", "5"))
+                      after = c(116, 18, 36, 18, 4, 3),
+                      level = as.character(0:5),
+                      feature = c("no", "no", "yes", "no", "no", "no"))
 
-p1 <- ggplot(my_data, aes(x = level, y = before, fill = level)) +
+p1 <- ggplot(my_data, aes(x = level, y = before, fill = feature)) +
   geom_bar(stat = "identity", colour = "black", width = 1, show_guide = FALSE) +
-  scale_fill_manual(values = c("white", "white", "grey60", 
-                               "white", "white", "white")) +
+  scale_fill_manual(values = c("yes" = "grey60", "no" = "white")) +
   scale_y_continuous(breaks = seq(0, 120, 20), limits = c(0, 120), 
                      expand = c(0, 0)) +
   labs(x = "Levels of Understanding", y = "Count") +
@@ -23,10 +23,9 @@ p1 <- ggplot(my_data, aes(x = level, y = before, fill = level)) +
 
 p1	
 
-p2 <- ggplot(my_data, aes(x = level, y = after, fill = level)) +
+p2 <- ggplot(my_data, aes(x = level, y = after, fill = feature)) +
   geom_bar(stat = "identity", colour = "black", width = 1, show_guide = FALSE) +
-  scale_fill_manual(values = c("white", "white", "grey60", 
-                               "white", "white", "white")) +
+  scale_fill_manual(values = c("yes" = "grey60", "no" = "white")) +
   scale_y_continuous(breaks = seq(0, 120, 20), limits = c(0, 120), 
                      expand = c(0, 0)) +
   labs(x = "Levels of Understanding", y = "Count") +
