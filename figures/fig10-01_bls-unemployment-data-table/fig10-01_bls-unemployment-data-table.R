@@ -4,7 +4,7 @@ library(gridExtra)
 this_base <- "fig10-01_bls-unemployment-data-table"
 
 my_data <- data.frame(
-  Year = c(1948:1962),
+  Year = 1948:1962,
   Jan = c(3.4, 4.3, 6.5, 3.7, 3.2, 2.9, 4.9, 4.9, 
           4.0, 4.2, 5.8, 6.0, 5.2, 6.6, 5.8),
   Feb = c(3.8, 4.7, 6.4, 3.4, 3.1, 2.6, 5.2, 4.7, 

@@ -7,11 +7,13 @@ this_base <- "fig10-02_bls-unemployment-data-graph"
 my_data <- read.delim(paste0(this_base, ".tsv"))
 
 # format my_data to long format
-my_data_long <- melt(my_data, "Year", variable.name = "month", value.name = "rate")
+my_data_long <-
+  melt(my_data, "Year", variable.name = "month", value.name = "rate")
 my_data_long <- 
   transform(my_data_long, 
             dat = as.Date(paste(Year, month, "01", sep = "/"), "%Y/%b/%d"))
-my_data_long <- my_data_long[order(as.Date(my_data_long$dat, format = "%Y/%m/%d")), ]
+my_data_long <-
+  my_data_long[order(as.Date(my_data_long$dat, format = "%Y/%m/%d")), ]
 
 p <- ggplot(my_data_long, aes(x = dat, y = rate)) + 
   geom_line() +
@@ -27,3 +29,5 @@ p
 
 ggsave(paste0(this_base, ".png"), 
        p, width = 6, height = 5)
+
+## TO DO: some of the date stuff above looks overly fiddly to me
