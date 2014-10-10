@@ -8,7 +8,7 @@ my_data <- data.frame(
   state_area_scaled = state.area / 1000)
 
 p <- ggplot(my_data, aes(x = state_area_scaled, 
-                      y = reorder(state_name, state_area_scaled))) +
+                         y = reorder(state_name, state_area_scaled))) +
   geom_point(shape = 18) + 
   scale_x_continuous(breaks = seq(0, 500, 100), limits = c(0, 600), 
                      expand = c(0, 0)) +
