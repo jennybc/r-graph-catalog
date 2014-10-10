@@ -12,17 +12,14 @@ my_data <- data.frame(
   respondents = c(1142, 335, 2206, 749, 1984, 3233, 2198, 
                   2979, 521, 906, 3221, 3316, 178, 400, 2525),
   percent = c(4.41, 1.29, 8.52, 2.89, 7.66, 12.49, 8.49,
-                 11.51, 2.01, 3.50, 12.44, 12.81, 0.69, 1.54, 9.75))
-
-
-my_data$discipline <- factor(my_data$discipline, 
-                          levels = rev(levels(my_data$discipline)))
+              11.51, 2.01, 3.50, 12.44, 12.81, 0.69, 1.54, 9.75))
 
 p <- ggplot(my_data, 
             aes(x = discipline, y = percent, group = 1, label = percent)) +
-  geom_point(shape = 15, size = 3) + 
-  geom_line(aes(x = as.character(discipline))) + 
+  geom_point(shape = 15, size = 3) +
+  geom_line() +
   geom_text(hjust = -0.1, size = 4) +
+  scale_x_discrete(limits = rev(levels(my_data$discipline))) +
   scale_y_continuous(breaks = seq(0, 14, 2), limits = c(0, 14), 
                      expand = c(0, 0)) +
   labs(x = "Discipline", y = "Percentage of Respondents") +
