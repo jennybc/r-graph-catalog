@@ -1,1 +1,1 @@
-Input any special figure description here.
+The [`cats` package](https://github.com/hilaryparker/cats) provides several cat-related functions.
