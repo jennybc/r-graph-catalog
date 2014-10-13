@@ -54,25 +54,20 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">04_copy-files-into-r-graph-catalog.R</h1>
 <h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Fri Oct 10 00:44:38 2014</em></h4>
+<h4 class="date"><em>Sun Oct 12 18:10:44 2014</em></h4>
 </div>
 
 
 <pre class="r"><code># Copy files over to r-graph-catalog app
 
-## get top-level directory for this project
-proj_dir &lt;-
-  normalizePath(if(basename(getwd()) == &quot;scripts&quot;) &quot;..&quot; else getwd())
-
-
 # create thumbnails directory if does not exist
-out_thumb_dir &lt;- file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;thumbnails&quot;)
+out_thumb_dir &lt;- file.path(PROJHOME, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;thumbnails&quot;)
 if(!file.exists(out_thumb_dir)) {
   dir.create(out_thumb_dir)
 }
 
 # create figures directory if does not exist
-out_fig_dir &lt;- file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;figures&quot;)
+out_fig_dir &lt;- file.path(PROJHOME, &quot;r-graph-catalog&quot;, &quot;www&quot;, &quot;figures&quot;)
 if(!file.exists(out_fig_dir)) {
   dir.create(out_fig_dir)
 }
@@ -80,16 +75,16 @@ if(!file.exists(out_fig_dir)) {
 
 # get R files
 r_files &lt;-
-  list.files(file.path(proj_dir, &quot;figures&quot;), pattern = &quot;.R&quot;, recursive = TRUE)
+  list.files(file.path(PROJHOME, &quot;figures&quot;), pattern = &quot;.R&quot;, recursive = TRUE)
 
 # get thumbnail files
 thumbs &lt;-
-  list.files(file.path(proj_dir, &quot;figures&quot;), pattern = &quot;_thumb.png&quot;,
+  list.files(file.path(PROJHOME, &quot;figures&quot;), pattern = &quot;_thumb.png&quot;,
              recursive = TRUE)
 
 # get image files
 all_imgs &lt;-
-  list.files(file.path(proj_dir, &quot;figures&quot;), pattern = &quot;.png&quot;, recursive = TRUE)
+  list.files(file.path(PROJHOME, &quot;figures&quot;), pattern = &quot;.png&quot;, recursive = TRUE)
 
 # remove thumbnails
 figures &lt;- all_imgs[grep(&quot;_thumb&quot;, all_imgs, invert = TRUE)]
@@ -97,8 +92,8 @@ figures &lt;- all_imgs[grep(&quot;_thumb&quot;, all_imgs, invert = TRUE)]
 
 # copy files from figures dir into app dir
 r_files_copied &lt;-
-  file.copy(file.path(proj_dir, &quot;figures&quot;, r_files),
-            file.path(proj_dir, &quot;r-graph-catalog&quot;, &quot;data&quot;), overwrite = TRUE)
+  file.copy(file.path(PROJHOME, &quot;figures&quot;, r_files),
+            file.path(PROJHOME, &quot;r-graph-catalog&quot;, &quot;data&quot;), overwrite = TRUE)
 
 if(all(r_files_copied)) {
   message(paste(length(r_files),
@@ -107,9 +102,9 @@ if(all(r_files_copied)) {
   failed &lt;- rfiles[which(r_files_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 123 *.R files successfully copied into r-graph-catalog/data</code></pre>
+<pre><code>## 124 *.R files successfully copied into r-graph-catalog/data</code></pre>
 <pre class="r"><code>thumbs_copied &lt;-
-  file.copy(file.path(proj_dir, &quot;figures&quot;, thumbs), out_thumb_dir, 
+  file.copy(file.path(PROJHOME, &quot;figures&quot;, thumbs), out_thumb_dir, 
             overwrite = TRUE)
 
 if(all(thumbs_copied)) {
@@ -119,9 +114,9 @@ if(all(thumbs_copied)) {
   failed &lt;- thumbs[which(thumbs_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 123 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails</code></pre>
+<pre><code>## 124 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails</code></pre>
 <pre class="r"><code>figs_copied &lt;-
-  file.copy(file.path(proj_dir, &quot;figures&quot;, figures), out_fig_dir,
+  file.copy(file.path(PROJHOME, &quot;figures&quot;, figures), out_fig_dir,
             overwrite = TRUE)
 
 if(all(figs_copied)) {
@@ -131,7 +126,7 @@ if(all(figs_copied)) {
   failed &lt;- figures[which(figs_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 123 *.pngs successfully copied into r-graph-catalog/www/figures</code></pre>
+<pre><code>## 124 *.pngs successfully copied into r-graph-catalog/www/figures</code></pre>
 
 
 </div>

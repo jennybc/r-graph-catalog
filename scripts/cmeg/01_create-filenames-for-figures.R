@@ -1,9 +1,5 @@
-## get top-level directory for this project
-proj_dir <-
-  normalizePath(if(basename(getwd()) == "cmeg") file.path("..", "..") else getwd())
-
 app <-
-  read.delim(file.path(proj_dir,
+  read.delim(file.path(PROJHOME,
                        "inputs", "appendix-b.tsv"), colClasses = "character")
 
 # --- format figure numbers
@@ -36,7 +32,7 @@ foo <- merge(app, df[c('Figure.Number', 'Title', 'basename')])
 foo <- foo[order(foo$basename), ]
 
 # ---- create outputs directory if does not exist
-out_dir <- file.path(proj_dir, "outputs")
+out_dir <- file.path(PROJHOME, "outputs")
 if(!file.exists(out_dir)) {
   dir.create(out_dir)
 }

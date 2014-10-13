@@ -9,11 +9,7 @@ initFigureDirectory <- function(x) {
   } else {
     
     #---- Set up 
-    ## get top-level directory for this project
-    proj_dir <-
-      normalizePath(if(basename(getwd()) == "scripts") ".." else getwd())
-    
-    fig_dirs <- list.files(file.path(proj_dir, "figures"))
+    fig_dirs <- list.files(file.path(PROJHOME, "figures"))
     
     #---- Get next number for naming new figure directory
     
@@ -47,13 +43,13 @@ initFigureDirectory <- function(x) {
     
     #---- build path to new figure directory
     
-    new_fig_dir <- file.path(proj_dir, "figures", FOLDER_NAME)
+    new_fig_dir <- file.path(PROJHOME, "figures", FOLDER_NAME)
     dir.create(new_fig_dir)
     
     #---- Fill new fig dir with skeleton elements
     
     files_to_create <- 
-      file.path(file.path(proj_dir, "figures", FOLDER_NAME), 
+      file.path(file.path(PROJHOME, "figures", FOLDER_NAME), 
                 c("README-fodder.md", paste0(FOLDER_NAME, "_tags.txt"),
                   paste0(FOLDER_NAME, ".R"), "instructions.md"))
     

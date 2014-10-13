@@ -2,6 +2,7 @@
 
 library(stringr) #str_trim
 
+## 2014-10-12 Jenny: this path clearly makes an assumption about working dir
 # get R files 
 r_files <- list.files(file.path("..", "figures"), pattern = ".R", recursive = TRUE)
 

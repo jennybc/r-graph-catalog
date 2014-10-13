@@ -1,16 +1,12 @@
 library(plyr)
 
-## get top-level directory for this project
-proj_dir <-
-  normalizePath(if(basename(getwd()) == "scripts") ".." else getwd())
-
 ## Generate figures list and corresponding tags list
 
 # get list of fig directories
-basenames <- list.files(file.path(proj_dir, "figures"))
+basenames <- list.files(file.path(PROJHOME, "figures"))
 
 # get tags files
-fig_tags_files <- list.files(file.path(proj_dir, "figures", basenames),
+fig_tags_files <- list.files(file.path(PROJHOME, "figures", basenames),
                              pattern = "_tags.txt$", full.names = TRUE)
 
 names(fig_tags_files) <- basenames
@@ -64,7 +60,7 @@ tags_only
 head(fig_tags)
 
 # ---- create outputs directory if does not exist
-out_dir <- file.path(proj_dir, "r-graph-catalog", "data")
+out_dir <- file.path(PROJHOME, "r-graph-catalog", "data")
 if(!file.exists(out_dir)) {
 	dir.create(out_dir)
 }
@@ -72,7 +68,7 @@ if(!file.exists(out_dir)) {
 ## Save to file
 
 write.table(tags_only,
-            file.path(proj_dir, "outputs", "available-tags.tsv"),
+            file.path(PROJHOME, "outputs", "available-tags.tsv"),
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
 
 write.table(fig_tags,

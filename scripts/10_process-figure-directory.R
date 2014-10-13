@@ -12,21 +12,18 @@ options(device = function(...) {
 
 processFigureDirectory <- function(x) {
 	
-	## get top-level directory for this project
-	proj_dir <-
-		normalizePath(if(basename(getwd()) == "scripts") ".." else getwd())
-	
+	## 2014-10-12 Jenny: this path specification doesn't look very robust to me
 	# generate README.md
 	system(paste('Rscript ./scripts/02_generate-readme.R', 
 	             file.path(arg)))
 	
 	
 	# generate figure PNG from .R file
-  print(file.path(proj_dir, x, paste0(basename(x), ".R")))
+  print(file.path(PROJHOME, x, paste0(basename(x), ".R")))
   
-	source(file.path(proj_dir, x, paste0(basename(x), ".R")))
+	source(file.path(PROJHOME, x, paste0(basename(x), ".R")))
   
-	if(file.exists(file.path(proj_dir, x, paste0(basename(x), ".png")))) 
+	if(file.exists(file.path(PROJHOME, x, paste0(basename(x), ".png")))) 
 		message(paste0(basename(x), ".png successfully created"))
 	
 	# generate figure thumbnail PNG 

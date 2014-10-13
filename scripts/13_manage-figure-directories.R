@@ -1,16 +1,12 @@
-## get top-level directory for this project
-proj_dir <-
-	normalizePath(if(basename(getwd()) == "scripts") ".." else getwd())
-
 #---- Check directories
 
 # Check if there are directories NOT created automatically existing
 # below "figures/"
 
 fig_dirs_found <-
-	data.frame(fig_dir = I(list.files(file.path(proj_dir, "figures"))))
+	data.frame(fig_dir = I(list.files(file.path(PROJHOME, "figures"))))
 
-fig_tags <- list.files(file.path(proj_dir, "figures", fig_dirs_found$fig_dir),
+fig_tags <- list.files(file.path(PROJHOME, "figures", fig_dirs_found$fig_dir),
 														 pattern = "_tags.txt$", full.names = TRUE)
 
 # get tags for each figure 
