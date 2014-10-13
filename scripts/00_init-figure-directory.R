@@ -1,4 +1,5 @@
 library(plyr) #ldply()
+library(stringr)
 
 initFigureDirectory <- function(x) {
   
@@ -13,14 +14,13 @@ initFigureDirectory <- function(x) {
     
     #---- Get next number for naming new figure directory
     
-    # find fig dirs that arent part of Naomi
-    ind <- grepl(paste0("fig", "[[:digit:]][[:digit:]]", "-", 
-                        "[[:digit:]][[:digit:]]"), fig_dirs)
+    # find fig dirs that start with digit
+    ind <- grepl("^[0-9]+", fig_dirs)
     
     # find figures not in Naomi 
-    if(any(ind == FALSE)) {
+    if(any(ind)) {
       
-      list_of_figs <- fig_dirs[!ind]
+      list_of_figs <- fig_dirs[ind]
       
       list_of_figs <- strsplit(list_of_figs, "_")
       
