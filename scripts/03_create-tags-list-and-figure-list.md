@@ -109,18 +109,18 @@ head(fig_tags)
 ```
 ##                                basename
 ## 1 0002_add-background-with-cats-package
-## 2           fig01-01_similar-pie-wedges
-## 3  fig01-02_similar-pie-wedges-dot-plot
-## 4     fig01-03_similar-pie-wedges-table
-## 5          fig02-01_structured-data-set
-## 6 fig02-02_structured-data-set-dot-plot
-##                                               tags
-## 1                           other,scatterplot,good
-## 2       pie chart,ch01_intro,naomi,not recommended
-## 3                   dot plot,good,ch01_intro,naomi
-## 4                      table,good,ch01_intro,naomi
-## 5 pie chart,ch02_limitations,naomi,not recommended
-## 6             dot plot,good,ch02_limitations,naomi
+## 2        0003_xkcd-and-direct-labelling
+## 3           fig01-01_similar-pie-wedges
+## 4  fig01-02_similar-pie-wedges-dot-plot
+## 5     fig01-03_similar-pie-wedges-table
+## 6          fig02-01_structured-data-set
+##                                                tags
+## 1                            other,scatterplot,good
+## 2 other,line graph,good,data labels,loess smoothing
+## 3        pie chart,ch01_intro,naomi,not recommended
+## 4                    dot plot,good,ch01_intro,naomi
+## 5                       table,good,ch01_intro,naomi
+## 6  pie chart,ch02_limitations,naomi,not recommended
 ```
 
 ```r
@@ -147,5 +147,5 @@ write.table(fig_tags,
 ---
 title: "03_create-tags-list-and-figure-list.R"
 author: "jenny"
-date: "Sun Oct 12 20:39:25 2014"
+date: "Sun Oct 12 23:22:36 2014"
 ---

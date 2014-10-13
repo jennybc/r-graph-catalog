@@ -122,3 +122,4 @@ fig10-01_bls-unemployment-data-table	table,good,ch10_qanda,naomi	TRUE
 fig10-02_bls-unemployment-data-graph	timeseries,line graph,good,ch10_qanda,naomi	TRUE
 fig10-03_presidential-approval-data-waffle-chart	waffle chart,good,ch10_qanda,naomi,legend	TRUE
 0002_add-background-with-cats-package	other,scatterplot,good	FALSE
+0003_xkcd-and-direct-labelling	other,line graph,good,data labels,loess smoothing	FALSE

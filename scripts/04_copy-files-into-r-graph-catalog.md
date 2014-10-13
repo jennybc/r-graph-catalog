@@ -48,7 +48,7 @@ if(all(r_files_copied)) {
 ```
 
 ```
-## 124 *.R files successfully copied into r-graph-catalog/data
+## 125 *.R files successfully copied into r-graph-catalog/data
 ```
 
 ```r
@@ -66,7 +66,7 @@ if(all(thumbs_copied)) {
 ```
 
 ```
-## 124 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails
+## 125 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails
 ```
 
 ```r
@@ -84,12 +84,12 @@ if(all(figs_copied)) {
 ```
 
 ```
-## 124 *.pngs successfully copied into r-graph-catalog/www/figures
+## 125 *.pngs successfully copied into r-graph-catalog/www/figures
 ```
 
 
 ---
 title: "04_copy-files-into-r-graph-catalog.R"
 author: "jenny"
-date: "Sun Oct 12 20:39:26 2014"
+date: "Sun Oct 12 23:22:36 2014"
 ---

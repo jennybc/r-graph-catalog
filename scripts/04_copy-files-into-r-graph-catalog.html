@@ -54,7 +54,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">04_copy-files-into-r-graph-catalog.R</h1>
 <h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Sun Oct 12 20:39:26 2014</em></h4>
+<h4 class="date"><em>Sun Oct 12 23:22:36 2014</em></h4>
 </div>
 
 
@@ -102,7 +102,7 @@ if(all(r_files_copied)) {
   failed &lt;- rfiles[which(r_files_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 124 *.R files successfully copied into r-graph-catalog/data</code></pre>
+<pre><code>## 125 *.R files successfully copied into r-graph-catalog/data</code></pre>
 <pre class="r"><code>thumbs_copied &lt;-
   file.copy(file.path(PROJHOME, &quot;figures&quot;, thumbs), out_thumb_dir, 
             overwrite = TRUE)
@@ -114,7 +114,7 @@ if(all(thumbs_copied)) {
   failed &lt;- thumbs[which(thumbs_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 124 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails</code></pre>
+<pre><code>## 125 *_thumb.pngs successfully copied into r-graph-catalog/www/thumbnails</code></pre>
 <pre class="r"><code>figs_copied &lt;-
   file.copy(file.path(PROJHOME, &quot;figures&quot;, figures), out_fig_dir,
             overwrite = TRUE)
@@ -126,7 +126,7 @@ if(all(figs_copied)) {
   failed &lt;- figures[which(figs_copied == FALSE)]
   message(paste(&quot;Failed to copy the following files:&quot;, failed))
 }</code></pre>
-<pre><code>## 124 *.pngs successfully copied into r-graph-catalog/www/figures</code></pre>
+<pre><code>## 125 *.pngs successfully copied into r-graph-catalog/www/figures</code></pre>
 
 
 </div>

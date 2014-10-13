@@ -1,0 +1,1 @@
+other,line graph,good,data labels,loess smoothing
