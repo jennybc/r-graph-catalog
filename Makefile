@@ -60,7 +60,7 @@ pngs: $(PNGS)
 
 ## create pngs from R files
 figures/%.png: figures/%.R
-	cd $(dir $<) && Rscript $(notdir $<) && rm *.pdf
+	cd $(dir $<) && Rscript $(notdir $<) && rm -f *.pdf
 
 script03 = 01_create-thumbnail.R
 
