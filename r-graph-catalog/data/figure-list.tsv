@@ -1,124 +1,124 @@
-basename	tags
-0002_add-background-with-cats-package	other,scatterplot,good
-fig01-01_similar-pie-wedges	pie chart,ch01_intro,naomi,not recommended
-fig01-02_similar-pie-wedges-dot-plot	dot plot,good,ch01_intro,naomi
-fig01-03_similar-pie-wedges-table	table,good,ch01_intro,naomi
-fig02-01_structured-data-set	pie chart,ch02_limitations,naomi,not recommended
-fig02-02_structured-data-set-dot-plot	dot plot,good,ch02_limitations,naomi
-fig02-04_three-dimensional-pie-data-two-dimensional-bar-chart	bar chart,good,ch02_limitations,naomi
-fig02-05_three-dimensional-pie-data-two-dimensional-pie-chart	pie chart,ch02_limitations,naomi,not recommended
-fig02-07_three-dimensional-bar-data-two-dimensional-bar-chart	bar chart,good,ch02_limitations,naomi
-fig02-11_energy-data	bar chart,not recommended,ch02_limitations,naomi,legend
-fig02-12_energy-data-all-other-oecd	bar chart,good,ch02_limitations,naomi
-fig02-13_energy-data-grouped-bar-chart	bar chart,ch02_limitations,naomi,legend,not recommended
-fig02-14_playfair-s-balance-of-trade-data	line graph,good,ch02_limitations,naomi,annotation
-fig02-15_playfair-s-balance-of-trade-data-imports-minus-export	line graph,good,ch02_limitations,naomi,annotation,multiple plots
-fig02-16_difference-between-curves	line graph,not recommended,ch02_limitations,naomi
-fig02-18_playfair-s-population-of-cities	bubble chart,ch02_limitations,naomi,not recommended
-fig02-19_population-of-cities-dot-plot	dot plot,good,ch02_limitations,naomi
-fig03-01_angle-judgments	pie chart,ch03_perception,naomi,not recommended
-fig03-02_area-and-volume-judgments	bubble chart,ch03_perception,naomi,not recommended
-fig03-03_color-hue-saturation-and-density	scatterplot,good,ch03_perception,naomi,multiple plots
-fig03-04_length-judgments	line graph,ch03_perception,naomi,not recommended
-fig03-05_position-along-a-common-scale	dot plot,good,ch03_perception,naomi
-fig03-06_position-along-identical-nonaligned-scales	dot plot,good,ch03_perception,naomi
-fig03-07_slope-judgments	line graph,good,ch03_perception,naomi,multiple plots
-fig03-08_detection	scatterplot,not recommended,ch03_perception,naomi
-fig04-01_state-areas-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,legend
-fig04-02_state-areas-dot-plot	dot plot,good,ch04_1or2dim,naomi
-fig04-03_state-areas-ordered-by-size	dot plot,good,ch04_1or2dim,naomi
-fig04-04_state-areas-logarithm-with-base-2	dot plot,good,ch04_1or2dim,naomi
-fig04-05_state-areas-top-axis-labeled-with-original-scale	dot plot,good,ch04_1or2dim,naomi
-fig04-06_families-exhibition-histogram	histogram,good,ch04_1or2dim,naomi
-fig04-07_avoid-misleading-histograms	histogram,ch04_1or2dim,naomi,not recommended
-fig04-08_judith-leyster-exhibition-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,legend
-fig04-09_judith-leyster-jittered-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,jitter,legend
-fig04-10_museum-exhibitions-jittering	dot plot,stripplot,good,ch04_1or2dim,naomi,jitter
-fig04-11_museum-exhibitions-box-plot	boxplot,good,ch04_1or2dim,naomi
-fig04-12_description-of-box-plot	boxplot,good,ch04_1or2dim,naomi,annotation
-fig04-13_museum-exhibitions-styles-of-box-plots	boxplot,good,ch04_1or2dim,naomi
-fig04-14_paying-attention-data-scatterplot	scatterplot,good,ch04_1or2dim,naomi
-fig04-15_paying-attention-data-regression-line	scatterplot,good,ch04_1or2dim,naomi
-fig04-16_paying-attention-data-loess-fit	scatterplot,good,ch04_1or2dim,naomi,loess smoothing
-fig04-17_visitors-at-st-louis-science-center	timeseries,good,ch04_1or2dim,naomi
-fig04-18_slsc-visitors-month-plot	timeseries,month plot,good,ch04_1or2dim,naomi
-fig04-19_carbon-dioxide-data	timeseries,good,ch04_1or2dim,naomi,loess smoothing
-fig04-20_carbon-dioxide-data-month-plot	timeseries,month plot,good,ch04_1or2dim,naomi
-fig04-21_used-car-price-line-graph	line graph,good,ch04_1or2dim,naomi
-fig04-22_mountain-height-data-line-graph	line graph,not recommended,ch04_1or2dim,naomi
-fig04-23_mountain-height-data-by-mountain	line graph,not recommended,ch04_1or2dim,naomi
-fig04-24_mountain-height-data-by-continent	line graph,not recommended,ch04_1or2dim,naomi
-fig05-02_energy-data-labeled-scatterplot	scatterplot,good,ch05_morethan2var,naomi,data labels
-fig05-03_energy-data-trellis-display	trellis display,dot plot,good,ch05_morethan2var,naomi
-fig05-04_barley-data	trellis display,dot plot,good,ch05_morethan2var,naomi
-fig05-05_barley-data-bar-chart	bar chart,trellis display,good,ch05_morethan2var,naomi
-fig05-08_monterey-bay-aquarium-data-mosaic-plot-preliminaries	bar chart,spline graph,mosaic plot,good,ch05_morethan2var,naomi
-fig05-12_iris-data-parallel-coordinate-plots	parallel coordinates plot,good,ch05_morethan2var,naomi
-fig05-13_reading-a-parallel-coordinates-plot	parallel coordinates plot,good,ch05_morethan2var,naomi
-fig05-14_nightingale-data	rose plot,good,ch05_morethan2var,naomi
-fig05-15_nightingale-data-trellis-plot	trellis display,timeseries,good,ch05_morethan2var,naomi
-fig05-16_djia-high-low-open-close-plots	line graph,good,ch05_morethan2var,naomi
-fig06-02_association-of-research-libraries-data	line graph,ch06_general,naomi,data labels,not recommended
-fig06-03_arl-data-data-stand-out-better	dot plot,good,ch06_general,naomi
-fig06-04_data-that-are-difficult-to-see	scatterplot,not recommended,ch06_general,naomi
-fig06-05_museum-exhibitions-overlapping-data	scatterplot,stripplot,good,ch06_general,naomi
-fig06-06_superposed-data-sets	scatterplot,good,ch06_general,naomi
-fig06-07_superposed-data-sets-2	scatterplot,good,ch06_general,naomi
-fig06-08_avoiding-superposed-data	trellis display,scatterplot,good,ch06_general,naomi,jitter
-fig06-09_stock-market-data	timeseries,ch06_general,naomi,not recommended
-fig06-10_stock-market-data-clarified	trellis display,timeseries,good,ch06_general,naomi
-fig06-11_marketing-data	scatterplot,not recommended,ch06_general,naomi
-fig06-12_marketing-data-less-cluttered-version	scatterplot,good,ch06_general,naomi
-fig06-13_inflation-data	timeseries,ch06_general,naomi,not recommended
-fig06-15_tick-marks-and-tick-mark-labels	bar chart,ch06_general,naomi,not recommended
-fig06-16_exhibit-label-data	bar chart,good,ch06_general,naomi
-fig06-18_zoo-exhibit-data	bubble chart,ch06_general,naomi,not recommended
-fig06-23_police-officer-data-to-scale	bar chart,good,ch06_general,naomi
-fig06-24_earnings-per-share-data	bar chart,ch06_general,naomi,not recommended
-fig06-25_america-online-market-value	area plot,not recommended,ch06_general,naomi
-fig06-28_immigration-data-with-horizontal-baseline	bar chart,good,ch06_general,naomi,data labels
-fig06-29_survey-results-data	line graph,timeseries,good,ch06_general,naomi
-fig06-30_health-insurance-data	pie chart,ch06_general,naomi,not recommended
-fig06-32_population-of-cities	dot plot,good,ch06_general,naomi,multiple plots
-fig06-33_population-of-cities-conflicting-principles	dot plot,good,ch06_general,naomi
-fig07-01_sunspot-data-aspect-ratio-1	timeseries,ch07_scales,naomi,multiple plots,not recommended
-fig07-02_annual-report-aspect-ratio-2	timeseries,ch07_scales,naomi,multiple plots,data labels,not recommended
-fig07-03_carbon-dioxide-data	timeseries,ch07_scales,naomi,multiple plots,not recommended
-fig07-04_carbon-dioxide-aspect-ratio-changed	timeseries,good,ch07_scales,naomi,multiple plots
-fig07-05_annual-report-bar-chart-no-zero	bar chart,ch07_scales,naomi,multiple plots,data labels,not recommended
-fig07-06_logarithmic-scales-for-percent-change	dot plot,good,ch07_scales,naomi,multiple plots,subscript
-fig07-07_sales-data	scatterplot,good,ch07_scales,naomi
-fig07-08_sales-data-logarithmic-scale	scatterplot,good,ch07_scales,naomi,subscript
-fig07-09_sales-data-ordered-data-with-logarithmic-scale	scatterplot,good,ch07_scales,naomi,subscript
-fig07-12_police-data-simple-view	bar chart,good,ch07_scales,naomi,data labels
-fig07-13_sales-data-full-scale-break	scatterplot,good,ch07_scales,naomi
-fig07-14_sales-data-avoiding-a-scale-break	scatterplot,good,ch07_scales,naomi
-fig07-16_temperature-data-two-scales	timeseries,good,ch07_scales,naomi
-fig07-17_income-data-gender-gap-at-all-ages	line graph,scatterplot,good,ch07_scales,naomi,annotation
-fig07-19_blood-level-data	line graph,not recommended,ch07_scales,naomi,annotation
-fig07-20_blood-level-data-variation-in-ratio	line graph,timeseries,good,ch07_scales,naomi
-fig07-21_blood-level-data-multipanel-plot	line graph,timeseries,trellis display,good,ch07_scales,naomi
-fig07-23_annual-report-no-y-scale	line graph,timeseries,not recommended,ch07_scales,naomi,multiple plots,data labels
-fig07-24_prime-lending-rate-data-no-x-scale	area plot,ch07_scales,naomi,not recommended
-fig07-25_annual-report-data-tick-marks-at-hard-to-judge-values	bar chart,not recommended,ch07_scales,naomi
-fig07-27_invoice-data-filling-the-scale-line-rectangle	line graph,ch07_scales,naomi,not recommended
-fig07-28_body-mass-data-unequal-intervals	line graph,not recommended,ch07_scales,naomi,legend,annotation
-fig07-29_body-mass-data-comparing-panels	line graph,not recommended,ch07_scales,naomi,multiple plots,legend
-fig07-30_body-mass-data-corrected	scatterplot,good,ch07_scales,naomi,legend
-fig08-01_gold-price-data	bar chart,good,ch08_beforeafter,naomi,legend
-fig08-02_gold-price-data-high-low-chart	line graph,good,ch08_beforeafter,naomi
-fig08-03_task-data	bar chart,good,ch08_beforeafter,naomi,footnote,data labels
-fig08-04_task-data-unified	dot plot,good,ch08_beforeafter,naomi
-fig08-05_task-data-improvement	dot plot,good,ch08_beforeafter,naomi
-fig08-06_task-data-percent-improvement	dot plot,good,ch08_beforeafter,naomi
-fig08-07_task-data-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend
-fig08-09_arl-library-survey-variation-of-a-trellis-plot	trellis display,dot plot,good,ch08_beforeafter,naomi
-fig08-10_arl-library-survey-comparison-of-user-groups	trellis display,dot plot,good,ch08_beforeafter,naomi
-fig08-12_car-production-stacked-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend
-fig08-13_car-production-trellis-panels	trellis display,timeseries,good,ch08_beforeafter,naomi
-fig08-14_population-data-by-race	trellis display,dot plot,good,ch08_beforeafter,naomi
-fig08-15_population-data-by-county	trellis display,dot plot,good,ch08_beforeafter,naomi
-fig09-03_state-areas-dot-chart-from-excel	dot plot,good,ch09_software,naomi
-fig10-01_bls-unemployment-data-table	table,good,ch10_qanda,naomi
-fig10-02_bls-unemployment-data-graph	timeseries,line graph,good,ch10_qanda,naomi
-fig10-03_presidential-approval-data-waffle-chart	waffle chart,good,ch10_qanda,naomi,legend
+basename	tags	CMEG
+fig01-01_similar-pie-wedges	pie chart,ch01_intro,naomi,not recommended	TRUE
+fig01-02_similar-pie-wedges-dot-plot	dot plot,good,ch01_intro,naomi	TRUE
+fig01-03_similar-pie-wedges-table	table,good,ch01_intro,naomi	TRUE
+fig02-01_structured-data-set	pie chart,ch02_limitations,naomi,not recommended	TRUE
+fig02-02_structured-data-set-dot-plot	dot plot,good,ch02_limitations,naomi	TRUE
+fig02-04_three-dimensional-pie-data-two-dimensional-bar-chart	bar chart,good,ch02_limitations,naomi	TRUE
+fig02-05_three-dimensional-pie-data-two-dimensional-pie-chart	pie chart,ch02_limitations,naomi,not recommended	TRUE
+fig02-07_three-dimensional-bar-data-two-dimensional-bar-chart	bar chart,good,ch02_limitations,naomi	TRUE
+fig02-11_energy-data	bar chart,not recommended,ch02_limitations,naomi,legend	TRUE
+fig02-12_energy-data-all-other-oecd	bar chart,good,ch02_limitations,naomi	TRUE
+fig02-13_energy-data-grouped-bar-chart	bar chart,ch02_limitations,naomi,legend,not recommended	TRUE
+fig02-14_playfair-s-balance-of-trade-data	line graph,good,ch02_limitations,naomi,annotation	TRUE
+fig02-15_playfair-s-balance-of-trade-data-imports-minus-export	line graph,good,ch02_limitations,naomi,annotation,multiple plots	TRUE
+fig02-16_difference-between-curves	line graph,not recommended,ch02_limitations,naomi	TRUE
+fig02-18_playfair-s-population-of-cities	bubble chart,ch02_limitations,naomi,not recommended	TRUE
+fig02-19_population-of-cities-dot-plot	dot plot,good,ch02_limitations,naomi	TRUE
+fig03-01_angle-judgments	pie chart,ch03_perception,naomi,not recommended	TRUE
+fig03-02_area-and-volume-judgments	bubble chart,ch03_perception,naomi,not recommended	TRUE
+fig03-03_color-hue-saturation-and-density	scatterplot,good,ch03_perception,naomi,multiple plots	TRUE
+fig03-04_length-judgments	line graph,ch03_perception,naomi,not recommended	TRUE
+fig03-05_position-along-a-common-scale	dot plot,good,ch03_perception,naomi	TRUE
+fig03-06_position-along-identical-nonaligned-scales	dot plot,good,ch03_perception,naomi	TRUE
+fig03-07_slope-judgments	line graph,good,ch03_perception,naomi,multiple plots	TRUE
+fig03-08_detection	scatterplot,not recommended,ch03_perception,naomi	TRUE
+fig04-01_state-areas-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,legend	TRUE
+fig04-02_state-areas-dot-plot	dot plot,good,ch04_1or2dim,naomi	TRUE
+fig04-03_state-areas-ordered-by-size	dot plot,good,ch04_1or2dim,naomi	TRUE
+fig04-04_state-areas-logarithm-with-base-2	dot plot,good,ch04_1or2dim,naomi	TRUE
+fig04-05_state-areas-top-axis-labeled-with-original-scale	dot plot,good,ch04_1or2dim,naomi	TRUE
+fig04-06_families-exhibition-histogram	histogram,good,ch04_1or2dim,naomi	TRUE
+fig04-07_avoid-misleading-histograms	histogram,ch04_1or2dim,naomi,not recommended	TRUE
+fig04-08_judith-leyster-exhibition-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,legend	TRUE
+fig04-09_judith-leyster-jittered-strip-plot	dot plot,stripplot,good,ch04_1or2dim,naomi,jitter,legend	TRUE
+fig04-10_museum-exhibitions-jittering	dot plot,stripplot,good,ch04_1or2dim,naomi,jitter	TRUE
+fig04-11_museum-exhibitions-box-plot	boxplot,good,ch04_1or2dim,naomi	TRUE
+fig04-12_description-of-box-plot	boxplot,good,ch04_1or2dim,naomi,annotation	TRUE
+fig04-13_museum-exhibitions-styles-of-box-plots	boxplot,good,ch04_1or2dim,naomi	TRUE
+fig04-14_paying-attention-data-scatterplot	scatterplot,good,ch04_1or2dim,naomi	TRUE
+fig04-15_paying-attention-data-regression-line	scatterplot,good,ch04_1or2dim,naomi	TRUE
+fig04-16_paying-attention-data-loess-fit	scatterplot,good,ch04_1or2dim,naomi,loess smoothing	TRUE
+fig04-17_visitors-at-st-louis-science-center	timeseries,good,ch04_1or2dim,naomi	TRUE
+fig04-18_slsc-visitors-month-plot	timeseries,month plot,good,ch04_1or2dim,naomi	TRUE
+fig04-19_carbon-dioxide-data	timeseries,good,ch04_1or2dim,naomi,loess smoothing	TRUE
+fig04-20_carbon-dioxide-data-month-plot	timeseries,month plot,good,ch04_1or2dim,naomi	TRUE
+fig04-21_used-car-price-line-graph	line graph,good,ch04_1or2dim,naomi	TRUE
+fig04-22_mountain-height-data-line-graph	line graph,not recommended,ch04_1or2dim,naomi	TRUE
+fig04-23_mountain-height-data-by-mountain	line graph,not recommended,ch04_1or2dim,naomi	TRUE
+fig04-24_mountain-height-data-by-continent	line graph,not recommended,ch04_1or2dim,naomi	TRUE
+fig05-02_energy-data-labeled-scatterplot	scatterplot,good,ch05_morethan2var,naomi,data labels	TRUE
+fig05-03_energy-data-trellis-display	trellis display,dot plot,good,ch05_morethan2var,naomi	TRUE
+fig05-04_barley-data	trellis display,dot plot,good,ch05_morethan2var,naomi	TRUE
+fig05-05_barley-data-bar-chart	bar chart,trellis display,good,ch05_morethan2var,naomi	TRUE
+fig05-08_monterey-bay-aquarium-data-mosaic-plot-preliminaries	bar chart,spline graph,mosaic plot,good,ch05_morethan2var,naomi	TRUE
+fig05-12_iris-data-parallel-coordinate-plots	parallel coordinates plot,good,ch05_morethan2var,naomi	TRUE
+fig05-13_reading-a-parallel-coordinates-plot	parallel coordinates plot,good,ch05_morethan2var,naomi	TRUE
+fig05-14_nightingale-data	rose plot,good,ch05_morethan2var,naomi	TRUE
+fig05-15_nightingale-data-trellis-plot	trellis display,timeseries,good,ch05_morethan2var,naomi	TRUE
+fig05-16_djia-high-low-open-close-plots	line graph,good,ch05_morethan2var,naomi	TRUE
+fig06-02_association-of-research-libraries-data	line graph,ch06_general,naomi,data labels,not recommended	TRUE
+fig06-03_arl-data-data-stand-out-better	dot plot,good,ch06_general,naomi	TRUE
+fig06-04_data-that-are-difficult-to-see	scatterplot,not recommended,ch06_general,naomi	TRUE
+fig06-05_museum-exhibitions-overlapping-data	scatterplot,stripplot,good,ch06_general,naomi	TRUE
+fig06-06_superposed-data-sets	scatterplot,good,ch06_general,naomi	TRUE
+fig06-07_superposed-data-sets-2	scatterplot,good,ch06_general,naomi	TRUE
+fig06-08_avoiding-superposed-data	trellis display,scatterplot,good,ch06_general,naomi,jitter	TRUE
+fig06-09_stock-market-data	timeseries,ch06_general,naomi,not recommended	TRUE
+fig06-10_stock-market-data-clarified	trellis display,timeseries,good,ch06_general,naomi	TRUE
+fig06-11_marketing-data	scatterplot,not recommended,ch06_general,naomi	TRUE
+fig06-12_marketing-data-less-cluttered-version	scatterplot,good,ch06_general,naomi	TRUE
+fig06-13_inflation-data	timeseries,ch06_general,naomi,not recommended	TRUE
+fig06-15_tick-marks-and-tick-mark-labels	bar chart,ch06_general,naomi,not recommended	TRUE
+fig06-16_exhibit-label-data	bar chart,good,ch06_general,naomi	TRUE
+fig06-18_zoo-exhibit-data	bubble chart,ch06_general,naomi,not recommended	TRUE
+fig06-23_police-officer-data-to-scale	bar chart,good,ch06_general,naomi	TRUE
+fig06-24_earnings-per-share-data	bar chart,ch06_general,naomi,not recommended	TRUE
+fig06-25_america-online-market-value	area plot,not recommended,ch06_general,naomi	TRUE
+fig06-28_immigration-data-with-horizontal-baseline	bar chart,good,ch06_general,naomi,data labels	TRUE
+fig06-29_survey-results-data	line graph,timeseries,good,ch06_general,naomi	TRUE
+fig06-30_health-insurance-data	pie chart,ch06_general,naomi,not recommended	TRUE
+fig06-32_population-of-cities	dot plot,good,ch06_general,naomi,multiple plots	TRUE
+fig06-33_population-of-cities-conflicting-principles	dot plot,good,ch06_general,naomi	TRUE
+fig07-01_sunspot-data-aspect-ratio-1	timeseries,ch07_scales,naomi,multiple plots,not recommended	TRUE
+fig07-02_annual-report-aspect-ratio-2	timeseries,ch07_scales,naomi,multiple plots,data labels,not recommended	TRUE
+fig07-03_carbon-dioxide-data	timeseries,ch07_scales,naomi,multiple plots,not recommended	TRUE
+fig07-04_carbon-dioxide-aspect-ratio-changed	timeseries,good,ch07_scales,naomi,multiple plots	TRUE
+fig07-05_annual-report-bar-chart-no-zero	bar chart,ch07_scales,naomi,multiple plots,data labels,not recommended	TRUE
+fig07-06_logarithmic-scales-for-percent-change	dot plot,good,ch07_scales,naomi,multiple plots,subscript	TRUE
+fig07-07_sales-data	scatterplot,good,ch07_scales,naomi	TRUE
+fig07-08_sales-data-logarithmic-scale	scatterplot,good,ch07_scales,naomi,subscript	TRUE
+fig07-09_sales-data-ordered-data-with-logarithmic-scale	scatterplot,good,ch07_scales,naomi,subscript	TRUE
+fig07-12_police-data-simple-view	bar chart,good,ch07_scales,naomi,data labels	TRUE
+fig07-13_sales-data-full-scale-break	scatterplot,good,ch07_scales,naomi	TRUE
+fig07-14_sales-data-avoiding-a-scale-break	scatterplot,good,ch07_scales,naomi	TRUE
+fig07-16_temperature-data-two-scales	timeseries,good,ch07_scales,naomi	TRUE
+fig07-17_income-data-gender-gap-at-all-ages	line graph,scatterplot,good,ch07_scales,naomi,annotation	TRUE
+fig07-19_blood-level-data	line graph,not recommended,ch07_scales,naomi,annotation	TRUE
+fig07-20_blood-level-data-variation-in-ratio	line graph,timeseries,good,ch07_scales,naomi	TRUE
+fig07-21_blood-level-data-multipanel-plot	line graph,timeseries,trellis display,good,ch07_scales,naomi	TRUE
+fig07-23_annual-report-no-y-scale	line graph,timeseries,not recommended,ch07_scales,naomi,multiple plots,data labels	TRUE
+fig07-24_prime-lending-rate-data-no-x-scale	area plot,ch07_scales,naomi,not recommended	TRUE
+fig07-25_annual-report-data-tick-marks-at-hard-to-judge-values	bar chart,not recommended,ch07_scales,naomi	TRUE
+fig07-27_invoice-data-filling-the-scale-line-rectangle	line graph,ch07_scales,naomi,not recommended	TRUE
+fig07-28_body-mass-data-unequal-intervals	line graph,not recommended,ch07_scales,naomi,legend,annotation	TRUE
+fig07-29_body-mass-data-comparing-panels	line graph,not recommended,ch07_scales,naomi,multiple plots,legend	TRUE
+fig07-30_body-mass-data-corrected	scatterplot,good,ch07_scales,naomi,legend	TRUE
+fig08-01_gold-price-data	bar chart,good,ch08_beforeafter,naomi,legend	TRUE
+fig08-02_gold-price-data-high-low-chart	line graph,good,ch08_beforeafter,naomi	TRUE
+fig08-03_task-data	bar chart,good,ch08_beforeafter,naomi,footnote,data labels	TRUE
+fig08-04_task-data-unified	dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-05_task-data-improvement	dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-06_task-data-percent-improvement	dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-07_task-data-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend	TRUE
+fig08-09_arl-library-survey-variation-of-a-trellis-plot	trellis display,dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-10_arl-library-survey-comparison-of-user-groups	trellis display,dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-12_car-production-stacked-bar-chart	bar chart,good,ch08_beforeafter,naomi,legend	TRUE
+fig08-13_car-production-trellis-panels	trellis display,timeseries,good,ch08_beforeafter,naomi	TRUE
+fig08-14_population-data-by-race	trellis display,dot plot,good,ch08_beforeafter,naomi	TRUE
+fig08-15_population-data-by-county	trellis display,dot plot,good,ch08_beforeafter,naomi	TRUE
+fig09-03_state-areas-dot-chart-from-excel	dot plot,good,ch09_software,naomi	TRUE
+fig10-01_bls-unemployment-data-table	table,good,ch10_qanda,naomi	TRUE
+fig10-02_bls-unemployment-data-graph	timeseries,line graph,good,ch10_qanda,naomi	TRUE
+fig10-03_presidential-approval-data-waffle-chart	waffle chart,good,ch10_qanda,naomi,legend	TRUE
+0002_add-background-with-cats-package	other,scatterplot,good	FALSE

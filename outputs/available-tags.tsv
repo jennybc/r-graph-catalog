@@ -2,35 +2,35 @@
 good
 not recommended
 ===GRAPH TAGS===
-other
-scatterplot
-pie chart
-dot plot
-table
-bar chart
-line graph
-bubble chart
-stripplot
-histogram
-boxplot
-timeseries
-month plot
-trellis display
-spline graph
-mosaic plot
-parallel coordinates plot
-rose plot
 area plot
+bar chart
+boxplot
+bubble chart
+dot plot
+histogram
+line graph
+month plot
+mosaic plot
+other
+parallel coordinates plot
+pie chart
+rose plot
+scatterplot
+spline graph
+stripplot
+table
+timeseries
+trellis display
 waffle chart
 ===GRAPH ELEMENTS===
-legend
 annotation
-multiple plots
-jitter
-loess smoothing
 data labels
-subscript
 footnote
+jitter
+legend
+loess smoothing
+multiple plots
+subscript
 ===CHAPTER===
 ch01_intro
 ch02_limitations

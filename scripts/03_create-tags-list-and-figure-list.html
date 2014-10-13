@@ -54,7 +54,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">03_create-tags-list-and-figure-list.R</h1>
 <h4 class="author"><em>jenny</em></h4>
-<h4 class="date"><em>Sun Oct 12 19:32:06 2014</em></h4>
+<h4 class="date"><em>Sun Oct 12 20:39:25 2014</em></h4>
 </div>
 
 
@@ -71,47 +71,40 @@ fig_tags_files &lt;- list.files(file.path(PROJHOME, &quot;figures&quot;, basenam
 
 names(fig_tags_files) &lt;- basenames
 
-fig_tags &lt;- ldply(as.list(fig_tags_files), function(x) {
-  tags_pre &lt;- scan(x, character(), sep = &quot;,&quot;, quiet = TRUE)
-  tags_post &lt;- paste(tags_pre, collapse=&quot;,&quot;)
-  data.frame(tags = I(tags_post))
-})
-
-fig_tags &lt;- rename(fig_tags, c(&quot;.id&quot; = &quot;basename&quot;))
+fig_tags &lt;- ldply(fig_tags_files, readLines)
+fig_tags &lt;- rename(fig_tags, c(&quot;.id&quot; = &quot;basename&quot;, &quot;V1&quot; = &quot;tags&quot;))
 
 # remove figures that we arent doing from the figure list
-fig_tags &lt;- fig_tags[-grep(&quot;not doing&quot;, fig_tags$tags),]
-
+fig_tags &lt;- fig_tags[grep(&quot;not doing&quot;, fig_tags$tags, invert = TRUE), ]
 
 ## Generate tags list
 
 all_tags &lt;- unique(unlist(strsplit(fig_tags$tags, split = &quot;,&quot;)))
 
 # chapter tags
-ind_chap &lt;- grep(paste0(&quot;ch&quot;, &quot;[[:digit:]][[:digit:]]&quot;, &quot;_&quot;), all_tags)
-tags_chap &lt;- all_tags[ind_chap]
+tags_chap &lt;-
+  grep(paste0(&quot;ch&quot;, &quot;[[:digit:]][[:digit:]]&quot;, &quot;_&quot;), all_tags, value = TRUE)
 
 # type tags
 to_match &lt;- c(&quot;good&quot;, &quot;bad&quot;, &quot;not recommended&quot;)
-ind_type &lt;- unique(grep(paste(to_match, collapse = &quot;|&quot;), all_tags))
-tags_type &lt;- all_tags[ind_type]
-
+tags_type &lt;- 
+  unique(grep(paste(to_match, collapse = &quot;|&quot;), all_tags, value = TRUE))
 
 to_match_graph_elem &lt;- c(&quot;annotation&quot;, &quot;footnote&quot;, &quot;multiple plots&quot;,
                          &quot;data labels&quot;, &quot;loess smoothing&quot;, &quot;jitter&quot;,
                          &quot;legend&quot;, &quot;subscript&quot;)
 
-ind_graph_elem &lt;- unique(grep(paste(to_match_graph_elem, collapse = &quot;|&quot;), all_tags))
-tags_graph_elem &lt;- all_tags[ind_graph_elem]
+tags_graph_elem &lt;- unique(grep(paste(to_match_graph_elem, collapse = &quot;|&quot;),
+                               all_tags, value = TRUE))
 
 # chart type tags
-tags_other &lt;- all_tags[-c(ind_chap, ind_type, ind_graph_elem)]
+tags_other &lt;-
+  setdiff(all_tags, c(&quot;naomi&quot;, tags_chap, tags_type, tags_graph_elem))
 
-tags_other &lt;- tags_other[-which(tags_other == &quot;naomi&quot;)]
-
-tags_only &lt;- data.frame(c(&quot;===GRAPH TYPE===&quot;, tags_type, &quot;===GRAPH TAGS===&quot;,
-                          tags_other, &quot;===GRAPH ELEMENTS===&quot;, tags_graph_elem,
-                          &quot;===CHAPTER===&quot;, tags_chap))
+tags_only &lt;-
+  data.frame(c(&quot;===GRAPH TYPE===&quot;, sort(tags_type), &quot;===GRAPH TAGS===&quot;,
+               sort(tags_other), &quot;===GRAPH ELEMENTS===&quot;, sort(tags_graph_elem),
+               &quot;===CHAPTER===&quot;, sort(tags_chap)))
 
 names(tags_only) &lt;- &quot;List of all tags&quot;
 
@@ -121,35 +114,35 @@ tags_only</code></pre>
 ## 2                       good
 ## 3            not recommended
 ## 4           ===GRAPH TAGS===
-## 5                      other
-## 6                scatterplot
-## 7                  pie chart
-## 8                   dot plot
-## 9                      table
-## 10                 bar chart
+## 5                  area plot
+## 6                  bar chart
+## 7                    boxplot
+## 8               bubble chart
+## 9                   dot plot
+## 10                 histogram
 ## 11                line graph
-## 12              bubble chart
-## 13                 stripplot
-## 14                 histogram
-## 15                   boxplot
-## 16                timeseries
-## 17                month plot
-## 18           trellis display
+## 12                month plot
+## 13               mosaic plot
+## 14                     other
+## 15 parallel coordinates plot
+## 16                 pie chart
+## 17                 rose plot
+## 18               scatterplot
 ## 19              spline graph
-## 20               mosaic plot
-## 21 parallel coordinates plot
-## 22                 rose plot
-## 23                 area plot
+## 20                 stripplot
+## 21                     table
+## 22                timeseries
+## 23           trellis display
 ## 24              waffle chart
 ## 25      ===GRAPH ELEMENTS===
-## 26                    legend
-## 27                annotation
-## 28            multiple plots
+## 26                annotation
+## 27               data labels
+## 28                  footnote
 ## 29                    jitter
-## 30           loess smoothing
-## 31               data labels
-## 32                 subscript
-## 33                  footnote
+## 30                    legend
+## 31           loess smoothing
+## 32            multiple plots
+## 33                 subscript
 ## 34             ===CHAPTER===
 ## 35                ch01_intro
 ## 36          ch02_limitations
@@ -181,8 +174,11 @@ if(!file.exists(out_dir)) {
     dir.create(out_dir)
 }
 
-## Save to file
+## sort figure basenames so CMEG figs come first (at least for now)
+fig_tags &lt;- mutate(fig_tags, CMEG = grepl(&quot;^fig&quot;, basename))
+fig_tags &lt;- fig_tags[order(desc(fig_tags$CMEG), fig_tags$basename), ]
 
+## Save to file
 write.table(tags_only,
             file.path(PROJHOME, &quot;outputs&quot;, &quot;available-tags.tsv&quot;),
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)

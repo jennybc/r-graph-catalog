@@ -14,47 +14,40 @@ fig_tags_files <- list.files(file.path(PROJHOME, "figures", basenames),
 
 names(fig_tags_files) <- basenames
 
-fig_tags <- ldply(as.list(fig_tags_files), function(x) {
-  tags_pre <- scan(x, character(), sep = ",", quiet = TRUE)
-  tags_post <- paste(tags_pre, collapse=",")
-  data.frame(tags = I(tags_post))
-})
-
-fig_tags <- rename(fig_tags, c(".id" = "basename"))
+fig_tags <- ldply(fig_tags_files, readLines)
+fig_tags <- rename(fig_tags, c(".id" = "basename", "V1" = "tags"))
 
 # remove figures that we arent doing from the figure list
-fig_tags <- fig_tags[-grep("not doing", fig_tags$tags),]
-
+fig_tags <- fig_tags[grep("not doing", fig_tags$tags, invert = TRUE), ]
 
 ## Generate tags list
 
 all_tags <- unique(unlist(strsplit(fig_tags$tags, split = ",")))
 
 # chapter tags
-ind_chap <- grep(paste0("ch", "[[:digit:]][[:digit:]]", "_"), all_tags)
-tags_chap <- all_tags[ind_chap]
+tags_chap <-
+  grep(paste0("ch", "[[:digit:]][[:digit:]]", "_"), all_tags, value = TRUE)
 
 # type tags
 to_match <- c("good", "bad", "not recommended")
-ind_type <- unique(grep(paste(to_match, collapse = "|"), all_tags))
-tags_type <- all_tags[ind_type]
-
+tags_type <- 
+  unique(grep(paste(to_match, collapse = "|"), all_tags, value = TRUE))
 
 to_match_graph_elem <- c("annotation", "footnote", "multiple plots",
                          "data labels", "loess smoothing", "jitter",
                          "legend", "subscript")
 
-ind_graph_elem <- unique(grep(paste(to_match_graph_elem, collapse = "|"), all_tags))
-tags_graph_elem <- all_tags[ind_graph_elem]
+tags_graph_elem <- unique(grep(paste(to_match_graph_elem, collapse = "|"),
+                               all_tags, value = TRUE))
 
 # chart type tags
-tags_other <- all_tags[-c(ind_chap, ind_type, ind_graph_elem)]
+tags_other <-
+  setdiff(all_tags, c("naomi", tags_chap, tags_type, tags_graph_elem))
 
-tags_other <- tags_other[-which(tags_other == "naomi")]
-
-tags_only <- data.frame(c("===GRAPH TYPE===", tags_type, "===GRAPH TAGS===",
-                          tags_other, "===GRAPH ELEMENTS===", tags_graph_elem,
-                          "===CHAPTER===", tags_chap))
+tags_only <-
+  data.frame(c("===GRAPH TYPE===", sort(tags_type), "===GRAPH TAGS===",
+               sort(tags_other), "===GRAPH ELEMENTS===", sort(tags_graph_elem),
+               "===CHAPTER===", sort(tags_chap)))
 
 names(tags_only) <- "List of all tags"
 
@@ -67,35 +60,35 @@ tags_only
 ## 2                       good
 ## 3            not recommended
 ## 4           ===GRAPH TAGS===
-## 5                      other
-## 6                scatterplot
-## 7                  pie chart
-## 8                   dot plot
-## 9                      table
-## 10                 bar chart
+## 5                  area plot
+## 6                  bar chart
+## 7                    boxplot
+## 8               bubble chart
+## 9                   dot plot
+## 10                 histogram
 ## 11                line graph
-## 12              bubble chart
-## 13                 stripplot
-## 14                 histogram
-## 15                   boxplot
-## 16                timeseries
-## 17                month plot
-## 18           trellis display
+## 12                month plot
+## 13               mosaic plot
+## 14                     other
+## 15 parallel coordinates plot
+## 16                 pie chart
+## 17                 rose plot
+## 18               scatterplot
 ## 19              spline graph
-## 20               mosaic plot
-## 21 parallel coordinates plot
-## 22                 rose plot
-## 23                 area plot
+## 20                 stripplot
+## 21                     table
+## 22                timeseries
+## 23           trellis display
 ## 24              waffle chart
 ## 25      ===GRAPH ELEMENTS===
-## 26                    legend
-## 27                annotation
-## 28            multiple plots
+## 26                annotation
+## 27               data labels
+## 28                  footnote
 ## 29                    jitter
-## 30           loess smoothing
-## 31               data labels
-## 32                 subscript
-## 33                  footnote
+## 30                    legend
+## 31           loess smoothing
+## 32            multiple plots
+## 33                 subscript
 ## 34             ===CHAPTER===
 ## 35                ch01_intro
 ## 36          ch02_limitations
@@ -136,8 +129,11 @@ if(!file.exists(out_dir)) {
 	dir.create(out_dir)
 }
 
-## Save to file
+## sort figure basenames so CMEG figs come first (at least for now)
+fig_tags <- mutate(fig_tags, CMEG = grepl("^fig", basename))
+fig_tags <- fig_tags[order(desc(fig_tags$CMEG), fig_tags$basename), ]
 
+## Save to file
 write.table(tags_only,
             file.path(PROJHOME, "outputs", "available-tags.tsv"),
             sep = '\t', row.names = FALSE, col.names = FALSE, quote = FALSE)
@@ -151,5 +147,5 @@ write.table(fig_tags,
 ---
 title: "03_create-tags-list-and-figure-list.R"
 author: "jenny"
-date: "Sun Oct 12 19:32:06 2014"
+date: "Sun Oct 12 20:39:25 2014"
 ---
