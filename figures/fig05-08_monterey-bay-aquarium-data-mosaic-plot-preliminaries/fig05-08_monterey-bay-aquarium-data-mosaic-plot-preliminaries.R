@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS ESTIMATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(plyr)
 library(reshape2)
@@ -75,4 +78,3 @@ ggsave(paste0(this_base, ".png"),
        p5, width = 6, height = 6)
 
 ## pedantic: missing space between bars
-## note: my_data is estimated

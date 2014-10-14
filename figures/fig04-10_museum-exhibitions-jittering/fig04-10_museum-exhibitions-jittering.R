@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS SIMULATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(reshape2)
 
@@ -52,6 +55,4 @@ p <- ggplot(my_data_long, aes(x = visit_length, y = exhibition)) +
 p
 
 ggsave(paste0(this_base, ".png"), p, width = 6, height = 6)
-
-## note: data was simulated and outliers were inspired by the original 
 

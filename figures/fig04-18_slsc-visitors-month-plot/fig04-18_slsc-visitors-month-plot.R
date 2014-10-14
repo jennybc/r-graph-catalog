@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS ESTIMATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(reshape2)
 library(grid)
@@ -39,5 +42,4 @@ p
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 6)
 
 ## pedantic: panel borders and position of x axis 
-## note: my_data is estimated
 
