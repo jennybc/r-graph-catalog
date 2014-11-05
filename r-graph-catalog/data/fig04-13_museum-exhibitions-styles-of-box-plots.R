@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS SIMULATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(reshape2)
 library(plyr)
@@ -35,4 +38,5 @@ p
 
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 6)
 
-## note: data was simulated so even the order of the boxes differes from orig
+## note: data was simulated so even the order of the boxes differs from orig
+

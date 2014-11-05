@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS SIMULATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(reshape2)
 
@@ -29,8 +32,6 @@ p <- ggplot(my_data_long, aes(x = exhibition, y = visit_length)) +
 p
 
 ggsave(paste0(this_base, ".png"), p, width = 7, height = 5)
-
-## note: data was simulated, inspired by the original
 
 ## TO DO: boxplot decorations don't match original exactly
 

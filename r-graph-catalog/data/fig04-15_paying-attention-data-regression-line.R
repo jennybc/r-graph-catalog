@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS SIMULATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 
 this_base <- "fig04-15_paying-attention-data-regression-line"
@@ -24,6 +27,4 @@ p <- ggplot(my_data, aes(x = x, y = y)) +
 p
 
 ggsave(paste0(this_base, ".png"), p, width = 6, height = 5)
-
-## note: my_data is simulated to resemble the original
 

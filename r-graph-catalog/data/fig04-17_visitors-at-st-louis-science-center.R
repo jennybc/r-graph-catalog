@@ -1,3 +1,6 @@
+## NOTE: THE DATA USED WAS ESTIMATED, WE DID NOT HAVE ACCESS TO THE
+##       RAW/ORIGINAL DATA.
+
 library(ggplot2)
 library(gridExtra)
 
@@ -74,4 +77,3 @@ p5
 
 ggsave(paste0(this_base, ".png"), p5, width = 6, height = 6)
 
-## note: my_data is estimated
