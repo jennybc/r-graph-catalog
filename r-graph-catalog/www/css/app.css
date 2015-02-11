@@ -5,28 +5,26 @@
 }
 
 #mytable table.data {
-  width: 100%;
+  height:100%;
+  width:100%;
+  table-layout:fixed;
 }
 
 #mytable table.data td {
   text-align: center;
   vertical-align: middle;
   width: 33.33%;
-  height: 250px
+  height: 250px;
 }
 
 #mytable td img {
   max-height: 250px;
-  width: auto;
-}
-
-#sidepanel {
-  height: 750px;
-  overflow: auto;
+  max-width: 100%;
 }
 
 #mytable {
-  height: 750px;
+  height: 800px;
+  width: 100%;
   overflow: auto;
 }
 
@@ -35,3 +33,11 @@
   left: -11px;
 }
 
+#sidepanel {
+  height: 825px;
+  overflow: auto;
+}
+
+#figImage img {
+  max-width: 100%;
+}
