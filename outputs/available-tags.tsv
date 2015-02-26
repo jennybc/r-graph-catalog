@@ -7,6 +7,8 @@ bar chart
 boxplot
 bubble chart
 dot plot
+ggplot2_tutorial
+heatmap
 histogram
 line graph
 month plot
@@ -19,7 +21,9 @@ scatterplot
 spline graph
 stripplot
 table
+themes
 timeseries
+transparency
 trellis display
 waffle chart
 ===GRAPH ELEMENTS===

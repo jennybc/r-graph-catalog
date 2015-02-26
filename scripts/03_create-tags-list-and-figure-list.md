@@ -65,41 +65,45 @@ tags_only
 ## 7                    boxplot
 ## 8               bubble chart
 ## 9                   dot plot
-## 10                 histogram
-## 11                line graph
-## 12                month plot
-## 13               mosaic plot
-## 14                     other
-## 15 parallel coordinates plot
-## 16                 pie chart
-## 17                 rose plot
-## 18               scatterplot
-## 19              spline graph
-## 20                 stripplot
-## 21                     table
-## 22                timeseries
-## 23           trellis display
-## 24              waffle chart
-## 25      ===GRAPH ELEMENTS===
-## 26                annotation
-## 27               data labels
-## 28                  footnote
-## 29                    jitter
-## 30                    legend
-## 31           loess smoothing
-## 32            multiple plots
-## 33                 subscript
-## 34             ===CHAPTER===
-## 35                ch01_intro
-## 36          ch02_limitations
-## 37           ch03_perception
-## 38              ch04_1or2dim
-## 39         ch05_morethan2var
-## 40              ch06_general
-## 41               ch07_scales
-## 42          ch08_beforeafter
-## 43             ch09_software
-## 44                ch10_qanda
+## 10          ggplot2_tutorial
+## 11                   heatmap
+## 12                 histogram
+## 13                line graph
+## 14                month plot
+## 15               mosaic plot
+## 16                     other
+## 17 parallel coordinates plot
+## 18                 pie chart
+## 19                 rose plot
+## 20               scatterplot
+## 21              spline graph
+## 22                 stripplot
+## 23                     table
+## 24                    themes
+## 25                timeseries
+## 26              transparency
+## 27           trellis display
+## 28              waffle chart
+## 29      ===GRAPH ELEMENTS===
+## 30                annotation
+## 31               data labels
+## 32                  footnote
+## 33                    jitter
+## 34                    legend
+## 35           loess smoothing
+## 36            multiple plots
+## 37                 subscript
+## 38             ===CHAPTER===
+## 39                ch01_intro
+## 40          ch02_limitations
+## 41           ch03_perception
+## 42              ch04_1or2dim
+## 43         ch05_morethan2var
+## 44              ch06_general
+## 45               ch07_scales
+## 46          ch08_beforeafter
+## 47             ch09_software
+## 48                ch10_qanda
 ```
 
 ```r
@@ -107,20 +111,20 @@ head(fig_tags)
 ```
 
 ```
-##                                basename
-## 1 0002_add-background-with-cats-package
-## 2        0003_xkcd-and-direct-labelling
-## 3           fig01-01_similar-pie-wedges
-## 4  fig01-02_similar-pie-wedges-dot-plot
-## 5     fig01-03_similar-pie-wedges-table
-## 6          fig02-01_structured-data-set
+##                                                      basename
+## 1                       0002_add-background-with-cats-package
+## 2                              0003_xkcd-and-direct-labelling
+## 3                              0004_scatterplot-nothing-fancy
+## 4                              0005_scatterplot-log-transform
+## 5                    0006_scatterplot-map-continent-to-colour
+## 6 0007_scatterplot-overplotting-fix-set-transparency-and-size
 ##                                                tags
 ## 1                            other,scatterplot,good
 ## 2 other,line graph,good,data labels,loess smoothing
-## 3        pie chart,ch01_intro,naomi,not recommended
-## 4                    dot plot,good,ch01_intro,naomi
-## 5                       table,good,ch01_intro,naomi
-## 6  pie chart,ch02_limitations,naomi,not recommended
+## 3                 scatterplot,good,ggplot2_tutorial
+## 4                 scatterplot,good,ggplot2_tutorial
+## 5                 scatterplot,good,ggplot2_tutorial
+## 6                 scatterplot,good,ggplot2_tutorial
 ```
 
 ```r
@@ -146,6 +150,6 @@ write.table(fig_tags,
 
 ---
 title: "03_create-tags-list-and-figure-list.R"
-author: "jzhao"
-date: "Wed Nov  5 13:41:54 2014"
+author: "joannazhao"
+date: "Wed Feb 25 18:04:25 2015"
 ---

@@ -123,3 +123,43 @@ fig10-02_bls-unemployment-data-graph	timeseries,line graph,good,ch10_qanda,naomi
 fig10-03_presidential-approval-data-waffle-chart	waffle chart,good,ch10_qanda,naomi,legend	TRUE
 0002_add-background-with-cats-package	other,scatterplot,good	FALSE
 0003_xkcd-and-direct-labelling	other,line graph,good,data labels,loess smoothing	FALSE
+0004_scatterplot-nothing-fancy	scatterplot,good,ggplot2_tutorial	FALSE
+0005_scatterplot-log-transform	scatterplot,good,ggplot2_tutorial	FALSE
+0006_scatterplot-map-continent-to-colour	scatterplot,good,ggplot2_tutorial	FALSE
+0007_scatterplot-overplotting-fix-set-transparency-and-size	scatterplot,good,ggplot2_tutorial	FALSE
+0008_scatterplot-fitted-curve	scatterplot,good,ggplot2_tutorial,loess smoothing	FALSE
+0009_scatterplot-fitted-curve-no-se	scatterplot,good,ggplot2_tutorial,loess smoothing	FALSE
+0010_scatterplot-fitted-line	scatterplot,good,ggplot2_tutorial	FALSE
+0011_scatterplot-map-continent-to-colour-with-lines	scatterplot,good,ggplot2_tutorial	FALSE
+0012_scatterplot-facet-by-continent	scatterplot,good,ggplot2_tutorial,trellis display,transparency	FALSE
+0013_scatterplot-facet-by-continent-with-lines	scatterplot,good,ggplot2_tutorial,trellis display,loess smoothing,transparency	FALSE
+0014_scatterplot-lifeexp-against-year	scatterplot,good,ggplot2_tutorial	FALSE
+0015_scatterplot-lifeexp-against-year-lines	scatterplot,good,ggplot2_tutorial,loess smoothing	FALSE
+0016_scatterplot-lifeexp-against-year-by-continent-with-lines	scatterplot,good,ggplot2_tutorial,trellis display,loess smoothing	FALSE
+0017_scatterplot-lifeexp-against-year-connect-countries	scatterplot,good,ggplot2_tutorial,trellis display,line graph	FALSE
+0018_scatterplot-subset-data-reorder-legend	scatterplot,good,ggplot2_tutorial,line graph,legend	FALSE
+0019_scatterplot-overplotting-fix-heatmap-2dbin	scatterplot,good,ggplot2_tutorial,heatmap	FALSE
+0020_stripplot-nothing-fancy	dot plot,good,ggplot2_tutorial	FALSE
+0021_stripplot-jitter	dot plot,good,ggplot2_tutorial,jitter	FALSE
+0022_stripplot-jitter-and-transparency	dot plot,good,ggplot2_tutorial,jitter,transparency	FALSE
+0023_stripplot-with-boxplot	dot plot,good,ggplot2_tutorial,boxplot,jitter,transparency	FALSE
+0024_stripplot-statistical-summary	dot plot,good,ggplot2_tutorial,annotation	FALSE
+0025_histogram-nothing-fancy	histogram,good,ggplot2_tutorial	FALSE
+0026_densityplot	area plot,good,ggplot2_tutorial	FALSE
+0027_histogram-stacked	histogram,good,ggplot2_tutorial	FALSE
+0028_histogram-unstacked	histogram,good,ggplot2_tutorial	FALSE
+0029_densityplot-set-transparency	area plot,good,ggplot2_tutorial,transparency	FALSE
+0030_densityplot-facet-by-continent	area plot,good,ggplot2_tutorial,trellis display	FALSE
+0031_histogram-facet-by-continent	histogram,good,ggplot2_tutorial,trellis display	FALSE
+0032_boxplot-specify-grouping-variable	boxplot,good,ggplot2_tutorial	FALSE
+0033_theme-bw	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0034_theme-calc	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0035_theme-economist	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0036_theme-economist-white	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0037_theme-few	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0038_theme-gdocs	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0039_theme-tufte	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0040_theme-wsj	scatterplot,good,ggplot2_tutorial,loess smoothing,themes	FALSE
+0041_pick-new-colours-for-lines	scatterplot,good,ggplot2_tutorial,line graph	FALSE
+0042_bubbleplot	bubble chart,good,ggplot2_tutorial,trellis display	FALSE
+0043_lineplot	line graph,good,ggplot2_tutorial,trellis display	FALSE

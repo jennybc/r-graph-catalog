@@ -31,7 +31,7 @@ p <- ggplot() +
   theme(legend.position = "none") + 
   xkcdaxis(xrange, yrange) +
   geom_text(aes(x = year + 1.5, y = lifeExp + 3, label = country), data = direct_label,
-            hjust = 1, vjust = 1,family = "xkcd", size = 7)  
+            hjust = 1, vjust = 1, family = "xkcd", size = 7)  
 
 ## we do not print the plot because that triggers creation of an unnecessary
 ## PDF, which causes an error due to missing fonts (the xkcd packages uses a
