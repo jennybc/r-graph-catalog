@@ -25,13 +25,13 @@ helpPopup <- function(title, content,
 }
 
 shinyUI(fluidPage(
-
+  
   tags$head(includeScript(file.path("www", "js", "app.js"))#,
             #includeScript(file.path("www", "js", "google-analytics.js"))
-            ),
-
+  ),
+  
   includeCSS(file.path("www", "css", "app.css")),
-
+  
   titlePanel("R Graph Catalog"),
   sidebarLayout(
     sidebarPanel(
@@ -47,32 +47,33 @@ shinyUI(fluidPage(
       checkboxGroupInput("type", strong("Filter by type"),
                          choices = c("Good", "Not Recommended"),
                          selected = list()),
-
-      checkboxGroupInput("dataset", strong("Filter by tags"),
+      
+      checkboxGroupInput("plottype", strong("Filter by tags"),
                          choices =
                            c("Dot Plot", "Line Graph", "Pie Chart",
                              "Bar Chart", "Scatterplot", "Trellis Display",
                              "Histogram", "Boxplot", "Timeseries", "Table",
                              "Bubble Chart", "Month Plot", "Area Plot",
-                             "Waffle Chart"),
+                             "Waffle Chart", "Heatmap"),
                          selected = list()),
-
+      
       checkboxGroupInput("element", strong("Filter by graph elements"),
                          choices =
                            c("Annotation", "Footnote", "Multiple Plots",
                              "Data Labels", "Loess Smoothing", "Jitter",
-                             "Legend", "Subscript"),
+                             "Legend", "Subscript", "Transparency", "Themes"),
                          selected = list()),
-
+      
       checkboxGroupInput("chapter", strong("Filter by chapter"),
                          choices =
                            c("ch01_intro", "ch02_limitations", "ch03_perception",
                              "ch04_1or2dim", "ch05_morethan2var",
                              "ch06_general", "ch07_scales", "ch08_beforeafter",
-                             "ch09_software", "ch10_qanda", "other"),
+                             "ch09_software", "ch10_qanda", "ggplot2_tutorial", 
+                             "other"),
                          selected = list())
     ),
-
+    
     mainPanel(
       width = 9,
       tabsetPanel(
@@ -80,17 +81,17 @@ shinyUI(fluidPage(
         tabPanel("Catalog", tableOutput("mytable")),
         tabPanel("Figure & Code",
                  fluidRow(
-                   column(width = 5, imageOutput("figImage")),
-                   column(width = 7,
+                   column(width = 6, imageOutput("figImage", height = "auto")),
+                   column(width = 6,
                           aceEditor("fig_and_code",
                                     value = "Please select a figure" ,
                                     readOnly = TRUE, height = "450px"),
                           htmlOutput("link")))),
-        tabPanel("Figure", imageOutput("figImage_only", height = "100%")),
+        tabPanel("Figure", imageOutput("figImage_only")),
         tabPanel("Code", htmlOutput("code_only"))
       )
-
-
+      
+      
     )
   )
 ))
