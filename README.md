@@ -1,7 +1,7 @@
 R Graph Catalog
 ===============
 
-The [r-graph-catalog](r-graph-catalog) subdirectory of this repo creates the [R Graph Catalog](http://shinyapps.stat.ubc.ca/r-graph-catalog/) Shiny app.
+The [r-graph-catalog](r-graph-catalog) subdirectory of this repo creates the [R Graph Catalog](http://shiny.stat.ubc.ca/r-graph-catalog/) Shiny app.
 
 This catalog is a complement to ["Creating More Effective Graphs"](http://www.amazon.com/Creating-Effective-Graphs-Naomi-Robbins/dp/0985911123) by [Naomi Robbins](http://www.nbr-graphs.com). All graphs were produced using the [`R` language](http://www.r-project.org) and the add-on package [`ggplot2`](http://ggplot2.org), written by [Hadley Wickham](http://hadley.github.io). The gallery is maintained by Joanna Zhao and [Jennifer Bryan](http://www.stat.ubc.ca/~jenny/).
 
