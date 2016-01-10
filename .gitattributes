@@ -1,1 +1,1 @@
-*.md linguist-documentation
+figures/**/*.md linguist-documentation
