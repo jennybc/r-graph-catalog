@@ -2,3 +2,4 @@
 README.md linguist-documentation
 README-fodder.md linguist-documentation
 figures/**/README* linguist-documentation
+scripts/*.html linguist-documentation
