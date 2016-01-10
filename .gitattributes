@@ -1,2 +1,1 @@
-*.md linguist-language=r
-*.md linguist-documentation=false
+*.md linguist-documentation
