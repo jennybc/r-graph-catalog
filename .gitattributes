@@ -1,1 +1,3 @@
 *.md linguist-documentation
+README.md linguist-documentation
+README-fodder.md linguist-documentation
