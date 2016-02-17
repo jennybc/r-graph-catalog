@@ -2,6 +2,7 @@
   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.5);
   -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.5);
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  cursor: pointer;
 }
 
 #mytable table.data {
@@ -40,4 +41,5 @@
 
 #figImage img {
   max-width: 100%;
+  max-height: 100%;
 }
