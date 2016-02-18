@@ -24,19 +24,12 @@
 }
 
 #mytable {
-  height: 800px;
   width: 100%;
-  overflow: auto;
 }
 
 #popup {
   position: relative;
   left: -11px;
-}
-
-#sidepanel {
-  height: 825px;
-  overflow: auto;
 }
 
 #figImage img {
