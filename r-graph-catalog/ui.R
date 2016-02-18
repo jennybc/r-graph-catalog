@@ -80,7 +80,7 @@ shinyUI(fluidPage(
         tabPanel("Catalog", tableOutput("mytable")),
         tabPanel("Figure & Code",
                  fluidRow(
-                   column(width = 5, imageOutput("figImage")),
+                   column(width = 5, imageOutput("figImage", height = "auto")),
                    column(width = 7,
                           aceEditor("fig_and_code",
                                     value = "Please select a figure" ,
