@@ -121,25 +121,39 @@ shinyServer(function(input, output, session){
   values$clicked <- FALSE
   values$code <- NULL
 
+  # When the app loads, if there is a hash value then load that figure
+  observe({
+    urlHash <- session$clientData$url_hash_initial
+    if (!is.null(urlHash) && substring(urlHash, 1, 1) == "#") {
+      values$code <- substring(urlHash, 2)
+    }
+  })
+
+  # When a figure is clicked, load that figure
   observe({
     if (!is.null(input$clicked) && input$clicked == TRUE) {
       values$code <- input$code
 
-      # get contents of figure R file
-      r_file <- file.path('data', paste0(values$code, ".R"))
-
-      x <- includeText(r_file)
-
-      updateAceEditor(session, "fig_and_code",
-                      mode="r", value = x)
-
-      # 			updateAceEditor(session, "code_only",
-      # 											mode="r", value = x)
-
-      updateTabsetPanel(session, "tabset", selected = "Figure & Code")
+      # Add figure name to URL so it can be retrieved later
+      session$sendCustomMessage("figClick", values$code)
     }
   })
 
+  # Load a figure and open the Figure tab
+  observeEvent(values$code, {
+    # get contents of figure R file
+    r_file <- file.path('data', paste0(values$code, ".R"))
+
+    x <- includeText(r_file)
+
+    updateAceEditor(session, "fig_and_code",
+                    mode="r", value = x)
+
+    #   		updateAceEditor(session, "code_only",
+    # 											mode="r", value = x)
+
+    updateTabsetPanel(session, "tabset", selected = "Figure & Code")
+  })
 
   output$figImage <- renderImage({
 
@@ -193,7 +207,7 @@ shinyServer(function(input, output, session){
     if(length(values$code > 0)) {
       repo <- paste0("https://github.com/jennybc/r-graph-catalog/tree/master/figures/",
                      values$code)
-      
+
       target <- paste('target="_blank"')
 
       link <- paste(a("Go to GitHub to download figure and code",
