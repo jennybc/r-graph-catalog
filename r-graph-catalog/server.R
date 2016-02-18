@@ -180,7 +180,7 @@ shinyServer(function(input, output, session){
     }
     list(src = filename,
          width = 600,
-         height = 600)
+         height = "auto")
   }, deleteFile = FALSE)
 
   output$code_only <- reactive({
