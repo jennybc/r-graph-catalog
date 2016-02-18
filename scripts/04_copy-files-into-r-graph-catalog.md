@@ -48,7 +48,7 @@ if(all(r_files_copied)) {
 ```
 
 ```
-## 125 *.R files successfully copied into r-graph-catalog/data
+## 124 *.R files successfully copied into r-graph-catalog/data
 ```
 
 ```r
@@ -90,6 +90,6 @@ if(all(figs_copied)) {
 
 ---
 title: "04_copy-files-into-r-graph-catalog.R"
-author: "jzhao"
-date: "Wed Nov  5 13:42:06 2014"
+author: "jenny"
+date: "Wed Feb 17 23:06:20 2016"
 ---
