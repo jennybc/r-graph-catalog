@@ -22,3 +22,8 @@ $(function() {
 		});
 	});
 });
+
+// When a figure is clicked, add it to the URL hash so it can be retrieved
+Shiny.addCustomMessageHandler("figClick", function(data) {
+  window.location.hash = data;
+});
